@@ -69,20 +69,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add scroll effect to navigation
+    // Add scroll effect to navigation (both desktop and mobile)
     let lastScrollTop = 0;
-    const nav = document.querySelector('nav');
+    const navs = document.querySelectorAll('#desktop-nav, #hamburger-nav');
     
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const hide = scrollTop > lastScrollTop && scrollTop > 100;
         
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down
-            nav.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            nav.style.transform = 'translateY(0)';
-        }
+        navs.forEach((n) => {
+            if (!n) return;
+            n.style.transform = hide ? 'translateY(-100%)' : 'translateY(0)';
+        });
         
         lastScrollTop = scrollTop;
     });

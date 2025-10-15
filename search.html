@@ -31,6 +31,32 @@
     </nav>
   </header>
 
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="index.html" class="logo-wrapper">
+        <img src="./assets/home_light.webp" src-light="./assets/home_light.webp" src-dark="./assets/home_light.webp"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="./blog/blog.html">Blog</a></li>
+        <li><a href="./about/about.html">About</a></li>
+        <li><a href="./search.html" class="active">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="./assets/theme_light.png"
+            src-light="./assets/theme_light.png" src-dark="./assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
   <main style="margin-top:56px; padding:2rem 1rem; min-height:calc(100vh - 56px - 60px); display:flex; flex-direction:column;">
     <section class="card" style="max-width:1100px;margin:0 auto;padding:1.5rem; flex:1;">
       <h1 class="title" style="text-align:left;margin-bottom:1rem;">Search</h1>
