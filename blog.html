@@ -27,25 +27,25 @@
   <link rel="icon" href="http://localhost:3000/assets/favicon.png" type="image/png" />
 
   <!-- Preloads -->
-  <link rel="preload" href="./../assets/home_light.webp" as="image" />
-  <link rel="preload" href="./../assets/theme_light.png" as="image" />
-  <link rel="preload" href="./../assets/profile.webp" as="image" />
+  <link rel="preload" href="./assets/home_light.webp" as="image" />
+  <link rel="preload" href="./assets/theme_light.png" as="image" />
+  <link rel="preload" href="./assets/profile.webp" as="image" />
 
   <!-- Theme & Fonts -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./../static/css/style.css" />
-  <link rel="stylesheet" href="./../static/css/mediaqueries.css" />
+  <link rel="stylesheet" href="./static/css/style.css" />
+  <link rel="stylesheet" href="./static/css/mediaqueries.css" />
 </head>
 
 <body>
   <header>
     <nav id="desktop-nav">
       <div class="logo">
-        <a href="./../index.html" class="logo-wrapper">
-          <!-- <img src="./../assets/home_light.webp" src-light="./../assets/home_light.webp" src-dark="./../assets/home_light.webp" alt="Home Logo" class="icon logo-icon" /> -->
+        <a href="./index.html" class="logo-wrapper">
+          <!-- <img src="./assets/home_light.webp" src-light="./assets/home_light.webp" src-dark="./assets/home_light.webp" alt="Home Logo" class="icon logo-icon" /> -->
           <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
         </a>
       </div>
@@ -53,11 +53,11 @@
       <div>
         <ul class="nav-links">
           <li><a href="./blog.html" class="active">Blog</a></li>
-          <li><a href="./../about/about.html">About</a></li>
-          <li><a href="./../search.html">🔍</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./search.html">🔍</a></li>
           <li>
-            <img id="modeToggle" class="icon color-icon" src="./../assets/theme_light.png"
-              src-light="./../assets/theme_light.png" src-dark="./../assets/theme_dark.png" alt="Color theme icon" />
+            <img id="modeToggle" class="icon color-icon" src="./assets/theme_light.png"
+              src-light="./assets/theme_light.png" src-dark="./assets/theme_dark.png" alt="Color theme icon" />
           </li>
         </ul>
       </div>
@@ -66,8 +66,8 @@
   
   <nav id="hamburger-nav">
     <div class="logo">
-      <a href="./../index.html" class="logo-wrapper">
-        <img src="./../assets/home_light.webp" src-light="./../assets/home_light.webp" src-dark="./../assets/home_light.webp"
+      <a href="./index.html" class="logo-wrapper">
+        <img src="./assets/home_light.webp" src-light="./assets/home_light.webp" src-dark="./assets/home_light.webp"
           alt="Home Logo" class="icon logo-icon" />
         <span>Justin Kombe T.</span>
       </a>
@@ -80,18 +80,18 @@
       </div>
       <div class="menu-links">
         <li><a href="./blog.html" class="active">Blog</a></li>
-        <li><a href="./../about/about.html">About</a></li>
-        <li><a href="./../search.html">🔍</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./search.html">🔍</a></li>
         <li>
-          <img id="modeToggle2" class="icon color-icon" src="./../assets/theme_light.png"
-            src-light="./../assets/theme_light.png" src-dark="./../assets/theme_dark.png" alt="Color theme icon" />
+          <img id="modeToggle2" class="icon color-icon" src="./assets/theme_light.png"
+            src-light="./assets/theme_light.png" src-dark="./assets/theme_dark.png" alt="Color theme icon" />
         </li>
       </div>
     </div>
   </nav>
     <div class="breadcrumb-wrapper">
         <p class="breadcrumb-text">/
-            <a href="./../index.html">Home</a>/
+            <a href="./index.html">Home</a>/
           <span>Blog</span>
         </p>
       </div>
@@ -110,10 +110,10 @@
                         <p class="category-description" style="margin-bottom:.75rem; text-align: justify;">ℹ️ Discover tools, techniques, tricks in this concise guide sharing valuable insights and practical tips for certification and skill development. Enjoy the series and may it bring you exciting new perspectives.</p>
                         <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                         <div class="post-grid" style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;">
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/ProLabs.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/ProLabs.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./certifications/prolabs-review.html">Dissecting HackTheBox Pro Labs: The Art of Attacking Enterprise Networks</a>
+                                        <a href="./blog/certifications/prolabs-review.html">Dissecting HackTheBox Pro Labs: The Art of Attacking Enterprise Networks</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">Comprehensive review of the HTB Pro Labs, key takeways, and practical tips.</p>
                                     <div class="post-meta" style="display:flex; gap:10px; align-items:center; margin:0 0 .5rem 0; color:var(--text-secondary);">
@@ -129,10 +129,10 @@
                                 </div>
                             </article>
 
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/cybersec.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/cybersec.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./certifications/cyber-journey.html">
+                                        <a href="./blog/certifications/cyber-journey.html">
                                             From Classroom to HackTheBox: My Journey Through Cybersecurity Degree, Certifications, and the Power of Practical Experience
                                         </a>
                                     </h3>
@@ -153,10 +153,10 @@
                                 </div>
                             </article>
 
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/off-pentest.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/off-pentest.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./certifications/thm-offpentest.html">TryHackMe Offensive PenTesting Pathway — Full Review</a>
+                                        <a href="./blog/certifications/thm-offpentest.html">TryHackMe Offensive PenTesting Pathway — Full Review</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">
                                         Comprehensive review of THM Offensive PenTesting pathway, alongside some personal advices.
@@ -173,10 +173,10 @@
                                 </div>
                             </article>
 
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/thm-redteaming.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/thm-redteaming.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./certifications/thm-redteaming.html">TryHackMe Red Teaming Pathway — Full Review</a>
+                                        <a href="./blog/certifications/thm-redteaming.html">TryHackMe Red Teaming Pathway — Full Review</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">
                                         Comprehensive review of THM Red Teaming Pathway alongside some personal advices.
@@ -193,10 +193,10 @@
                                 </div>
                             </article>
 
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/thm-pentest.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/thm-pentest.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./certifications/thm-pentest.html">TryHackMe CompTIA PenTest+ Pathway — Full Review</a>
+                                        <a href="./blog/certifications/thm-pentest.html">TryHackMe CompTIA PenTest+ Pathway — Full Review</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">
                                         Comprehensive review of THM CompTIA PenTest+ pathway, alongside some personal advices.
@@ -223,10 +223,10 @@
                             <p class="category-description" style="margin-bottom:.75rem; text-align: justify;">ℹ️ This list cover essential tips, tools, practical analysis as well as relevant resources to master Linux for all skill levels. Hope you learn something new going through this series.</p>
                         <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                         <div class="post-grid" style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;">
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/linux-resources.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/linux-resources.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./linux/linux-resources.html">RH124, RH134 & DO457 — A Deep Dive into Key Concepts, Learning Resources and Personal Insights</a>
+                                        <a href="./blog/linux/linux-resources.html">RH124, RH134 & DO457 — A Deep Dive into Key Concepts, Learning Resources and Personal Insights</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">Must-know resources and materials to get you started with Linux, System Administration, and security analysis.</p>
                                     <div class="post-meta" style="display:flex; gap:10px; align-items:center; margin:0 0 .5rem 0; color:var(--text-secondary);">
@@ -245,10 +245,10 @@
                             </article>
 
                             <!-- Arch Linux Vs Ubuntu PopOS  -->
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/archvspop.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/archvspop.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./linux/arch-vs-pop.html">Arch Linux Vs Pop!_OS: The Ultimate Guide for Developers and Security Experts</a>
+                                        <a href="./blog/linux/arch-vs-pop.html">Arch Linux Vs Pop!_OS: The Ultimate Guide for Developers and Security Experts</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">A comprehensive guide to choosing the right Linux distribution for your needs.</p>
                                     <div class="post-meta" style="display:flex; gap:10px; align-items:center; margin:0 0 .5rem 0; color:var(--text-secondary);">
@@ -265,10 +265,10 @@
                             </article>
 
                             <!-- Data Recovery Using ldmtool  -->
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/data-recovery.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/data-recovery.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./linux/ldmtool.html">Data Recovery Using ldmtool</a>
+                                        <a href="./blog/linux/ldmtool.html">Data Recovery Using ldmtool</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">Recover your data safely with Linux using ldmtool</p>
                                     <div class="post-meta" style="display:flex; gap:10px; align-items:center; margin:0 0 .5rem 0; color:var(--text-secondary);">
@@ -294,10 +294,10 @@
                         <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                         <div class="post-grid" style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;">
                                                 
-                            <!-- <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/data-recovery.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <!-- <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/data-recovery.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0;">
-                                        <a href="./linux/ldmtool.html">Data Recovery Using ldmtool: A Complete Linux Guide</a>
+                                        <a href="./blog/linux/ldmtool.html">Data Recovery Using ldmtool: A Complete Linux Guide</a>
                                     </h3>
                                     <div class="post-meta" style="display:flex; gap:10px; align-items:center; margin:0 0 .5rem 0; color:var(--text-secondary);">
                                         <span class="chip">Nov 11, 2024</span>
@@ -324,10 +324,10 @@
                         <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                         <div class="post-grid" style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;">
                                                 
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/ArcGIS_webapp_cover.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/ArcGIS_webapp_cover.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./geotech/arcgis-webapps.html">ArcGIS Web Applications: Overview, Common Issues, Solutions & Best Practices</a>
+                                        <a href="./blog/geotech/arcgis-webapps.html">ArcGIS Web Applications: Overview, Common Issues, Solutions & Best Practices</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">Overview, Common Issues, Solutions & Best Practices for ArcGIS Web Applications (Experience Builder & WebApp Builder)</p>
                                     <div class="post-meta" style="display:flex; gap:10px; align-items:center; margin:0 0 .5rem 0; color:var(--text-secondary);">
@@ -343,10 +343,10 @@
                                 </div>
                             </article>
 
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/arcgisprinting.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/arcgisprinting.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./geotech/arcgis-printing.html">ArcGIS Printing Services Made Simple: Frequent Issues, Fixes, and Proven Tips</a>
+                                        <a href="./blog/geotech/arcgis-printing.html">ArcGIS Printing Services Made Simple: Frequent Issues, Fixes, and Proven Tips</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">Overview, Common Issues, Solutions & Best Practices for ArcGIS Printing Services</p>
                                     <div class="post-meta" style="display:flex; gap:10px; align-items:center; margin:0 0 .5rem 0; color:var(--text-secondary);">
@@ -362,10 +362,10 @@
                                 </div>
                             </article>
 
-                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./../assets/arcgisservices.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                            <article class="blog-post card interactive-row" style="padding:1rem; position: relative; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/arcgisservices.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div style="position: relative; z-index: 2;">
                                     <h3 class="post-title" style="margin:0 0 .5rem 0; text-align: justify;">
-                                        <a href="./geotech/arcgis-featureservices.html">ArcGIS Feature Services: Common Issues, Tips and Effective Solutions You Need to Know</a>
+                                        <a href="./blog/geotech/arcgis-featureservices.html">ArcGIS Feature Services: Common Issues, Tips and Effective Solutions You Need to Know</a>
                                     </h3>
                                     <p class="post-excerpt" style="margin:0 0 .6rem 0; text-align: justify;">Overview, Common Issues, Solutions & Best Practices for ArcGIS Feature Services</p>
                                     <div class="post-meta" style="display:flex; gap:10px; align-items:center; margin:0 0 .5rem 0; color:var(--text-secondary);">
@@ -415,8 +415,10 @@
     <br>
   
     <footer>
-      <p>Copyright &#169; 2025 Justin Kombe Tonguino.</p>
+      <p>COPYRIGHT &#169; 2025 Justin Kombe Tonguino.</p>
     </footer>
-    <script src="./../static/js/main.js"></script>
+    <script src="./static/js/main.js"></script>
 </body>
 </html>
+
+
