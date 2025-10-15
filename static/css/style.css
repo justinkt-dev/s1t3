@@ -17,6 +17,7 @@ body {
 
 /* Catppuccin Mocha (dark) defaults */
 :root {
+    --nav-height: 70px;
     --bg-primary: #1e1e2e; /* base */
     --bg-secondary: #181825; /* mantle */
     --bg-tertiary: #11111b; /* crust */
@@ -52,7 +53,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: var(--nav-height);
     padding: 0 20px;
     background-color: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
@@ -175,7 +176,7 @@ nav a:hover {
     justify-content: center;
     gap: 5rem;
     height: 80vh;
-    margin-top: 56px;
+    margin-top: var(--nav-height);
     padding: 0 2rem;
     background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 60%);
 }
@@ -334,6 +335,9 @@ nav a:hover {
     border: 1px solid var(--border-color);
     border-radius: 999px;
     white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Chip hover effect similar to the "My Resume" button (btn-color-2)
@@ -412,6 +416,18 @@ nav a:hover {
     overflow: hidden;
   }
   .post-meta .chip { padding: 6px 10px; font-size: .8rem; }
+
+  /* Home: Whoami + Blog Posts responsive stacking */
+  #home-summary { padding: 1rem .8rem !important; }
+  #home-summary .card { padding: .85rem !important; }
+  #home-summary .chip.interactive-row { gap: 8px; }
+  #home-summary .chip.interactive-row span:nth-child(2) {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 /* Very small phones */
@@ -674,7 +690,7 @@ nav a:hover {
 
 .post-toc {
     position: sticky;
-    top: 76px;
+    top: calc(var(--nav-height) + 6px);
     align-self: start;
     height: max-content;
     background: transparent;
@@ -711,7 +727,7 @@ nav a:hover {
 .post-toc.collapsed nav{display:none}
 
 /* Ensure anchored headings are visible below sticky nav */
-.post-content h2, .post-content h3 { scroll-margin-top: 70px; }
+.post-content h2, .post-content h3 { scroll-margin-top: var(--nav-height); }
 
 /* Post meta row under cover */
 .post-meta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;color:var(--text-secondary);margin:0 0 1rem 0}
@@ -802,90 +818,30 @@ article a:hover {
     transform: translateY(0);
 }
 
-.blog-post:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 0 25px rgba(255,255,255,0.05);
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-image) !important;
-}
-
-/* Light theme specific hover adjustments */
-[data-theme="light"] .blog-post:hover {
-    background-image: linear-gradient(rgba(255,255,255,0.85), rgba(240,240,240,0.85)), var(--bg-image) !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2), 0 0 25px rgba(0,0,0,0.1);
-}
-
-/* Light theme text adjustments for better contrast */
-[data-theme="light"] .blog-post:hover .post-title a {
-    color: #1a1a1a !important;
-    text-shadow: 0 1px 3px rgba(255,255,255,0.8);
-}
-
-[data-theme="light"] .blog-post:hover .post-excerpt {
-    color: #2d2d2d !important;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.6);
-}
-
-[data-theme="light"] .blog-post:hover .chip {
-    background: rgba(0,0,0,0.1) !important;
-    color: #1a1a1a !important;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
-}
-
-[data-theme="light"] .blog-post:hover .tag {
-    background: rgba(0,0,0,0.08) !important;
-    color: #1a1a1a !important;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
-}
-
-/* Dark theme specific hover adjustments */
-[data-theme="dark"] .blog-post:hover {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-image) !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 0 25px rgba(255,255,255,0.05);
-}
-
-.blog-post .post-title a {
-    color: white !important;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-    transition: color 0.3s ease;
-}
-
-.blog-post:hover .post-title a {
-    color: var(--accent-primary) !important;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.9);
-}
-
-.blog-post .post-excerpt {
-    color: rgba(255,255,255,0.9) !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-    transition: color 0.3s ease;
-}
-
-.blog-post:hover .post-excerpt {
-    color: rgba(255,255,255,1) !important;
-}
-
-.blog-post .chip {
-    background: rgba(255,255,255,0.2) !important;
-    color: white !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-    transition: all 0.3s ease;
-}
-
-.blog-post:hover .chip {
-    background: rgba(255,255,255,0.2) !important;
-    transform: scale(1.05);
-}
-
-.blog-post .tag {
-    background: rgba(255,255,255,0.15) !important;
-    color: white !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-    transition: all 0.3s ease;
-}
-
-.blog-post:hover .tag {
-    background: rgba(255,255,255,0.18) !important;
-    transform: scale(1.05);
+/* Blog card image hover effects only on desktop */
+@media (min-width: 901px){
+  .blog-post:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 0 25px rgba(255,255,255,0.05);
+      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-image) !important;
+  }
+  [data-theme="light"] .blog-post:hover {
+      background-image: linear-gradient(rgba(255,255,255,0.85), rgba(240,240,240,0.85)), var(--bg-image) !important;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2), 0 0 25px rgba(0,0,0,0.1);
+  }
+  [data-theme="light"] .blog-post:hover .post-title a { color: #1a1a1a !important; text-shadow: 0 1px 3px rgba(255,255,255,0.8); }
+  [data-theme="light"] .blog-post:hover .post-excerpt { color: #2d2d2d !important; text-shadow: 0 1px 2px rgba(255,255,255,0.6); }
+  [data-theme="light"] .blog-post:hover .chip { background: rgba(0,0,0,0.1) !important; color: #1a1a1a !important; text-shadow: 0 1px 2px rgba(255,255,255,0.8); }
+  [data-theme="light"] .blog-post:hover .tag { background: rgba(0,0,0,0.08) !important; color: #1a1a1a !important; text-shadow: 0 1px 2px rgba(255,255,255,0.8); }
+  [data-theme="dark"] .blog-post:hover { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-image) !important; box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 0 25px rgba(255,255,255,0.05); }
+  .blog-post .post-title a { color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.8); transition: color 0.3s ease; }
+  .blog-post:hover .post-title a { color: var(--accent-primary) !important; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
+  .blog-post .post-excerpt { color: rgba(255,255,255,0.9) !important; text-shadow: 0 1px 2px rgba(0,0,0,0.8); transition: color 0.3s ease; }
+  .blog-post:hover .post-excerpt { color: rgba(255,255,255,1) !important; }
+  .blog-post .chip { background: rgba(255,255,255,0.2) !important; color: white !important; text-shadow: 0 1px 2px rgba(0,0,0,0.8); transition: all 0.3s ease; }
+  .blog-post:hover .chip { background: rgba(255,255,255,0.2) !important; transform: scale(1.05); }
+  .blog-post .tag { background: rgba(255,255,255,0.15) !important; color: white !important; text-shadow: 0 1px 2px rgba(0,0,0,0.8); transition: all 0.3s ease; }
+  .blog-post:hover .tag { background: rgba(255,255,255,0.18) !important; transform: scale(1.05); }
 }
 
 @media (max-width: 900px){
@@ -1099,6 +1055,10 @@ footer p {
 }
 
 @media screen and (max-width: 600px) {
+    /* keep nav consistent on small screens */
+    :root { --nav-height: 15vh; }
+    /* smaller cover images on phones */
+    .post-cover img { max-height: 320px; }
     #contact,
     footer {
         height: auto;

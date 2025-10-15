@@ -159,6 +159,8 @@
 
 /* Mobile Large */
 @media screen and (max-width: 600px) {
+    /* Keep nav visible on small screens */
+    #desktop-nav, #hamburger-nav { transform: none !important; }
     nav {
         height: 15vh;
         padding: 0 1rem;
