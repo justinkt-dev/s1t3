@@ -1,3 +1,75 @@
+/* ============================================
+   Responsive Breakpoints & Layout Adjustments
+   ============================================ */
+
+/* Large desktops */
+@media (min-width: 1440px) {
+  :root { --container-max: 1280px; --content-max: 1100px; }
+}
+
+/* Desktops */
+@media (max-width: 1280px) {
+  :root { --container-max: 1100px; --content-max: 980px; }
+}
+
+/* Tablets landscape */
+@media (max-width: 1024px) {
+  /* Fluid type only below desktop to preserve desktop look */
+  body { font-size: var(--fs-body); line-height: 1.7; }
+  h1, .title { font-size: var(--fs-h1); line-height: 1.2; }
+  h2, .project-title { font-size: var(--fs-h2); line-height: 1.3; }
+  h3 { font-size: var(--fs-h3); line-height: 1.35; }
+  :root { --container-max: 960px; --content-max: 860px; }
+
+  /* Blog grid: from 2 to 2/1 columns as needed */
+  .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  /* Respect inline max-widths but center containers */
+  #home-summary { max-width: var(--container-max) !important; margin-left: auto !important; margin-right: auto !important; }
+}
+
+/* Tablets portrait */
+@media (max-width: 900px) {
+  :root { --container-max: 820px; --content-max: 760px; }
+
+  /* Collapse blog layout into single column when space is tight */
+  .blog-container { display: block; }
+  .blog-posts, .blog-sidebar { width: 100%; }
+  .blog-sidebar { margin-top: var(--gutter); }
+}
+
+/* Large phones / small tablets */
+@media (max-width: 768px) {
+  :root { --container-max: 680px; --content-max: 640px; }
+
+  /* Stack blog posts as a single column */
+  .post-grid { grid-template-columns: 1fr !important; }
+
+  /* Tighten paddings */
+  .card { padding: 0.9rem !important; }
+  #home-summary .card { padding: 1rem !important; }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  :root {
+    --gutter: clamp(10px, 3.5vw, 18px);
+    --fs-body: clamp(0.95rem, 0.4rem + 1.4vw, 1.05rem);
+  }
+
+  /* Prevent overflow of long titles and chips */
+  .chip, .post-title a { word-break: break-word; }
+  .project-title { font-size: clamp(1.1rem, 3.5vw, 1.4rem); }
+
+  /* Hero adjustments */
+  .section__text { text-align: left; }
+  .section__text__p2 { line-height: 1.7; }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  :root { --gutter: 10px; }
+  .btn { padding: 0.55rem 0.9rem; }
+}
 /* Media Queries for Responsive Design */
 
 /* Large Desktop */
@@ -709,6 +781,7 @@
         font-size: 0.9rem;
         line-height: 1.4;
         display: -webkit-box;
+        line-clamp: 3;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
@@ -824,6 +897,7 @@
     
     .post-excerpt {
         font-size: 0.85rem;
+        line-clamp: 2;
         -webkit-line-clamp: 2;
     }
     
