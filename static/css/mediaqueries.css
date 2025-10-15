@@ -558,6 +558,364 @@
     }
 }
 
+/* Blog-specific responsive styles */
+@media screen and (max-width: 1200px) {
+    .post-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .post-toc {
+        position: relative;
+        top: 0;
+        order: -1;
+    }
+    
+    .blog-container {
+        display: block;
+    }
+    
+    .blog-sidebar {
+        margin-top: 2rem;
+        width: 100%;
+    }
+}
+
+/* Tablet optimizations */
+@media screen and (max-width: 900px) {
+    /* Blog post grid adjustments */
+    .post-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+    
+    .blog-post {
+        padding: 0.8rem !important;
+    }
+    
+    .post-title a {
+        font-size: 1.05rem;
+        line-height: 1.4;
+    }
+    
+    .post-excerpt {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .post-meta {
+        flex-wrap: wrap;
+        gap: 6px !important;
+    }
+    
+    .post-meta .chip {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .post-tags {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    
+    .post-tags .tag {
+        padding: 3px 6px;
+        font-size: 0.75rem;
+    }
+    
+    /* Blog content adjustments */
+    .post-content {
+        padding: 1rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .post-content h1,
+    .post-content h2,
+    .post-content h3 {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .post-content p {
+        margin-bottom: 1rem;
+    }
+    
+    .post-content ul,
+    .post-content ol {
+        padding-left: 1.5rem;
+    }
+    
+    .post-content blockquote {
+        padding: 0.8rem 1rem;
+        margin: 1rem 0;
+    }
+    
+    .post-content pre {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Category descriptions */
+    .category-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .category-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* Mobile Large (Android, iPhone Plus) */
+@media screen and (max-width: 600px) {
+    /* Blog layout adjustments */
+    .blog-container {
+        padding: 0 1rem;
+    }
+    
+    .blog-category {
+        padding: 0.8rem !important;
+        margin-bottom: 1.5rem;
+    }
+    
+    .category-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .category-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Blog post cards */
+    .blog-post {
+        padding: 0.7rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    .post-title a {
+        font-size: 1rem;
+        line-height: 1.3;
+        display: block;
+    }
+    
+    .post-excerpt {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .post-meta {
+        gap: 4px !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    .post-meta .chip {
+        padding: 3px 6px;
+        font-size: 0.75rem;
+    }
+    
+    .post-tags {
+        gap: 3px;
+    }
+    
+    .post-tags .tag {
+        padding: 2px 5px;
+        font-size: 0.7rem;
+    }
+    
+    /* Blog content mobile optimizations */
+    .post-content {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .post-content h1,
+    .post-content h2,
+    .post-content h3 {
+        font-size: 1.2rem;
+        margin-top: 1.2rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .post-content p {
+        margin-bottom: 0.8rem;
+    }
+    
+    .post-content ul,
+    .post-content ol {
+        padding-left: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .post-content li {
+        margin-bottom: 0.3rem;
+    }
+    
+    .post-content blockquote {
+        padding: 0.6rem 0.8rem;
+        margin: 0.8rem 0;
+        font-size: 0.9rem;
+    }
+    
+    .post-content pre {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+        overflow-x: auto;
+    }
+    
+    .post-content code {
+        font-size: 0.8rem;
+        padding: 0.1rem 0.3rem;
+    }
+    
+    /* Sidebar adjustments */
+    .blog-sidebar {
+        margin-top: 1.5rem;
+    }
+    
+    .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    
+    .tag-cloud .tag {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile Small (iPhone SE, small Android) */
+@media screen and (max-width: 400px) {
+    .blog-container {
+        padding: 0 0.8rem;
+    }
+    
+    .blog-category {
+        padding: 0.6rem !important;
+    }
+    
+    .category-title {
+        font-size: 1.1rem;
+    }
+    
+    .category-description {
+        font-size: 0.85rem;
+    }
+    
+    .blog-post {
+        padding: 0.6rem !important;
+    }
+    
+    .post-title a {
+        font-size: 0.95rem;
+    }
+    
+    .post-excerpt {
+        font-size: 0.85rem;
+        -webkit-line-clamp: 2;
+    }
+    
+    .post-meta .chip {
+        padding: 2px 5px;
+        font-size: 0.7rem;
+    }
+    
+    .post-tags .tag {
+        padding: 2px 4px;
+        font-size: 0.65rem;
+    }
+    
+    .post-content {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .post-content h1,
+    .post-content h2,
+    .post-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .post-content pre {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+    
+    .tag-cloud .tag {
+        padding: 3px 6px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .blog-post {
+        transition: transform 0.2s ease;
+    }
+    
+    .blog-post:active {
+        transform: scale(0.98);
+    }
+    
+    .interactive-row:active {
+        transform: scale(0.99);
+    }
+    
+    /* Larger touch targets */
+    .post-title a,
+    .chip,
+    .tag {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Better scrolling */
+    .post-content {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .post-content pre {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .post-content {
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    .blog-post {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .post-content pre {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Android Chrome specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .post-content {
+        text-rendering: optimizeLegibility;
+    }
+    
+    .blog-post {
+        will-change: transform;
+    }
+}
+
 /* Print Styles */
 @media print {
     nav,
@@ -592,5 +950,26 @@
     .section__text__p1,
     .section__text__p2 {
         color: var(--text-secondary);
+    }
+    
+    /* Print blog optimizations */
+    .post-content {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .post-content h1,
+    .post-content h2,
+    .post-content h3 {
+        page-break-after: avoid;
+    }
+    
+    .post-content p {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    .blog-post {
+        page-break-inside: avoid;
     }
 }
