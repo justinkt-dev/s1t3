@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Linux Resources - JKT</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/mediaqueries.css">
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="../../index.html" class="logo-wrapper">
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="../../blog/blog.html">Blog</a></li>
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../search.html">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="../../assets/theme_light.png"
+              src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="../../index.html" class="logo-wrapper">
+        <img src="../../assets/home_light.png" src-light="../../assets/home_light.png" src-dark="../../assets/home_dark.png"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="../../blog/blog.html">Blog</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../search.html">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="../../assets/theme_light.png"
+            src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
+    <main style="margin-top: 56px; padding: 2rem;">
+        <div class="post-layout about-wide">
+        <article class="post-content">
+            <header>
+                <h1>RH124, RH134 & DO457 — A Deep Dive into Key Concepts, Learning Resources and Personal Insights</h1>
+            </header>
+            <!-- Cover image directly under title for all blogs -->
+            <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
+                <picture>
+                    <source srcset="../../assets/linux-resources.webp" type="image/webp" />
+                    <img src="../../assets/linux-resources.webp" alt="Linux Resources" style="width:100%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary)" />
+                </picture>
+                <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Linux Resources</figcaption>
+            </figure>
+            <div class="post-meta-row">
+              <span class="meta">Published on February 22, 2025</span>
+              <span class="meta">|</span>
+              <span class="meta">6 min read</span>
+              <span class="meta hash">#</span>
+              <div class="post-tags-inline">
+              🏷 <span class="tag">Linux</span>
+                <span class="tag">Red Hat</span>
+                <span class="tag">HackTheBox</span>
+                <span class="tag">TryHackMe</span>
+                <span class="tag">RHCSA</span>
+                <span class="tag">System Administration</span>
+              </div>
+            </div>
+
+            <!-- Inline Table of Contents -->
+            <section id="inline-toc" class="card" style="padding:1rem; margin: 0 0 1rem 0;">
+              <h3 style="margin:0 0 .5rem 0; color:var(--text-secondary);">Table of Contents</h3>
+              <ul class="toc-list blog-list">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#rh124">System Administration I (RH124)</a></li>
+                <li><a href="#rh134">System Administration II (RH134)</a></li>
+                <li><a href="#do457">Network Automation with Ansible (DO457)</a></li>
+                <li><a href="#materials">Valuable Resources & Materials</a></li>
+                    <ul style="margin-left: 1rem; padding-left: 0.5rem;">
+                        <li><a href="#gp-resources">General Purpose Resources</a></li>
+                        <li><a href="#sec-resources">Security Focused resources with Hands-on Labs & Challenges</a></li>
+                        <li><a href="#rhcsa-resources">RHCSA Certification Prep Resources</a></li>
+                    </ul>
+                <li><a href="#final-reflections">Final Reflections</a></li>
+              </ul>
+
+            
+            </section>
+            
+            <div class="content">
+                <br><h2 id="introduction">Introduction</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  Linux is a very common topic nowadays in the world of Software development, System Administration, DevOps, database management, and not to mention Security Operations. In this blog, I tried to cover as much as I could not only on RH124, RH134, DO457 but also on Linux in general highlighting useful materials and resources for future reference.
+                  <br><br>
+                  <strong>Disclaimer:</strong> It’s crucial to understand your learning style then adapt to what is more convenient for yourself. In fact, there are several ways you can learn and master Linux either from the official documentation, YouTube channels or 3rd party providers. Thus, whether the below information are new or a simple reminder to you, feel free to share, and recommend more tips / materials as your contribution is highly appreciated. Let’s dive in!!
+                </p>
+
+                <!-- System Administration II (RH134) -->
+                <br><h2 id="rh124">System Administration I (RH124)</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <img src="../../assets/rh124.webp" alt="SysAdmin I" style="width:50%;max-height:400px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+
+                <br><br><p style="text-align: justify;">
+                  RH124 is an introductory course that covers the fundamental skills needed to manage and administer Red Hat Enterprise Linux systems. It teaches key concepts such as user and group management, package installation, file system navigation, and essential networking commands.
+                  <br><br>
+                  <strong>Main topics covered in RH124</strong><br><br>
+                  <ol class="blog-list">
+                    <li><strong>Linux Essentials:</strong> Command-line basics, file system navigation, and text file manipulation.</li>
+                    <li><strong>User & Group Management:</strong> Creating, modifying, and managing users, groups, and permissions.</li>
+                    <li><strong>Software Management:</strong> Installing, updating, and removing packages using RPM/YUM/DNF.</li>
+                    <li><strong>System Services & Logging:</strong> Managing systemd services, checking logs with journalctl, and troubleshooting.</li>
+                    <li><strong>Basic Networking & Storage:</strong> Configuring IP addresses, mounting storage, and using partitions.</li>
+                  </ol>
+                </p><br>
+
+                <!-- System Administration II (RH134) -->
+                <h2 id="rh134">System Administration II (RH134)</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <img src="../../assets/rh134.webp" alt="SysAdmin II" style="width:50%;max-height:400px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+
+                <br><br><p style="text-align: justify;">
+                  RH134 builds on RH124 and dives deeper into more advanced system administration topics, including storage management, security policies, and network configuration. It focuses on automating tasks using shell scripting, storage management and configuring network services such as DNS and NFS.
+                  <br><br>
+                  <strong>Key Concepts Highlighted in RH134</strong><br><br>
+                  <ol class="blog-list">
+                    <li><strong>Advanced User & Group Management:</strong> sudo privileges, ACLs, and SELinux policies.</li>
+                    <li><strong>Storage Management:</strong> LVM, disk partitioning, mounting file systems, and swap management.</li>
+                    <li><strong>Networking & Firewalls:</strong> Configuring network interfaces, troubleshooting, and managing firewall.</li>
+                    <li><strong>Process & Performance Management:</strong> Monitoring resource usage, scheduling tasks with cron/systemd timers.</li>
+                    <li><strong>System Automation & Scripting:</strong> Writing Bash scripts to automate administration tasks.</li>
+                    <li><strong>Linux Essentials:</strong> Command-line basics, file system navigation, and text file manipulation.</li>
+                  </ol>
+                </p><br>
+
+
+                <!-- Network Automation with Ansible (DO457) -->
+                <br><h2 id="do457">Network Automation with Ansible (DO457)</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <img src="../../assets/do457.webp" alt="Ansible Automation" style="width:50%;max-height:400px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
+
+                <br><br><p style="text-align: justify;">
+                  DO457 focuses on automating network management tasks using Ansible, a powerful automation tool. The course covers how to use Ansible to configure network devices, deploy configurations, and manage network infrastructure efficiently.
+                  <br><br>
+                  <strong>Significant Points Addressed in of DO457</strong><br><br>
+                  <ol class="blog-list">
+                    <li><strong>ntroduction to Ansible:</strong> Setting up Ansible, preparing for development, and managing inventories.</li>
+                    <li><strong>Playbook Development:</strong> Writing, running, and troubleshooting Ansible playbooks.</li>
+                    <li><strong>Variables & Facts:</strong> Managing variables, gathering facts, and using surveys to configure systems.</li>
+                    <li><strong>Task Control:</strong> Implementing loops, conditionals, and handling task failures in playbooks.</li>
+                    <li><strong>Network Automation:</strong> Simplifying network administration with roles, templates, and platform-independent modules.</li>
+                  </ol>
+                </p><br>
+
+                <!-- valuable resources & materials -->
+                <h2 id="materials">Valuable Resources & Materials</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;"> 
+                <p style="text-align: justify;">
+                  As previously stated, there are numerous ways to learn Linux, System Administration, Ansible and the list goes on. 
+                  Consequently, I have tried my very best to compile several platforms that I believe would ease the process for anyone looking to get started with Linux, or prepare for RHCSA Certification for that matter.
+                  Feel free to explore extra reviews and select the materials that align best with your needs and expectations.
+                </p>
+
+                <!-- General Purpose Resources -->
+                <br><h3 id="gp-resources">General Purpose Resources</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Linux Journey</strong></li>
+                    <ul class="blog-list">
+                      <li><strong>Overview:</strong> Descriptive course, simple and non practical, it’s a technical documentation useful to either refresh knowledge or get a basic understanding of Linux environment.</li>
+                      <li><strong>Price:</strong> Free of charge.</li>
+                      <li><a href="https://labex.io/linuxjourney" target="_blank">More Details</a></li>
+                    </ul>
+                    <li><strong>NetworkChuck — Linux for Hackers and Everyone</strong></li>
+                    <ul class="blog-list">
+                      <li> <a href="https://www.youtube.com/@NetworkChuck" target="_blank">Chuck Keith</a> is a professional that creates engaging contents about IT, Linux, Networking, Cyber Security and much more. 
+                        The <a href="https://www.youtube.com/watch?v=VbEx7B_PTOE&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL" target="_blank"> Linux for Hackers (and everyone) series</a> was invaluable to me when I first started learning Linux few years ago. 
+                        Additionally, he uses HackTheBox VM to demonstrate everything in the course. 
+                        You may consider doing the same to save yourself the struggle of installing Linux on a VM or locally.
+                      </li>
+                      <li>Moreover, Chuck dives into Ansible giving us an overview of Ansible and its main deliverables. <a href="https://www.youtube.com/watch?v=5hycyr-8EKs" target="_blank">More details</a></li> 
+                    </ul>
+                </ul>
+
+
+                <br><h3 id="sec-resources">Security Focused resources with Hands-on Labs & Challenges</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>TryHackMe</strong></li>
+                    <ul class="blog-list">
+                      <li><strong>Overview:</strong> Beginner friendly course, I would highly recommend to anyone starting from scratch. 
+                        It’s great for security-focused learners, however non-security enthusiasts can also benefit from it. 
+                        Linux Fundamentals Part 1 is free of charge, however Part 2 and 3 are premium content.
+                      </li>
+                      <li><strong>Price:</strong> Check out THM official website for pricing.</li>
+                      <li><a href="https://tryhackme.com/module/linux-fundamentals" target="_blank">More Details on Linux Fundamentals</a></li>
+                    </ul>
+                    <li><strong>HackTheBox</strong></li>
+                    <ul class="blog-list">
+                      <li><strong>Overview:</strong> Intermediate to Advanced content, it’s not recommended for beginners as HackTheBox expect users to have fundamentals before exploring their curriculum. 
+                        You may also feel free to explore the HackTheBox Labs for more practical content.
+                      </li>
+                      <li><strong>Price:</strong> $8/month (student). <a href="https://help.hackthebox.com/en/articles/5720974-academy-subscriptions" target="_blank">Check HTB Academy subscriptions more more details</a></li>
+                    </ul>
+                    <li><strong>Over The Wire - Bandit</strong></li>
+                    <ul class="blog-list">
+                      <li><strong>Overview:</strong> Gamified Linux CTF platform that aims to help learners master Linux commands while having fun. 
+                        Designed such in a way that the password to unlock the next challenge is the content of the previous challenge flag.</li>
+                      <li><strong>Price:</strong> Free of charge.</li>
+                      <li><a href="https://overthewire.org/wargames/bandit/" target="_blank">More Details</a></li>
+                    </ul>
+                </ul>
+
+
+                <br><h3 id="rhcsa-resources">RHCSA Certification Prep Resources</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                  <li><strong>Red Hat Academy or RHCSA EX200</strong></li>
+                  <ul class="blog-list">
+                    <li>I have to admit, I had the privilege of being granted access to RH124, RH134, and DO457 materials thanks to my student email and the invaluable support of <a href="https://www.linkedin.com/in/ts-dr-manimegalai-rajenderan-05041280/" target="_blank">Miss Ts. Dr. Manimegalai Rajenderan</a>. 
+                      The course come with 60hrs Lab time that you may start anytime you’re ready to practice the labs. 
+                      Additionally, the syllabus is blended with guided-exercises as well as a final assessment at the end of each chapter. 
+                      The last chapter (Comprehensive Review) of each course is tailored with nothing but hands-on labs covering the entire syllabus.</li>
+                    <li>For anyone interested in learning more about the EX200 certification, kindly check the link for more details.</li>
+                  </ul>
+                  <li><strong>RHCSA Guru</strong></li>
+                  <ul class="blog-list">
+                    <li><strong>Overview:</strong> 
+                      This is arguably one of if not the best resource in terms of preparation for <strong>RHCSA — EX200 Certification</strong>. 
+                      The scope emphasizes not only on RHCSA content but goes beyond by covering <strong>RHCSA+ (Advanced Linux Administration)</strong> as well as <strong>RHCE (Network automation with Ansible)</strong>. 
+                      Additionally, the platform is powered by a sandbox enabling users to access hands-on labs with ease.
+                    </li>
+                    <li><strong>Price:</strong> There are 2 packages</li>
+                    <ul class="blog-list">
+                      <li>Premium ($19/month) for All 30 RHCSA Labs and Unlimited Labs Plays.</li>
+                      <li>Premium + ($29/month) for All 20+ RHCE Labs, All RHCSA+ Labs (Ongoing), and Extend Lab duration for Practice Labs.</li>
+                    </ul>
+                    <li><a href="https://rhcsa.guru/pricing/" target="_blank">More Details</a></li>
+                  </ul>
+                  <li><strong>Labex</strong></li>
+                  <ul class="blog-list">
+                    <li><strong>Overview:</strong>
+                      Beginner to Intermediate, labex is a very beginner friendly platform covering several topics ranging from Programming, Applications/Services, Linux (including RHCSA) and much more. 
+                      Similarly to RHCSA-guru, it’s also powered by a sandbox enabling user to interact gain access to hands-on labs.
+                    <li><strong>Price:</strong> <a href="https://labex.io/pricing" target="_blank">More Details</a></li>
+                  </ul>
+                  <li><strong>CBT Nuggets</strong></li>
+                  <ul class="blog-list">
+                    <li><strong>Overview:</strong> 
+                      First introduced to the platform thanks to <a href="https://www.linkedin.com/in/sal2919/" target="_blank">AbdulGadir</a>, CBT Nuggets is an online IT training platform offering video-based courses for certifications in networking, cyber security, cloud computing, and programming. 
+                      It provides hands-on labs, quizzes, and practice exams to reinforce learning.
+                    <li><strong>Price:</strong> $59.00/month</li>
+                    <li><a href="https://www.cbtnuggets.com/" target="_blank">More Details</a></li>
+                  </ul>
+              </ul>
+
+
+                <br><h2 id="final-reflections">Final Reflections</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  In a nutshell, mastering Linux, System Administration, and automation tools like Ansible is an essential skill for anyone pursuing a career in IT, Security, or DevOps. It’s good to mention that I may have missed out on a few resources that I came across, however I hope that the variety of resources, ranging from beginner-friendly tutorials to advanced courses helped you find suitable materials based on your learning style.
+                  <br><br>
+                  In my opinion, the best way to get your hands really dirty is when undergoing a full installation and development from scratch. However, everyone at some point start somewhere hence why you may start with BROWSER-BASED sandboxes, then go for READY-TO-USE or beginner friendly distro such as Ubuntu, Parrot OS, or Kali Linux then migrate to more complex distro with higher learning curve such as Arch Linux or any other for that matter.
+                  <br><br>
+                  All in all, whether you’re tackling RHCSA exams, diving into hands-on labs, or seeking practical Linux or security challenges, there’s a wealth of resources available to sharpen your skills and make you a Linux expert.
+                </p>
+            </div>
+        </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Justin Kombe Tonguino. All rights reserved.</p>
+    </footer>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>

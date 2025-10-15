@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search | Justin Kombe T.</title>
+  <link rel="stylesheet" href="./static/css/style.css" />
+  <link rel="stylesheet" href="./static/css/mediaqueries.css" />
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="index.html" class="logo-wrapper">
+          <!-- <img src="./assets/home_light.webp" src-light="./assets/home_light.webp" src-dark="./assets/home_light.webp" alt="Home Logo" class="icon logo-icon" /> -->
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="./blog/blog.html">Blog</a></li>
+          <li><a href="./about/about.html">About</a></li>
+          <li><a href="./search.html" class="active">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="./assets/theme_light.png"
+              src-light="./assets/theme_light.png" src-dark="./assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main style="margin-top:56px; padding:2rem 1rem;">
+    <section class="card" style="max-width:1100px;margin:0 auto;padding:1.5rem;">
+      <h1 class="title" style="text-align:left;margin-bottom:1rem;">Search</h1>
+      <div style="display:flex;gap:.5rem;align-items:center;">
+        <input id="search-input" type="search" placeholder="Enter a term (e.g., ejpt, red team)" style="flex:1;padding:.8rem 1rem;border:1px solid var(--border-color);border-radius:10px;background:var(--bg-primary);color:var(--text-primary);" />
+        <button id="search-btn" class="btn btn-color-2" style="width:auto;">🔍</button>
+      </div>
+      <div id="search-meta" style="margin:.75rem 0;color:var(--text-secondary);"></div>
+      <div id="search-results" style="display:flex;flex-direction:column;gap:12px;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright &#169; 2025 Justin Kombe Tonguino.</p>
+  </footer>
+
+  <script src="./static/js/main.js"></script>
+  <script>
+    // Lightweight index of pages to search
+    const PAGES = [
+      { title: 'About', url: 'about/about.html', fetch: 'about/about.html' },
+      { title: 'Blog - eJPT Review', url: 'blog/certifications/ejpt-review.html', fetch: 'blog/certifications/ejpt-review.html' },
+      { title: 'Blog - CRTA vs MCRTA', url: 'blog/certifications/crta-mcrta-comparison.html', fetch: 'blog/certifications/crta-mcrta-comparison.html' },
+      { title: 'Blog - Linux Essentials', url: 'blog/linux/essential-commands.html', fetch: 'blog/linux/essential-commands.html' },
+      { title: 'Blog - TryHackMe Beginner', url: 'blog/geotech/tryhackme-beginner.html', fetch: 'blog/geotech/tryhackme-beginner.html' },
+      { title: 'Blog', url: 'blog/blog.html', fetch: 'blog/blog.html' },
+      { title: 'Home', url: 'index.html', fetch: 'index.html' }
+    ];
+
+    function excerpt(html, query) {
+      const text = html.replace(/<[^>]+>/g, ' ');
+      const q = query.toLowerCase();
+      const idx = text.toLowerCase().indexOf(q);
+      if (idx === -1) return '';
+      const start = Math.max(0, idx - 80);
+      const end = Math.min(text.length, idx + q.length + 80);
+      const snippet = text.slice(start, end).trim();
+      return snippet.replace(new RegExp(query, 'ig'), m => `**${m}**`);
+    }
+
+    async function runSearch() {
+      const q = document.getElementById('search-input').value.trim();
+      const meta = document.getElementById('search-meta');
+      const out = document.getElementById('search-results');
+      out.innerHTML = '';
+      if (!q) { meta.textContent = ''; return; }
+      let total = 0;
+      for (const page of PAGES) {
+        try {
+          const res = await fetch(page.fetch);
+          const html = await res.text();
+          if (html.toLowerCase().includes(q.toLowerCase())) {
+            total++;
+            const snip = excerpt(html, q);
+            const card = document.createElement('a');
+            card.href = page.url;
+            card.className = 'card interactive-row';
+            card.style.padding = '1rem';
+            card.style.textDecoration = 'none';
+            card.style.color = 'inherit';
+            card.innerHTML = `<div style="font-weight:700;margin-bottom:.25rem;">${page.title}</div><div style="color:var(--text-secondary);font-size:.95rem;">${snip || 'Match found on this page.'}</div>`;
+            out.appendChild(card);
+          }
+        } catch(e) { /* ignore fetch errors */ }
+      }
+      meta.textContent = `${total} result${total===1?'':'s'} for "${q}"`;
+    }
+
+    document.getElementById('search-btn').addEventListener('click', runSearch);
+    document.getElementById('search-input').addEventListener('keydown', (e)=>{ if(e.key==='Enter') runSearch(); });
+  </script>
+</body>
+</html>
+

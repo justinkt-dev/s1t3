@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSecurity Journey - JKT</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/mediaqueries.css">
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="../../index.html" class="logo-wrapper">
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="../../blog/blog.html">Blog</a></li>
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../search.html">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="../../assets/theme_light.png"
+              src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="../../index.html" class="logo-wrapper">
+        <img src="../../assets/home_light.png" src-light="../../assets/home_light.png" src-dark="../../assets/home_dark.png"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="../../blog/blog.html">Blog</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../search.html">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="../../assets/theme_light.png"
+            src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
+    <main style="margin-top: 56px; padding: 2rem;">
+        <div class="post-layout about-wide">
+        <article class="post-content">
+            <header>
+                <h1>From Classroom to HackTheBox: My Journey Through Cybersecurity Degree, Certifications, and the Power of Practical Experience</h1>
+            </header>
+            <!-- Cover image directly under title for all blogs -->
+            <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
+                <picture>
+                    <source srcset="../../assets/cybersec.webp" type="image/webp" />
+                    <img src="../../assets/cybersec.webp" alt="Cybersecurity Journey" style="width:100%;max-height:500px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary)" />
+                </picture>
+                <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Information Technology</figcaption>
+            </figure>
+            <div class="post-meta-row">
+              <span class="meta">Published on May 27, 2025</span>
+              <span class="meta">|</span>
+              <span class="meta">12 min read</span>
+              <span class="meta hash">#</span>
+              <div class="post-tags-inline">
+                🏷 <span class="tag">Cybersecurity</span>
+                    <span class="tag">HackTheBox</span>
+                    <span class="tag">TryHackMe</span>
+                    <span class="tag">CyberSec Tips</span>
+              </div>
+            </div>
+
+            <!-- Inline Table of Contents -->
+            <section id="inline-toc" class="card" style="padding:1rem; margin: 0 0 1rem 0;">
+              <h3 style="margin:0 0 .5rem 0; color:var(--text-secondary);">Table of Contents</h3>
+              <ul class="toc-list blog-list">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#traditional">The Traditional Route: Cybersecurity University Degrees</a></li>
+                <li><a href="#certifications">Certifications: Focused, Practical, and Industry-Recognized</a></li>
+                    <ul style="margin-left: 1rem; padding-left: 0.5rem;">
+                        <li><a href="#golden">The “Golden Standards” Widely Recognized</a></li>
+                        <li><a href="#tech-practical">Technical & Practical-Focused Certifications</a></li>
+                    </ul>
+                <li><a href="#choice">Cybersecurity Degree or Certifications, Which one to choose?</a></li>
+                <li><a href="#hands-on">Practical Hands-On Experience: The Game Changer</a></li>
+                <li><a href="#foundation">Relevant Foundational Skills to Guide Your Cybersecurity Career Path</a></li>
+                
+                <li><a href="#dos">The Do’s and Don’ts: Tips for Aspiring Cybersecurity Professionals</a></li>
+
+                <li><a href="#conclusion">Conclusion</a></li>
+              </ul>
+
+            
+            </section>
+            
+            <div class="content">
+                <br><h2 id="introduction">Introduction</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Quick note before we begin, I am an aspiring offensive security professional with a growing portfolio of certifications and hands-on experience, particularly through platforms like INE (formally known as eLearnSecurity), TryHackMe and HackTheBox. While I have made significant progress in my learning journey, I am still early in my career. 
+                    This review reflects my personal experiences and observations so far, and I highly encourage readers to consider multiple perspectives when planning their own cybersecurity education paths.
+                    <br><br>
+                    This topic is important because many newcomers to cybersecurity face the same dilemma: Should I pursue a degree, stack certifications, or dive straight into practical experience? Will I land a job by the end of my studies? 
+                    In this blog, I’ll share how all three, classroom learning, professional certifications, and platforms like TryHackMe, HackTheBox, INE and many more out there can be leveraged to build a well-rounded foundation. 
+                    Whether you’re just starting out or looking to level up, I hope my insights offer some clarity and direction.
+                </p><br>
+
+
+                <h2 id="traditional">The Traditional Route: Cybersecurity University Degrees</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Below are 2 overview tables highlighting pros, cons and job readiness offers by a Cybersecurity degree. There are several other points that I might not mention in the tables but again keep in mind that each University has its own curriculum. As such, I can’t pronounce myself much on the curriculum, however based on common statistics and patterns, the below tables can be taken into consideration.
+                </p>
+
+                <!-- Insert Pros and Cons table here -->
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Relevant Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: justify;">What Degree Offers?</td>
+                                <td style="text-align: justify;">
+                                    <ul style="margin: 0; padding-left: 1.2rem; text-align: justify;">
+                                        <li>Structured curriculum covering computer science and cybersecurity fundamentals</li>
+                                        <li>Strong theoretical foundation (e.g., networking, OS, cryptography)</li>
+                                        <li>Academic & professional networking opportunities (peers, faculty, events)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: justify;">Pros</td>
+                                <td style="text-align: justify;">
+                                    <ul style="margin: 0; padding-left: 1.2rem; text-align: justify;">
+                                        <li>Recognized by employers (especially corporate/government roles)</li>
+                                        <li>Teaches broad tech concepts beyond just security (teamwork, leadership)</li>
+                                        <li>Access to internships, research, and graduate programs</li>
+                                        <li>Builds discipline, academic writing, and problem-solving skills</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: justify;">Cons</td>
+                                <td style="text-align: justify;">
+                                    <ul style="margin: 0; padding-left: 1.2rem; text-align: justify;">
+                                        <li>Often lacks practical, hands-on training</li>
+                                        <li>May not reflect current industry tools or attack methods</li>
+                                        <li>Can be expensive and time-intensive</li>
+                                        <li>May only lightly cover security-specific content</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Cybersecurity Degree Overview</figcaption>
+                </div>
+
+
+                <!-- Insert Offensive and Defensive Security table here -->
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="text-align: center; font-size: 1.2rem;">Preparation for Real-World Cybersecurity Roles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: justify;"><strong>Offensive Security (e.g. Penetration Tester, Red Teamer)</strong></td>
+                                <td style="text-align: justify;">
+                                    <ul style="margin: 0; padding-left: 1.2rem; text-align: justify;">
+                                        <li>Limited practical exposure</li>
+                                        <li>Theory helps (e.g., OS internals, networking), but hands-on skills must be learned outside (HackTheBox, TryHackMe, VulnLab, etc.)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: justify;"><strong>Defensive Security (e.g. SOC Analyst, Threat Hunter, Blue Teamer)</strong></td>
+                                <td style="text-align: justify;">
+                                    <ul style="margin: 0; padding-left: 1.2rem; text-align: justify;">
+                                        <li>Slightly more aligned (especially for SOC, IR, GRC roles)</li>
+                                        <li>Still needs labs, internships, and tools like SIEMs for practical knowledge</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Cybersecurity Role Preparation</figcaption>
+                </div>
+
+
+                <p style="text-align: justify;">
+                    Overall, a degree is a great starting point, but not enough on its own. A well structured curriculum combined with hands-on practice, certifications, and self-learning to be job-ready is the best approach. 
+                    By the time of writing this blog (May 2025), I have an on-going subscription on HackTheBox where I have been actively learning for over a year and half after a good 6 months of grinding on TryHackMe.
+                </p><br>
+
+                <h2 id="certifications">Certifications: Focused, Practical, and Industry-Recognized</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+
+                <h3 id="golden">The “Golden Standards” Widely Recognized</h3>
+                <p style="text-align: justify;">
+                    <ul class="blog-list">
+                        <li><a href="https://www.offensive-security.com/information-security-certifications/" target="_blank">OffSec</a> → Consider the gold standard and known for hardcore hands-on exams like the OSCP, OSEP, OSWE, OSCE and beyond.</li>
+                        <li><a href="https://www.crest-approved.org/crest-certifications/" target="_blank">CREST</a> → CREST certifications are highly practical, industry-driven, and often essential for senior technical roles. In fact, CREST has a strong emphasis on formal industry standards and company accreditation.</li>
+                        <li><a href="https://www.giac.org/certifications" target="_blank">GIAC (SANS Institute)</a> → Premium-priced but extremely well-respected, their certs like GCIH, GPEN, and GCIA are staples in large enterprises and government roles.</li>
+                        <li><a href="https://www.ec-council.org/cybersecurity-certifications" target="_blank">EC-Council</a> → CEH is popular and often requested in job listings. However, it’s often criticized for being outdated. Note that there is CEH and CEH(Practical).</li>
+                        <li><a href="https://www.comptia.org/certifications/security" target="_blank">CompTIA</a> → Ideal for those starting out but also great stepping stones for junior to mid-level roles.</li>
+                    </ul>
+                </p>
+
+                <br><h3 id="tech-practical">Technical & Practical-Focused Certifications</h3>
+                <p style="text-align: justify;">
+                    <ul class="blog-list">
+                        <li><a href="https://academy.hackthebox.com/certifications" target="_blank">HackTheBox</a> → Rigorous and reflect real-world TTPs, they are great for red teamers and SOC analysts alike. Check out HTB Academy Certs & ProLabs for more details.</li>
+                        <li><a href="https://ine.com/course/certified-blue-team-specialist" target="_blank">INE (formally known as eLearnSecurity)</a> → Very hands-on and respected in the PenTesting community providing both Red and Blue Team Certifications. Shoutout to Sir Alexis Ahmed and other instructors for turning every moment of learning into something meaningful and rewarding.</li>
+                        <li><a href="https://www.tcmsecurity.com/certifications" target="_blank">TCM Security</a> → Affordable, practical, and community-driven provider known for its flexibility in granting lifetime vouchers and certifications.</li>
+                        <li><a href="https://alteredsecurity.com/course/certified-red-team-operator" target="_blank">Altered Security</a> → Known for Active Directory exploitation training ranging on various levels. Do check them out if you are serious about AD PenTesting and Red Teaming.</li>
+                        <li><a href="https://www.zeropointsecurity.co.uk/course/red-team-ops" target="_blank">ZeroPoint Security</a> → Known for their famous CRTO and CRTL Certifications, it’s very hands-on and focused on C2 infrastructure, AV evasion, and real TTPs. Checkout MITRE ATT&CK for more details on Tactics, Techniques, and Procedures (TTP).</li>
+                        <li><a href="https://www.securityblueteam.com/certifications" target="_blank">SecurityBlueTeam (AKA SBT)</a> & <a href="https://cyberdefenders.org/certifications" target="_blank">CyberDefenders</a> → Excellent for those on the defensive side. Moreover, certifications like BTL1, CCD and BTL2 are ideal for those looking to go beyond just theory. Review My Journey Through BTL1 from Shanuka Samarasinghe (AKA Shan) for more insights.</li>
+                        <li><a href="https://tryhackme.com/certifications" target="_blank">TryHackMe</a> → Recently launched their first certifications, SAL1 and PT1. Look up reviews online to learn more about each one.</li>    
+                        <li><a href="https://www.cyberwarfarelabs.com/certifications" target="_blank">CyberWarFare Labs</a> → Offers affordable but highly technical certs worth reviewing. They cover wide range of domain such Blue Team, Purple Team, Red Team, and Cloud Security.</li>
+                        <li><a href="https://www.secopsgroup.com/certifications" target="_blank">SecOpsGroup</a> → Provides affordable exam vouchers worth exploring if you are on a budget.</li>
+                        <li><a href="https://hacktricks.xyz/cloud-hacking" target="_blank">Hacktricks</a> → Learn everything about Cloud Hacking from Hacktricks. I haven’t personally enrolled to any course, hence can’t comment on them.</li>
+                        <li><a href="https://www.whitenightlabs.com/certifications" target="_blank">WhiteNightLabs</a> → Known for their famous CRTO and CRTL Certifications, it’s very hands-on and focused on C2 infrastructure, AV evasion, and real TTPs. Checkout MITRE ATT&CK for more details on Tactics, Techniques, and Procedures (TTP).</li>
+                        <li><a href="https://www.wifichallenge.com/certifications" target="_blank">WifiChallenge</a> → Known for their famous CRTO and CRTL Certifications, it’s very hands-on and focused on C2 infrastructure, AV evasion, and real TTPs. Checkout MITRE ATT&CK for more details on Tactics, Techniques, and Procedures (TTP).</li>
+                        <li><a href="https://www.mobilehackinglab.com/certifications" target="_blank">MobileHackingLab</a> → Known for their famous CRTO and CRTL Certifications, it’s very hands-on and focused on C2 infrastructure, AV evasion, and real TTPs. Checkout MITRE ATT&CK for more details on Tactics, Techniques, and Procedures (TTP).</li>
+                        <li><a href="https://www.arcx.com/certifications" target="_blank">ArcX</a> → Known for their famous CRTO and CRTL Certifications, it’s very hands-on and focused on C2 infrastructure, AV evasion, and real TTPs. Checkout MITRE ATT&CK for more details on Tactics, Techniques, and Procedures (TTP).</li>
+                        <li><a href="https://www.apisecuniversity.com/certifications" target="_blank">APISec University</a> → Known for their famous CRTO and CRTL Certifications, it’s very hands-on and focused on C2 infrastructure, AV evasion, and real TTPs. Checkout MITRE ATT&CK for more details on Tactics, Techniques, and Procedures (TTP).</li>
+                    </ul>
+                </p>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        Note: Certifications such as OSCP, CEH, PNPT, and PenTest+ are often listed as entry-level job requirements for PenTesters. 
+                        Believe it or not HTB CPTS is gradually becoming gold standard for Junior PenTesters. 
+                        For Blue Team or SOC enthusiasts, some job ready certifications such as HTB CDSA, BTL1, CCD or PSAA would be suitable. 
+                        Lastly, Security+ is applicable for any entry-level role (of course it depends on the specific target role requirements as well).
+                    </p>
+                </div>
+                
+
+                <p style="text-align: justify;">
+                    There’s no “one-size-fits-all” when it comes to certs. It depends on your goals, resume visibility, deep hands-on skills, or affordability. Feel free to choose what align best with your career path. Dive into Security-Certification-Roadmap to find out more about Cybersecurity Certifications.
+                </p><br>
+
+                <h2 id="choice">Cybersecurity Degree or Certifications, Which one to choose?</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Now comes the big question, should I focus on pursuing a Cybersecurity degree or invest in Certifications? Below is a quick summary table that I believe would give an overview of key differences between both hence help you decide.
+                    <br><br>
+                    Additionally, as you’re reading this, you probably came across Job Role such as Red Teamer, Threat Hunter, Malware Analyst, SOC Analyst and so forth. Worry not, I also had no idea about either of these role when I first started. Hence, do review 20-coolest-cyber-security-careers from SANS Institute to learn more about Cybersecurity Careers. Please do keep it mind that YOU DO NOT NEED a GIAC or OffSec certification to get started in Cybersecurity (no offense to the giants).
+                </p>
+
+                <!-- Insert Degree and Certifications table here -->
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Cybersecurity Degree</th>
+                                <th>Cybersecurity Certifications</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Duration</td>
+                                <td>2-4 years (undergrad), longer for advanced programs</td>
+                                <td>Weeks to months</td>
+                            </tr>
+                            <tr>
+                                <td>Cost</td>
+                                <td>High (up to tens of thousands)</td>
+                                <td>Varies based on Vendors and Certs</td>
+                            </tr>
+                            <tr>
+                                <td>Scope</td>
+                                <td>Broad, theoretical, foundational</td>
+                                <td>Specialized, practical, skill-focused</td>
+                            </tr>
+                            <tr>
+                                <td>Career Outcomes</td>
+                                <td>Leadership roles, broad job opportunities</td>
+                                <td>Mid-level roles, niche expertise</td>
+                            </tr>
+                            <tr>
+                                <td>Learning Style</td>
+                                <td>Structured, academic</td>
+                                <td>Hands-on, exam-focused</td>
+                            </tr>
+                            <tr>
+                                <td>Flexibility</td>
+                                <td>Less flexible, fixed schedule</td>
+                                <td>More flexible, self-paced options</td>
+                            </tr>
+                            <tr>
+                                <td>Employer preference</td>
+                                <td>Preferred for management and research roles</td>
+                                <td>Value for specific technical skills</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Degree vs Certifications Comparison</figcaption>
+                </div>
+
+                <p style="text-align: justify;">
+                    Below are few considerations to take into account while choosing where to invest your time, money and resources.
+                </p>
+                <ul class="blog-list">
+                    <li>If you seek broad knowledge, leadership roles, and comprehensive education, a degree is more suitable. Think of it like looking at the bigger picture and having an overall understanding of core key concepts.</li>
+                    <li>If you want quick entry, specialization, or to supplement existing knowledge, certifications are ideal. Once again, I would prioritize hands-on certifications over MCQs even though both require in-depth knowledge of the target domains.</li>
+                    <li>Despite the above, many professionals combine both to balance theory and practical skills, enhancing employability and adaptability. In my humble opinion, there is no such thing as practical skills without theory, therefore a mix of both is the best possible approach.</li>
+                </ul>
+                    
+
+                <br><h2 id="hands-on">Practical Hands-On Experience: The Game Changer</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    No amount of theory can ever replace the value of hands-on practice. Platforms like HackTheBox, TryHackMe, and INE’s labs have been instrumental in helping me build real-world offensive security skills. These environments simulate actual assessments and challenge you to think outside the box making it useful for real-world scenarios.
+                    <br><br>
+                    I won’t really dive much into each CTF platform individually, so feel free to explore the Top-10-Best-CTF-Platforms-2024 from Open Security Labs and Best-CTF-platforms-for-cybersecurity-skills by the Cyber Express covering the top CTFs Platforms to master Cybersecurity.
+                    <br><br>
+                    I would always recommend my all time favorite HackTheBox as the methodology utilized takes students out of their comfort zone making it invaluable. Moreover, if you’re serious about improving your skills, HTB Academy & Labs is one of the best place to start. Remember, self-learning and persistence leads to tangible skill growth.
+                    <br><br>
+                    Finding the right balance between academic coursework, certifications, and hands-on labs can be challenging, as it demands a high level of dedication and discipline. As such, prioritization is key to staying organized and making consistent progress. For instance, at the start of each semester, I would allocate more time to platforms like HackTheBox and pursue certifications such as eJPT, CBBH, and CPTS. As the semester progressed and academic demands increased, I would gradually adjust my focus to align with coursework deadlines and workload.
+                </p>
+                
+                
+                <br><h2 id="foundation">Relevant Foundational Skills to Guide Your Cybersecurity Career Path</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Despite the number of certifications and hands-on platforms, it’s essential to recognize the core technical and soft skills that can guide your journey in cybersecurity. 
+                    These are not always taught directly in certification programs, but often make a huge difference in both your growth and job readiness.
+                </p>
+                <br>
+                <ol class="blog-list" style="text-align: justify;">
+
+                    <!-- System Administration (Windows & Linux) -->
+                    <li><strong>System Administration (Windows & Linux)</strong></li>
+                    <p style="text-align: justify;">
+                        Foundational to nearly all areas of cybersecurity, an individual with SysAdmin expertise knows how operating systems start, run, and fail. 
+                        Additionally, you understand processes, services, permissions, and privilege escalation paths, which are crucial when dealing with hardened systems. 
+                        On top of that, managing users, groups, file permissions, systemd/init, networking are also core skills mastered by SysAdmin.
+                        <br><br>
+                        How does these skills help in career choices:
+                    </p>
+
+                    <ul class="blog-list">
+                        <li>Red Team: abusing processes, permission, performing privilege escalation, persistence, even pivoting and tunneling.</li>
+                        <li>Blue Team: hardening system, log collection, and patching.</li>
+                    </ul>
+                    <p style="text-align: justify;"> 
+                        Certificates to look into are RHCSA/RHCE (Linux), LPIC-1, Windows Server Admin, Microsoft SC-900, SC-200. 
+                        I covered everything on Linux-based resources in my previous blog here.
+                    </p>
+
+                    <br>
+
+                    <!-- Programming & Scripting -->
+                    <li><strong>Programming & Scripting</strong></li>
+                    <p style="text-align: justify;">
+                        Mastering programming and scripting enables CyberSec enthusiasts to go beyond simple certifications and exploitations, they learn automation, tool development, and exploit analysis. 
+                        Below is a list of programming languages and why they are useful.
+                        <br>
+                        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                            <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                                Note: I recommend checking the official documentation for each language listed below, and combining it with any other resource to learn/master it
+                            </p>
+                        </div>
+                    </p>
+
+                    <ul class="blog-list">
+                        <li>Python → Useful for scripting, automation, recon tools, exploit writing.</li>
+                        <li>C/C++ → Master theses if you’re interested in binary exploitation, buffer overflows, malware development. Check out MalDev Academy if you’re interested in malware analysis or exploit development.</li>
+                        <li>Go / Rust → Known for their speed and robustness, Go and Rust are modern malware and cross-platform tools (lightweight & compiled). I am currently learning both and aiming to develop a C2 in the future.</li>
+                        <li>PowerShell / Bash → These are native scripting for Windows/Linux ops and attacks.</li>
+                        <li>Why it’s useful:</li>
+                        <ul class="blog-list">
+                            <li>Red Team → Exploit writing, malware development.</li>
+                            <li>Blue Team → automation, log parsing, SIEM integration.</li>
+                        </ul>
+                    </ul><br>
+
+                    <!-- Web Development & WebApp Security -->
+                    <li><strong>Web Development & WebApp Security</strong></li>
+                    <p style="text-align: justify;">
+                        Understanding how apps are built helps break or defend them. In fact, mastering HTML, CSS, JavaScript, basic Node.js, PHP and databases (SQL, PostgreSQL, Mongo/Maria) can be a great asset. Moreover, frameworks such as Django, React, Express sharpen our understanding of logic flaws and bypasses.
+                        <br><br>
+                        <strong>Use Cases</strong>
+                        <ul class="blog-list">
+                            <li>Web App Pentesting (XSS, SQLi, SSRF, etc.) and Bug bounty hunting. HTB CBBH & CWEE Learning Paths as well as THM WebApp Pentesting covers everything you need to know.</li>
+                            <li>DevSecOps → Securing SDLC pipelines</li>
+                        </ul>
+                        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                            <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                                TheOdinProject takes you from Zero to Hero in WedDev if you are ever interested in learning how to build a web app from scratch.
+                            </p>
+                        </div>
+                    </p>
+
+                    <!-- Cloud Platforms and Security -->
+                    <li><strong>Cloud Platforms and Security</strong></li>
+                    <p style="text-align: justify;">
+                        With the growing technology, keep in mind that everything is moving to the cloud, so will security. Having fundamental knowledge or expertise can sharpen your way into Cloud-Security. Some core skills include:
+                        <br><br>
+                        <strong>Core Skills</strong>
+                        <ul class="blog-list">
+                            <li>AWS, Azure, GCP basics (IAM, S3, EC2, Lambda, VPC)</li>
+                            <li>Cloud IAM, roles, misconfigurations (over-permissive roles, public buckets) and cloud logging and threat detection.</li>
+                        </ul>
+                        <p style="text-align: justify;">
+                            Some notable certs include AWS Cloud Practitioner, Azure Fundamentals, or even CCA (Practical). 
+                            You may also check out the eJPT + ICCA bundle from INE.
+                        </p>
+                    </p><br>
+
+                    <!-- Networking and Network Security -->
+                    <li><strong>Networking and Network Security</strong></li>
+                    <p style="text-align: justify;">
+                        Cybersecurity starts with the wire, hence understanding TCP/IP scheme, most common used ports, mastering tools such as wireshark, tcpdump, nmap, netcat, and so on helps understand protocol weaknesses and how packets are being forward from one endpoint to another. Learn more on OSI Model and TCP/IP from GeeksforGeeks.
+                        <br><br>
+                        <strong>Use Cases</strong>
+                        <ul class="blog-list">
+                            <li>Blue Team: Traffic/PCAP analysis, NIDS tuning, alert triage</li>
+                            <li>Red Team: Scanning, pivoting, lateral movement and so forth.</li>
+                        </ul>
+                    </p>
+                    <p style="text-align: justify;">
+                        The learning path might be different based on your learning style, however certifications such as CCNA, CCNP, or any other networking related can be a game-changer.
+                    </p><br>
+
+                    <!-- Cryptography Fundamentals -->
+                    <li><strong>Cryptography Fundamentals</strong></li>
+                    <p style="text-align: justify;">
+                        It’s essential to understand secure communication, encryption, and cracking. In fact, symmetric/asymmetric encryption, hashing, digital signatures, TLS, certificates, steganography and crypto attacks are common topics in the field. This is essential as it applies in Application Security (or AppSec for short), protocol analysis, CTFs and forensic challenges.
+                    </p><br>
+
+                    <!-- Soft skills (Yes Seriously) -->
+                    <li><strong>Soft skills (Yes Seriously)</strong></li>
+                    <p style="text-align: justify;">
+                        This is often overlooked, but crucial for long-term growth. By this, I don’t mean being capable of entertaining basic conversation, it goes way beyond. The key factors here go as such:
+                    </p>
+                    <ul class="blog-list">
+                        <li>Report writing → clear, structured, technical + non-technical</li>
+                        <li>Communication → explaining risks to non-tech people</li>
+                        <li>Time management & documentation</li>
+                        <li>Curiosity and continuous learning mindset</li>
+                    </ul>
+                    <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                        <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                            This is applicable to any cybersecurity professional out there.
+                        </p>
+                    </div>
+
+                </ol>
+
+
+                <br><h2 id="dos">The Do’s and Don’ts: Tips for Aspiring Cybersecurity Professionals</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+
+                <!-- Dos -->
+                <h3>✅ Dos</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ol class="blog-list" style="text-align: justify;">
+                    <li><strong>Learn and master the basics</strong></li>
+                    Before diving into advanced tools or frameworks such as Nessus or Wazuh, make sure you truly understand how systems, networks, and protocols work. Solid foundations in Linux, networking, and OS internals will take you further than any automated tool ever will.
+                    <br><br><li><strong>Commit to continuous learning</strong></li>
+                    Cybersecurity is a fast-moving field. What works today might be obsolete tomorrow. Always keep learning whether it’s a new technique, framework, or certification. As surprising as it may sounds, I still do revisit previous modules from TryHackMe and HackTheBox to help me refresh some knowledge.
+                    <br><br><li><strong>Balance theory and hands-on practice</strong></li>
+                    Reading about privilege escalation is one thing, actually performing it in a lab is another. Labs like Hack The Box, TryHackMe, or even self-made VMs are excellent practice grounds. By the time of writing this (May 2025), I am undergoing Local Privilege Escalation Skill path from HackTheBox and believe it or not, what you learn from the Academy is far different from some techniques used in the labs. Watch, read, then do, matter of fact, adopt your own methodology if applicable.
+                    <br><br><li><strong>Build your network</strong></li>
+                    Connect with like-minded individuals online or in person. Join communities, attend webinars, CTF competitions, talk to people at conferences or even LinkedIn. You’ll be surprised how many opportunities come from a simple conversation.
+                    <br><br><li><strong>Document your journey</strong></li>
+                    Take notes, write blogs, record your progress even if it’s just for yourself. Over time, this builds into a valuable knowledge base that can help compare the changes and see how much you have learned and become better. Additionally, sharing your journey might also inspire someone else, lead to mentorship or collaboration opportunities.
+                </ol>
+
+
+                <!-- Don’ts -->
+                <br><h3>❌ Don’ts</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ol class="blog-list" style="text-align: justify;">
+                    <li><strong>Don’t rely solely on one learning path</strong></li>
+                    Completing a learning path (like TryHackMe or HTB Academy) is great but don’t stop there. The main idea here is not just completing the paths but rather understanding key methodologies, techniques utilized and therefore going beyond.
+                    <br><br><li><strong>Don’t neglect soft skills</strong></li>
+                    Communication is just as important as technical skill. Whether you’re explaining findings to a client or reporting to a SOC team, the ability to clearly articulate your thoughts is vital. Growing up I thought Cybersecurity was all about running scripts and popping shells, I learned the hard way that writing, speaking, and active listening are far as equally important if not more.
+                    <br><br><li><strong>Don’t ignore emerging trends.</strong></li>
+                    The landscape is always changing cloud security, AI, threat intel, and zero trust are becoming mainstream. It’s advised to stay informed through blogs, newsletters, and conferences. The more you know about where things are headed, the more valuable you become. One more reason to give HTB a praise as they constantly update their modules with latest TTPs and tools.
+                  
+                </ol>
+                <br>
+
+                <p style="text-align: justify;">
+                  With this comparison, you should have the necessary knowledge to determine which distro aligns best with your workflow and professional needs. 
+                  With that being said, there are still wonderful distros out there worth downloading and configuring.
+                </p>
+
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                  <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    My advice: Download, configure, play around and choose what’s best for your needs as we all have our preferences.
+                  </p>
+                </div>
+
+                <p style="text-align: justify;">
+                  Lastly, the beauty of Linux lies in its freedom of choice, whether you prioritize control or convenience, the best distro is the one that empowers you to achieve your goals.
+                </p>
+
+                <br><h2 id="conclusion">Conclusion</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Cybersecurity is a field that rewards curiosity, dedication, and adaptability. Whether you’re starting with a degree, certifications, or hands-on labs, the key is to blend all three for a truly well-rounded foundation. Remember, no matter the career you decide to pursue, you will come across tools such as Metasploit, Wireshark, BurpSuite, Nessus, Nuclei, Splunk, Snort as well as common services (FTP, SMB, RDP, DNS, Email services, and so forth) and common applications (WordPress, Drupal, Joomla, Tomcat, Jenkins, GitLab, LDAP and much more).
+                    <br><br>
+                    In terms of balance, everybody has their own schedule and what is applicable to me might not be to someone else. Consequently, feel free to find the right balance between school, certification and hands-on labs at your own pace.
+                    <br><br>
+                    Long story short, I would highly recommend starting off with TryHackMe as it is beginner friendly then progressively migrate to HackTheBox as things get serious and more challenging. 
+                    Check out TryHackMe and HackTheBox learning paths to choose where you see yourself. Immediate action is key to achieving the best results.
+                </p>
+                
+                
+
+            </div>
+        </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Justin Kombe Tonguino. All rights reserved.</p>
+    </footer>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>

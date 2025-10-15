@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTB ProLabs Review - JKT</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/mediaqueries.css">
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="../../index.html" class="logo-wrapper">
+          <!-- <img src="../../assets/home_light.webp" src-light="../../assets/home_light.webp" src-dark="../../assets/home_light.webp" alt="Home Logo" class="icon logo-icon" /> -->
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="../../blog/blog.html">Blog</a></li>
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../search.html">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="../../assets/theme_light.png"
+              src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="../../index.html" class="logo-wrapper">
+        <img src="../../assets/home_light.png" src-light="../../assets/home_light.png" src-dark="../../assets/home_dark.png"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="../../blog/blog.html">Blog</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../search.html">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="../../assets/theme_light.png"
+            src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
+    <main style="margin-top: 56px; padding: 2rem;">
+        <div class="post-layout about-wide">
+        <article class="post-content">
+            <header>
+                <h1>Dissecting HackTheBox Pro Labs: The Art of Attacking Enterprise Networks</h1>
+            </header>
+            <!-- Cover image directly under title for all blogs -->
+            <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
+                <picture>
+                    <source srcset="../../assets/ProLabs.webp" type="image/webp" />
+                    <img src="../../assets/ProLabs.webp" alt="Blog cover" style="width:100%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary)" />
+                </picture>
+                <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">HackTheBox Pro Labs</figcaption>
+            </figure>
+            <div class="post-meta-row">
+              <span class="meta">Published on February 15, 2024</span>
+              <span class="meta">|</span>
+              <span class="meta">8 min read</span>
+              <span class="meta hash">#</span>
+              <div class="post-tags-inline">
+                🏷 <span class="tag">HackTheBox</span>
+                <span class="tag">ProLabs</span>
+                <span class="tag">Red Teaming</span>
+                <span class="tag">Penetration Testing</span>
+                </div>
+            </div>
+
+            <!-- Inline Table of Contents -->
+            <section id="inline-toc" class="card" style="padding:1rem; margin: 0 0 1rem 0;">
+              <h3 style="margin:0 0 .5rem 0; color:var(--text-secondary);">Table of Contents</h3>
+                <ul class="toc-list blog-list">
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#quick-overview">Quick Overview of Pro Labs Categories</a></li>
+                    <li><a href="#redteamer-pentesters">Are Pro Labs Designed for Red Team Operators or Penetration Testers?</a></li>
+                    <li><a href="#poo-mini-pro-labs">1.0 P.O.O Mini Pro Labs</a></li>
+                    <li><a href="#dante-pro-labs">2.0 Dante Pro Labs (AKA The Pivot Playground)</a></li>
+                    <li><a href="#zephyr-pro-labs">3.0 Zephyr Pro Labs (AKA The calm before the storm)</a></li>
+                    <li><a href="#offshore-pro-labs">4.0 Offshore Pro Labs (AKA Trust Terror)</a></li>
+                    <li><a href="#final-tips-recommendations">Final Thoughts, Tips and Recommendation</a></li>
+                    <li><a href="#references">References</a></li>
+                </ul>
+            
+            </section>
+            
+            <div class="content">
+                <br><h2 id="introduction">Introduction</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">HackTheBox Pro Labs have become a defining benchmark in cybersecurity training, offering immersive, real-world simulation environments designed to push the boundaries of ethical hacking skills. These labs are highly valued by cybersecurity professionals for their realism, complexity, and advanced setup with the latest TTPs.
+                    <br><br>In this blog post, we will dive into the meat and potatoes of 3 major Pro Labs (Dante, Zephyr, Offshore) and POO mini Pro Labs highlighting their core challenges, learning outcomes, and what makes each lab a unique training ground. Whether you’re a seasoned professional or a novice seeking for a challenge, I hope this guide bring some clarity and help you decide which Pro Labs to tackle next.
+                </p>
+                
+                <br><h2 id="quick-overview">Quick Overview of Pro Labs Categories</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Before dissecting the mentioned Pro Labs individually, it’s essential to have a sneak peek of what they are made of, their purpose, as well as applicability. As you can see below, there are 2 main categories:
+                    <br><br>
+                    <ul class="blog-list">
+                        <li><strong style="font-size: bold;">The Primary Bundle:</strong> this allows players to gain access to the all Pro Labs shown on the cover image of this post. More details on pricing can be found <a href="https://www.hackthebox.com/blog/pro-labs-update" target="_blank">HERE</a>.</li>
+                        <li><strong style="font-size: bold;">Enterprise Exclusive:</strong>On the other hand comes under a different subscription. I can’t pronounce myself much on this so feel free to explore.</li>
+                    </ul>
+                </p><br>
+
+                <img src="../../assets/HTBProLabs.webp" alt="HTB Pro Labs" style="width:80%;max-height:1300px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+                
+                <a href="https://www.hackthebox.com/blog/new-pro-labs-offerings" target="_blank">
+                    <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">HTB Red Team Training Labs</figcaption>
+                </a><br>    
+
+                <h2 id="redteamer-pentesters">Are Pro Labs Designed for Red Team Operators or Penetration Testers?</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    At first, I thought HackTheBox Pro Labs were only for Red Team operators but turns out I was wrong. Most labs are Red Team–level, and while shortcuts can work, it’s best to follow the intended approach. Relying on shortcuts or luck might work in these labs at times but may not or rather would never in real engagements. Everything in the lab exists for a reason, so stay observant and take detailed notes.
+                    <br><br>
+                    Despite the name, penetration testers can tackle these labs to learn new skills or techniques. Bear in mind that they are time-consuming, even for seasoned professionals. This could be due to factors like tools malfunctioning, VPN issues, broken machines, or overlapping attacks. Frustrating moments such as “Why won’t this payload work?” are unavoidable.
+                </p><br>
+
+                <img src="../../assets/Pentest-Redteamin.webp" alt="RedTeaming Vs PenTesting" style="width:80%;max-height:1000px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+                
+                <a href="https://www.hackthebox.com/blog/new-pro-labs-offerings" target="_blank">
+                    <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Red Teaming Vs PenTesting</figcaption>
+                </a><br>
+                <p style="text-align: justify;">
+                    Attached is an HTB blog image highlighting the key differences between Red Teaming and Penetration Testing. Kindly take note if you were unsure or confused about these two terminologies.
+                    <br><br>
+                    With that clarified, let’s dive into the deliverables of these wonderful networks.
+                    <br><br>
+                </p>
+
+                <img src="../../assets/letsdothiscat.webp" alt="Cat Meme" style="width:50%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        <strong>Note </strong> that the overviews and learning outcomes below <strong>are exactly same</strong> as described <strong><a href="https://www.hackthebox.com/hacker/pro-labs" target="_blank">HERE</a></strong> (Check out Lab Scenarios section). However, everything else is my personal opinion and experience with the labs.
+                        Remember to always document your findings and maintain proper ethical guidelines during penetration testing. The eJPT v2 exam emphasizes not just technical skills, but also professional conduct and thorough documentation practices.
+                        <br><br>
+                        As always, I recommend checking other reviews to gain more insights. For obvious reasons, <strong>I will try my very best not to throw spoilers</strong>, while focusing on the challenges I faced, and a few tips and tricks.
+                    </p>
+                </div>
+
+
+                <br><h2 id="poo-mini-pro-labs">1.0 P.O.O Mini Pro Labs</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                
+                <img src="../../assets/POO.webp" alt="P.O.O Mini Pro Labs" style="width:60%;max-height:500px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
+                
+                <br><br><h3>1.1 Overview</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <p style="text-align: justify;">
+                    P.O.O focuses on enumeration, lateral movement, and privilege escalation within small Active Directory environments configured with the latest and greatest operating systems and technologies. 
+                    The goal is to compromise the perimeter host, escalate privileges and ultimately compromise the domain.
+                </p>
+
+                <br><h3>1.2 Learning Outcomes</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Enumeration</li>
+                    <li>Active Directory enumeration and attacks</li>
+                    <li>Pivoting & Lateral Movement</li>
+                    <li>Local privilege escalation</li>
+                    <li>Situational awareness</li>
+                    <li>Web application enumeration and attacks</li>
+                </ul>
+
+
+                <br><h3>1.3 Key Takeaways & Insights</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>I find it difficult to elaborate on this one without spoiling it to be very honest. However, if you want to get familiar with HTB Enterprise Networks (Pro Labs) at the smaller scale, then this will be a great warm up. Starting with this was instrumental for me, as the roller coaster of emotions and difficulty keeps increasing as I moved forward.</li>
+                    <li>I found the attacks paths very interesting and I enumerated these machines in ways I never thought I could before. Long story short, it won’t be a waste of time even though you only get 5 flags to capture. Bear in mind that P.O.O is a Pro Lab for a reason and I will let you discover it.</li>
+                </ul>
+
+
+                <p style="text-align: justify;">
+
+                </p>
+
+                <!-- Time for Dante Pro Labs -->
+                <br><h2 id="dante-pro-labs">2.0 Dante Pro Labs (AKA The Pivot Playground)</h2>
+                <hr style="border: 1px solid black;"><br>
+                <img src="../../assets/Dante.webp" alt="Dante Pro Labs" style="width:60%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
+
+
+                <br><br><h3>2.1 Overview</h3>
+                <p style="text-align: justify;">
+                    Dante is a modern, yet beginner-friendly pro lab that provides the opportunity to learn common penetration testing methodologies and gain familiarity with tools included in the Parrot OS Linux distribution.
+                </p>
+
+                <br><h3>2.2 Learning Outcomes</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Enumeration</li>
+                    <li>Exploit development</li>
+                    <li>Pivoting & Lateral Movement</li>
+                    <li>Local privilege escalation</li>
+                    <li>Situational awareness</li>
+                    <li>Web application Attacks</li>
+                </ul>
+
+
+                <br><h3>1.3 Key Takeaways & Insights</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Dante focuses on network-level penetration testing. Some find it chaotically messy, while others enjoy navigating its pitfalls and can make sense of the chaos.</li>
+                    <li>PoC and Exploits are all over ExploitDB, GitHub and just a little hint will put you on the right path. Hence, Google is your best ally.</li>
+                    <li>Ligolo-ng is essential for navigating subnets and pivoting, outperforming tools like ProxyChains, SSH tunnels, or Chisel. Still, sometimes I relied on Chisel for specific hosts.</li>
+                    <li>A junior penetration tester with strong methodology and patience can tackle Dante, but success depends on experience. While it covers little AD exploitation, it’s excellent for practicing pivoting, understanding enterprise network setups, and sharpening engagement skills.</li>
+                </ul>
+
+                <!-- Time for Zephyr Pro Labs -->
+                <br><h2 id="zephyr-pro-labs">3.0 Zephyr Pro Labs (AKA The calm before the storm)</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <img src="../../assets/Zephyr.webp" alt="Zephyr Pro Labs" style="width:60%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
+
+                <br><br><h3>3.1 Overview</h3>
+                <p style="text-align: justify;">
+                    Zephyr is an intermediate-level red team simulation environment, designed to be attacked as a means of learning and honing your engagement skills and improving your active directory enumeration and exploitation skills.
+                </p>
+
+                <br><h3>3.2 Learning Outcomes</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Enumeration</li>
+                    <li>Evading endpoint protections</li>
+                    <li>Exploitation of a wide range of real-world Active Directory flaws</li>
+                    <li>SQL & Relay Attacks</li>
+                    <li>Lateral movement and crossing trust boundaries</li>
+                    <li>Privilege escalation</li>
+                    <li>Web application Attacks</li>
+                </ul>
+
+                <br><h3>3.3 Insights and Reflections</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Several reviews suggest Zephyr to be excellent for CRTP holders and exam prep. I haven’t completed CRTP yet, so I won’t comment directly, but the latest syllabus includes using Sliver C2 on Windows Server 2022, which is invaluable. I didn’t use a C2 for Zephyr, but leveraging one could make handling AV/EDR much easier.</li>
+                    <li>Besides CRTP, many CPTS veterans note that Zephyr aligns well with the HTB CPTS exam. Dante and Zephyr are often the top two Pro Labs recommended before attempting the CPTS Exam. While Offshore is considered to be an overkill, doing it wouldn’t hurt and will just be icing on the cake.</li>
+                    <li>While CPTS learning path felt enough, I found the overall experience to be incredibly rewarding allowing me to learn new tricks and TTPs.</li>
+                </ul>
+
+                <!-- Time for Offshore Pro Labs -->             
+                <br><h2 id="offshore-pro-labs">4.0 Offshore Pro Labs (AKA Trust Terror)</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <img src="../../assets/Offshore.webp" alt="Offshore Pro Labs" style="width:60%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
+
+
+                <br><br><h3>4.1 Overview</h3>
+                <p style="text-align: justify;">
+                    Offshore is a real-world enterprise environment that features a wide range of modern Active Directory misconfigurations. If you manage to breach the perimeter and gain a foothold, you are tasked to explore the infrastructure and attempt to compromise all Offshore Corp entities.
+                </p>
+
+                <br><h3>4.2 Learning Outcomes</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Active Directory enumeration and exploitation</li>
+                    <li>Evading endpoint protections</li>
+                    <li>Lateral movement</li>
+                    <li>Local privilege escalation</li>
+                    <li>Situational awareness</li>
+                    <li>Tunneling and pivoting</li>
+                    <li>Web application Enumeration and Attacks</li>
+                </ul>
+
+
+                <br><h3>4.3 Lessons Shaping the Path Forward</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Firstly, Offshore is time consuming specially for non CRTE, CRTM, or CRTO, CRTL, or even HTB CAPE holders. Don’t get me wrong, you can certainly do it without non of the certs previously mentioned. However, if you decide to go down that path like I did, be ready to be humbled several times, to embrace extreme resilience and composure, and most importantly extensive research every now and then is non negotiable. If you have been through HTB Pro Labs you know the drill.</li>
+                    <li>BloodHound is essential for mapping the landscape, especially in offshore labs with four forests. Map each domain and forest thoroughly to understand trust relationships and uncover valuable insights.</li>
+                    <li>A key tip for Offshore is switching VPN instances, it can make unreachable hosts accessible. Many users suggest US over EU instances, partly because some stay broken for days. I’ve been there, it’s frustrating, but you learn as you go.</li>
+                    <li>Offshore is vast, chaotic, and demanding, but truly rewarding. Cybernetics and RastaLabs (AKA Evasion Madness), however, are tougher and their strict evasion requirements mean msfvenom alone won’t save you without proper obfuscation and evasion techniques.</li>
+                    <li>If Dante felt messy, this one will blow your mind as FLAGS are everywhere. Thoroughly enumerate every host, and search for strings like “flag”, “OFFSHORE” , or similar. I ran the below command on nearly every host, it saved me, and it might save you too.</li>
+                    <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                        <p style="margin: 0; color: var(--text-primary); font-style: JetBrains Mono, monospace;">
+                            powershell.exe -c "Get-ChildItem -Path C:\ -Recurse -Filter *flag*.txt -ErrorAction SilentlyContinue -Force"
+                        </p>
+                    </div>
+                </ul>
+
+                <!-- Time for Final Thoughts, Tips and Recommendation -->
+                <br><h2 id="final-tips-recommendations">Final Thoughts, Tips and Recommendation</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <img src="../../assets/rocklee.webp" alt="Rock Lee" style="width:60%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" /><br> 
+                <br>
+                
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>First and foremost, the labs often have many active users, so expect overlapping techniques. For instance, ForceChangePassword is frequently used (thanks to BloodHound) and often by novices, while experienced players take other routes. Artifacts, hashes, or deleted files may also result from others’ actions.</li>
+                    <li>Establish a solid methodology before starting, or refine one as you progress. CPTS gave me the fundamentals, but success with HTB Labs demands research and resourcefulness. As such, I highly recommend you use Google, the HTB Community, Forum, and Discord.</li>
+                    <li>Sometimes, it’s best to capture or steal credentials instead of Brute forcing them (Responder, SMBRelay, or OSINT are instrumental). Additionally, credentials reuse is common in the above Pro Labs and it might apply to the rest as well. Hence, familiarity with tools such as NXC or CME can save a lot of TIME.</li>
+                    <li>Enumeration is key, you may run tools like winPEAS, LinPEAS or living off the land techniques such as built-in powershell commands, for loop, powershell or bash one liners to locate interesting files and attack paths.</li>
+                    <li>Engage wisely with the community, Discord is your best ally. Check the Pro Labs section for past discussions when stuck, or ask questions to exchange insights with others. Many solutions come from reading, sharing, or helping others, and I remain grateful to those who do the same.</li>
+                    <li>Take detailed notes and track all findings. Some even practice reporting, which is great. Whatever method or tool you use, never CHARGE IN BLIND. Your motivation to get started is one thing, but perseverance and consistency keeps you going when you’re stuck for days or weeks.</li>
+                    <li>You don’t need to master C2 frameworks for some Pro Labs, though they shine in Zephyr, RastaLabs, and Cybernetics. For POO and Dante, they’re overkill. Focus on mastering Ligolo-ng for pivots as it’s far more reliable than classics like Proxychains, Chisel, or SSH.</li>
+                    <li>Be ready to step out of your comfort zone as you will need to use unfamiliar or previously avoided TTPs. HTB Pro Labs are truly time-consuming, with duration varying based on VPN performance, experience in enterprise exploitation, and daily time commitment.</li>
+                    <li>Lastly, automate wherever possible. Create scripts for repetitive tasks, this saves time and effort. For instance, here’s a bash script I use to add hosts to a Ligolo interface and I keep similar scripts for each subnet in the Pro Labs.</li>
+                    <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                        <pre style="margin: 0; color: var(--text-primary); font-family: 'JetBrains Mono', monospace; white-space: pre; overflow-x: auto; background: transparent; border: none; padding: 0; font-size: 14px;"><code>#!/bin/bash
+# Interface to use
+INTERFACE="ligolo"
+# List of target IPs
+IPS=(
+    172.16.x.x
+    172.16.x.x
+    172.16.x.x
+)
+# Loop through each IP and add route
+for ip in "${IPS[@]}"; do
+    echo "Adding route to $ip via $INTERFACE..."
+    sudo ip route add "$ip" dev "$INTERFACE"
+done
+echo "All routes added successfully."</code></pre>
+                    </div>
+                </ul>
+
+                
+                <br><h2 id="key-takeaways">Referencess</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><a href="https://www.thehacker.recipes/" target="_blank">The Hacker Recipes</a></li>
+                    <li><a href="https://book.hacktricks.wiki/en/index.html" target="_blank">Hacktricks — Wiki</a></li>
+                    <li><a href="https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet" target="_blank">AD Exploitation Cheat Sheet | GitHub</a></li>
+                    <li><a href="https://github.com/jakobfriedl/precompiled-binaries/tree/main" target="_blank">Pre-Compiled Binaries | GitHub</a></li>
+                    <li><a href="https://github.com/theyoge/AD-Pentesting-Tools" target="_blank">AD PenTesting Tools | GitHub</a></li>
+                    <li><a href="https://github.com/CyberSecurityUP/Awesome-Active-Directory-PenTest-Tools" target="_blank">Awesome AD PenTest Tools | GitHub</a></li>
+                    <li><a href="https://github.com/expl0itabl3/Toolies" target="_blank">Toolies | GitHub</a></li>
+                    <li><a href="https://www.hackthebox.com/blog/new-pro-labs-offerings" target="_blank">Introduction to Enterprise Level Attack Scenario | HTB Blog</a></li>
+                    <li><a href="https://www.hackthebox.com/hacker/pro-labs" target="_blank">HackTheBox Pro Labs | Overview & Learning Outcome</a></li>         
+                    <li><a href="https://help.hackthebox.com/en/articles/7257535-htb-labs-subscriptions" target="_blank">HTB Labs Subscription | HTB Article</a></li>
+                    <li><a href="https://github.com/hackinaggie/OSEP-Tools-v2/tree/main" target="_blank">OSEP Tools | GitHub</a></li>
+                    
+                    <li><a href="https://www.linkedin.com/pulse/htb-pro-labs-deep-dive-realistic-penetration-testing-ewerson-w19qf/" target="_blank">HTB Pro Labs - Deep Dive | LinkedIn Blog</a></li>
+                </ul>
+
+            </div>
+        </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Justin Kombe Tonguino. All rights reserved.</p>
+    </footer>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>

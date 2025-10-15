@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArcGIS Web Applications: Overview, Common Issues, Solutions & Best Practices - JKT</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/mediaqueries.css">
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="../../index.html" class="logo-wrapper">
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="../../blog/blog.html">Blog</a></li>
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../search.html">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="../../assets/theme_light.png"
+              src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="../../index.html" class="logo-wrapper">
+        <img src="../../assets/home_light.png" src-light="../../assets/home_light.png" src-dark="../../assets/home_dark.png"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="../../blog/blog.html">Blog</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../search.html">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="../../assets/theme_light.png"
+            src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
+    <main style="margin-top: 56px; padding: 2rem;">
+        <div class="post-layout about-wide">
+        <article class="post-content">
+            <header>
+                <h1>ArcGIS Web Applications: Overview, Common Issues, Solutions & Best Practices</h1>
+            </header>
+            <!-- Cover image directly under title for all blogs -->
+            <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
+                <picture>
+                    <source srcset="../../assets/ArcGIS_webapp_cover.webp" type="image/webp" />
+                    <img src="../../assets/ArcGIS_webapp_cover.webp" alt="ArcGIS Web Applications: Overview, Common Issues, Solutions & Best Practices" style="width:70%;max-height:700px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+                </picture>
+                <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">ArcGIS Web Applications</figcaption>
+            </figure>
+            <div class="post-meta-row">
+              <span class="meta">Published on June 20, 2025</span>
+              <span class="meta">|</span>
+              <span class="meta">6 min read</span>
+              <span class="meta hash">#</span>
+              <div class="post-tags-inline">
+                🏷 <span class="tag">ArcGIS</span>
+                    <span class="tag">Common Issues</span>
+                    <span class="tag">Solutions</span>
+                    <span class="tag">Best Practices</span>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    Notice: This is another piece of work part of the GeoTech Logbook Series. If you are dealing with GIS based systems, I hope you find some useful insights regardless of your background.
+                </p>
+            </div>
+
+            <!-- Inline Table of Contents -->
+            <section id="inline-toc" class="card" style="padding:1rem; margin: 0 0 1rem 0;">
+              <h3 style="margin:0 0 .5rem 0; color:var(--text-secondary);">Table of Contents</h3>
+              <ul class="toc-list blog-list">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#sec1">Understanding ArcGIS Web Applications: Experience Builder and Web AppBuilde</a></li>
+                <li><a href="#sec2">Building and Troubleshooting workflows</a></li>
+                <li><a href="#sec3">Guide to Common Errors: Causes, Workarounds, and Relevant Knowledge Articles</a></li>
+                <li><a href="#sec4">Best Practices for Reliable ArcGIS WebApps</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#references">References & Further Reading</a></li>
+              </ul>
+
+            
+            </section>
+
+            
+            <div class="content">
+                <br><h2 id="introduction">Introduction</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    ArcGIS web applications are essential tools for organizations seeking to visualize, analyze, and share spatial data interactively. Two primary platforms, ArcGIS Experience Builder and Web AppBuilder offer powerful, flexible solutions for building these web apps. However, users frequently encounter challenges during configuration and deployment. In this guide, we will try to summarize key troubleshooting workflows, common errors, and best practices, drawing from documentation and real-world cases.
+                    <br><br>
+                    <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                        <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                            📝 Side note: We won’t cover ArcGIS Web App in depth here, this is just a glimpse of something much bigger. Thus, this aims to give us an overview of how web app are handled in ArcGIS Enterprise Environments. With that out of the way, let’s get to it.
+                        </p>
+                    </div>
+                    
+                </p>
+
+                <!-- Understanding ArcGIS Web Applications: Experience Builder and Web AppBuilder -->
+                <br><h2 id="sec1">Understanding ArcGIS Web Applications: Experience Builder and Web AppBuilder</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    ArcGIS Experience Builder enables users to create unique web experiences with flexible layouts, interactive widgets, and support for both 2D and 3D data. It offers drag-and-drop tools, responsive design, and the ability to build multi-page apps, making it ideal for modern, mobile-friendly web applications. Additionally, express mode allows for quick setup focused on essential features, while advanced options support custom widgets and templates.
+                    <br><br>
+                    ArcGIS Web AppBuilder, on the other hand, is a WYSIWYG (What-You-See-Is-What-You-Get) platform for building HTML and JavaScript apps without coding. It provides ready-to-use widgets, configurable themes, and supports both 2D and 3D maps.
+                    <br><br>
+                    The key differences between both tools is summarized into the below table. There are more features I could have covered but as previously stated THIS IS JUST A GLIMPSE of something greater.
+                </p>
+
+                <!-- INSERT TABLE HERE -->
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>ArcGIS Experience Builder</th>
+                                <th>ArcGIS Web AppBuilder</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Layout Flexibility and design</td>
+                                <td>Highly flexible, responsive, drag-and-drop positioning, full control over placement, size, and spacing.</td>
+                                <td>Theme-based, less flexible, fixed with limited customization, WYSIWYG interface.</td>
+                            </tr>
+                            <tr>
+                                <td>Widget Customization</td>
+                                <td>Advanced, supports custom widgets.</td>
+                                <td>Ready-to-use, limited customization.</td>
+                            </tr>
+                            <tr>
+                                <td>Custom widget and themes</td>
+                                <td>Developer edition supports building custom widgets and themes with low-code development.</td>
+                                <td>Developer edition supports custom widgets and themes.</td>
+                            </tr>
+                            <tr>
+                                <td>2D/3D Support</td>
+                                <td>Both in one app.</td>
+                                <td>2D or 3D apps separately.</td>
+                            </tr>
+                            <tr>
+                                <td>App Structure</td>
+                                <td>Multi-page, dynamic.</td>
+                                <td>Single or multi-page.</td>
+                            </tr>
+                            <tr>
+                                <td>Migration Path</td>
+                                <td>Recommended for all new apps.</td>
+                                <td>Legacy, but still supported.</td>
+                            </tr>
+                            <tr>
+                                <td>Modern capabilities</td>
+                                <td>Built on the latest web technologies.</td>
+                                <td>Built on older technology.</td>
+                            </tr>
+                            <tr>
+                                <td>Underlying Technology</td>
+                                <td>Built on ArcGIS Maps SDK for JavaScript 4.x (modern API).</td>
+                                <td>Based on ArcGIS API for JavaScript 3.x.</td>
+                            </tr>
+                            <tr>
+                                <td>Use Case Suitability</td>
+                                <td>Best for new apps requiring advanced customization, responsive design, 2D/3D integration, and multi-page layouts.</td>
+                                <td>Suitable for apps needing many existing widgets or specific legacy widgets like Parcel Drafter.</td>
+                            </tr>
+                            <tr>
+                                <td>Release Cycle</td>
+                                <td>Three releases per year in Online and Developer editions; two releases per year in Enterprise.</td>
+                                <td>Mature product with steady updates.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">ArcGIS Experience Builder vs Web AppBuilder Comparison</figcaption>
+                </div>
+
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        Bear in mind that, there are developer editions for both Experience Builder as well as Web AppBuilder which give additional functionalities to the default ones mentioned above.
+                    </p>
+                </div>
+
+                <!-- Building and Troubleshooting workflows -->
+                <br><h2 id="sec2">Building and Troubleshooting Workflows</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Understanding how Web Applications are constructed from the ground up is essential when troubleshooting ArcGIS-based environments. This foundational knowledge enables a more effective approach and optimal use of available resources. Consequently, the figure below highlights what I refer to as key checkpoints at each stage from services, through web maps, to web applications.
+                    <br><br>
+                    From left to right, the diagram illustrates the troubleshooting workflow: starting with the web application, then moving to the associated web map(s), and finally examining the layers or services that compose those web maps.
+                    <br><br>
+                    Conversely, from right to left, it illustrates the building workflow, showing how Web Applications are developed beginning at the services level, progressing to the web map, and culminating in the final application.
+                    <br><br>
+                    Remember that certain factors such as permissions, sharing settings, user types, and roles apply across all levels. Therefore, it is important to consider these elements throughout your troubleshooting process.
+                </p><br>
+
+                <!-- IMAGE HERE -->
+                <img src="../../assets/webappflow.webp" alt="ArcGIS Web Application Troubleshooting and Building Flow" style="width:70%;max-height:1000px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color); position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+
+
+                
+                <br><br><h2 id="sec3">Guide to Common Errors: Causes, Workarounds, and Relevant Knowledge Articles</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Below is a list of frequent errors encountered when working with ArcGIS Experience Builder, along with Knowledge Base articles highlighting likely causes, and recommended solutions. This will be slightly different compared to the other guides as we will highlight main causes and plausible solutions for each error. However, it’s crucial to mention the need of exploring the knowledge article to get a clear understanding of the workflow.
+                </p><br>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        As side note, WebApp Builder is soon to be deprecated reason why I did not cover it in this guide . Read more here.
+                    </p>
+                </div>
+                
+                <h3>Error 1: Creating Map Failed</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    <strong>Possible Causes</strong>
+                </p>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Inappropriate sharing level of the map from Portal for ArcGIS</li>
+                    <li>Broken or corrupted ArcGIS Experience Builder</li>
+                    <li>Web map is corrupted, broken, or deleted and no longer exists from the source.</li>
+                </ul><br>
+
+
+                <p style="text-align: justify;">
+                    <strong>Possible Solutions</strong>
+                </p>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Change the sharing level of the web map (Organization/Public)</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Steps: ArcGIS Portal → Content → Select Web Map → Edit Sharing → Set to Organization or Public
+                        </li>
+                    </ul>
+                    <li>Replace the Web map in ArcGIS Experience Builder</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Steps: Experience Builder → Open App → Select Map widget → Content → Replace Web Map → Save → Preview / Publish
+                        </li>
+                    </ul>
+                    <li>Replace the Map widget in ArcGIS Experience Builder</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Steps: Experience Builder → Delete existing Map widget → Insert new Map widget → Configure with desired Web Map → Save → Preview / Publish
+                        </li>
+                    </ul>
+                    <li>Replace the Map widget in ArcGIS Experience Builder</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Steps: Experience Builder → Delete existing Map widget → Insert new Map widget → Configure with desired Web Map → Save → Preview / Publish
+                        </li>
+                    </ul>
+                    <li>Ensure all data sources are properly bound and loaded for custom widget</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Steps: ArcGIS Portal → Content→ Item details page →Settings Feature layer (hosted) or Feature layer (hosted, view) →Enable editing → Check keep track of changes to the data (add, update, delete features) → Select the desired editing capabilities → Save
+                        </li>
+                    </ul>
+                    <li>Verify data source connections in widget settings</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Steps: Confirm all layers load correctly → Test in Preview mode
+                        </li>
+                    </ul>
+                </ul>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        Relevant Knowledge Article → <a href="https://support.esri.com/en-us/knowledge-base/problem-the-web-map-is-not-available-in-the-map-widget--000031842" target="_blank" rel="noreferrer">Creating Map Failed</a>
+                    </p>
+                </div>
+
+
+                <h3>Error 2: Unable to toggle the visibility of the map layers in the Map Layers widget</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    <strong>Possible Causes</strong>
+                </p>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>The “Interact with a Map widget” option is not selected</li>
+                    <li>The “Toggle layer visibility” options is not enabled</li>
+                </ul><br>
+
+
+                <p style="text-align: justify;">
+                    <strong>Effective Solutions</strong>
+                </p>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Select and enable the necessary options in the Map Layers Widgets (Interact with a Map widget, toggle layer visibility)</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Steps: Insert widget → Map Layers → Content → Select Interact with a Map widget (source) → Options, Toggle layer visibility → Save / Preview / Publish
+                        </li>
+                    </ul>
+                    <li>User the Map Widget as the source of the Map layers widget</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Steps: Insert widget → Map → Select or configure your map (Source) then Insert widget → Map Layers → Open Map Layers widget settings → Set Source to Interact with a Map widget → Choose the Map widget you added → Customize layers and enable desired options (optional) → Save → Preview / Publish
+                        </li>
+                    </ul>
+                    <li>Save and publish changes after enabling options.</li>
+                </ul>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        Relevant Knowledge Article → <a href="https://support.esri.com/en-us/knowledge-base/problem-unable-to-toggle-the-visibility-of-the-map-laye-000028614" target="_blank" rel="noreferrer"></a>Toggle the visibility of the map layers</a>
+                    </p>
+                </div>
+                
+
+                <h3>Error 3: No editable layers found</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    <strong>Possible Root Causes</strong>
+                </p>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>The layers specified in the widget are not editable</li>
+                    <li>The user does not have the appropriate role for editing a layer (viewer role)</li>
+                </ul><br>
+
+
+                <p style="text-align: justify;">
+                    <strong>Recommended Fixes</strong>
+                </p>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Allow edits on all the feature layers.</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Steps: ArcGIS Portal → Content→ Item details page →Settings Feature layer (hosted) or Feature layer (hosted, view) →Enable editing → Check keep track of changes to the data (add, update, delete features) → Select the desired editing capabilities → Save
+                        </li>
+                    </ul>
+                    <li>With an admin account, change the user’s role to one with editing privileges (e.g., Viewer to Editor)</li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Steps: ArcGIS Portal → Organization → Members tab →Search for Member → Click Role and select appropriate role.</li>
+                    </ul>
+                    <li>Test the Editor widget after making changes.</li>
+                
+                
+                </ul>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        Relevant Knowledge Article → <a href="https://support.esri.com/en-us/knowledge-base/problem-the-editor-widget-is-empty-in-arcgis-experience-000031809" target="_blank" rel="noreferrer">No editable layers found</a>
+                    </p>
+                </div>
+
+
+                <h3>Other Relevant Causes & Tips for Troubleshooting</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Widget-specific challenges can be tough as they call for a range of techniques and persistence.</li>
+                    <li>Ensure all web maps and feature services are shared with the intended audience and not restricted by organization or group settings.</li>
+                    <li>Check for version mismatches between custom widgets and the Experience Builder framework.</li>
+                    <li>For custom widgets, verify that the manifest URL is correct and the server is listed in allowed proxy hosts.</li>
+                    <li>Update browsers and clear cache to resolve client-side issues.</li>
+                </ul><br>
+
+
+                <h2 id="sec4">Best Practices for Reliable ArcGIS WebApps</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Best practices are crucial for maintaining the stability and reliability of ArcGIS web applications. These guidelines help to prevent common issues, enhance performance, and ensure a seamless user experience. Below are some key best practices to consider when working with ArcGIS web applications:
+                </p><br>
+                
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Regularly review sharing settings for all data sources and apps.</li>
+                    <li>Test apps in multiple browsers and devices to ensure compatibility. Incognito mode is also something worth checking as we there are browser specific issues out there.</li>
+                    <li>Document configuration changes and maintain version control.</li>
+                    <li>Monitor Esri’s release notes for updates, bug fixes, and breaking changes.</li>
+                    <li>Use roles and privileges appropriately to control editing and data access.</li>
+                    <li>Leverage Esri’s Knowledge Base and community forums for troubleshooting and peer support.</li>
+                    <li>Always save snapshot and back up configurations before major updates or migrations.</li>
+                </ul><br>
+
+
+                <h2 id="conclusion">Conclusion</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    ArcGIS Experience Builder and Web AppBuilder are robust platforms for building interactive and responsive web mapping applications. By following structured troubleshooting workflows, understanding common errors, and applying best practices, you can minimize downtime as well as performance issue, subsequently deliver reliable, user-friendly web apps.
+                </p><br>
+                
+
+                <h2 id="references">References & Further Reading</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li> <a href="https://www.esri.com/en-us/arcgis/products/arcgis-experience-builder/overview" target="_blank" rel="noreferrer">ArcGIS Experience Builder | Esri Products</a></li>
+                    <li> <a href="https://www.esri.com/en-us/arcgis/products/arcgis-webapp-builder/overview" target="_blank" rel="noreferrer">ArcGIS WebApp Builder | Esri Products</a></li>
+                    <li> <a href="https://www.esri.com/en-us/arcgis/products/esri-product-with-relevant-lifecycle" target="_blank" rel="noreferrer">Esri Product With Relevant LifeCycle</a></li>
+                    <li> <a href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/manage-members.htm" target="_blank" rel="noreferrer">Manage Members | ArcGIS Enterprise</a></li>
+                    <li> <a href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/manage-feature-layer-editing.htm" target="_blank" rel="noreferrer">Manage Feature layer editing | ArcGIS Portal</a></li>
+                    <li> <a href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/configure-map-layers-widget.htm" target="_blank" rel="noreferrer">Configure Map Layers widget | ArcGIS Enterprise</a></li>
+                    <li> <a href="https://support.esri.com/en-us/knowledge-base/unable-to-configure-custom-widget" target="_blank" rel="noreferrer">Unable to configure custom widget</a></li>
+                    <li> <a href="https://support.esri.com/en-us/knowledge-base/category/106000" target="_blank" rel="noreferrer">Esri Knowledge Base</a></li>
+                </ul>
+
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        "GIS enables us to analyze geographic data and make informed decisions." — <a href="https://www.bookey.app/quote-author/jack-dangermond" target="_blank" rel="noreferrer">Jack Dangermond</a>
+                    </p>
+                </div>
+
+            </div> 
+        </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Justin Kombe Tonguino. All rights reserved.</p>
+    </footer>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArcGIS Printing Services Made Simple: Frequent Issues, Fixes, and Proven Tips - JKT</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/mediaqueries.css">
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="../../index.html" class="logo-wrapper">
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="../../blog/blog.html">Blog</a></li>
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../search.html">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="../../assets/theme_light.png"
+              src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="../../index.html" class="logo-wrapper">
+        <img src="../../assets/home_light.png" src-light="../../assets/home_light.png" src-dark="../../assets/home_dark.png"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="../../blog/blog.html">Blog</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../search.html">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="../../assets/theme_light.png"
+            src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
+    <main style="margin-top: 56px; padding: 2rem;">
+        <div class="post-layout about-wide">
+        <article class="post-content">
+            <header>
+                <h1>ArcGIS Printing Services Made Simple: Frequent Issues, Fixes, and Proven Tips</h1>
+            </header>
+            <!-- Cover image directly under title for all blogs -->
+            <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
+                <picture>
+                    <source srcset="../../assets/arcgisprinting.webp" type="image/webp" />
+                    <img src="../../assets/arcgisprinting.webp" alt="ArcGIS Printing Services" style="width:70%;max-height:500px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+                </picture>
+                <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">ArcGIS Printing Services</figcaption>
+            </figure>
+            <div class="post-meta-row">
+              <span class="meta">Published on June 07, 2025</span>
+              <span class="meta">|</span>
+              <span class="meta">6 min read</span>
+              <span class="meta hash">#</span>
+              <div class="post-tags-inline">
+                🏷 <span class="tag">ArcGIS</span>
+                    <span class="tag">Common Issues</span>
+                    <span class="tag">Solutions</span>
+                    <span class="tag">Best Practices</span>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    Disclaimer: While this might not align with typical OpSec content, this article is part of the GeoTech Logbook Series. In this series, I share GIS-related insights meant to capture technical notes, observations and insights for future reference and community sharing.
+                </p>
+            </div>
+
+            <!-- Inline Table of Contents -->
+            <section id="inline-toc" class="card" style="padding:1rem; margin: 0 0 1rem 0;">
+              <h3 style="margin:0 0 .5rem 0; color:var(--text-secondary);">Table of Contents</h3>
+              <ul class="toc-list blog-list">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#overview">Quick Overview on ArcGIS Printing Services</a></li>
+                <li><a href="#sec1">The Common Printing Service Errors and Root Causes</a></li>
+                <li><a href="#sec2">Step-by-Step Troubleshooting & Solutions</a></li>
+                <li><a href="#sec3">Some Printing Service Errors and knowledge based articles for reference</a></li>
+                <li><a href="#sec4">Probing Questions for Efficient Diagnosis</a></li>
+                <li><a href="#sec5">Best Practices for Reliable ArcGIS Printing Services</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#references">References & Further Reading</a></li>
+              </ul>
+
+            
+            </section>
+
+            
+            <div class="content">
+                <br><h2 id="introduction">Introduction</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Printing maps is a fundamental workflow in many GIS organizations, however configuring and maintaining ArcGIS Enterprise printing services can present a variety of complex challenges. From failing print jobs to inconsistent output quality, these issues can interrupt operations and frustrate end users. One category of recurring problems lies in ArcGIS Feature Services, those critical components that drive data visualization, sharing, and interaction in ArcGIS applications.
+                    <br><br>
+                    This guide outlines few of the most common issues encountered by end users, their causes, and the proven solutions that work, backed by case studies, knowledge base articles, practical steps, and field tested troubleshooting workflow. Consequently, whether you’re an analyst, admin, GIS developer, or even a simple end-user, you’ll find practical, proven steps to restore reliability and performance.
+                </p>
+
+                <!-- Quick Overview on ArcGIS Printing Services -->
+                <br><h2 id="overview">Quick Overview on ArcGIS Printing Services</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    For a quick overview, ArcGIS PrintingTools also labelled as Printing Services allow users to generate printable map outputs from web applications and the Portal Map Viewer. These services rely on a chain of trusted network communications, SSL certificates, and correct service configurations to function seamlessly.
+                </p>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        Check out <a href="https://enterprise.arcgis.com/en/server/latest/publish-services/windows/printing-in-web-applications.htm" target="_blank" rel="noreferrer">PrintingTools Service</a> to learn more on Printing Service.
+                    </p>
+                </div>
+
+                <h2 id="sec1">The Common Printing Service Errors and Root Causes</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    The below list outlines common and recurring Printing Service errors along with their typical root causes. Keep in mind that you may come across other related issues not mentioned here. Moreover, in ArcGIS Enterprise environments, it’s also common for one problem to trigger a series of others, forming a sequence of interconnected issues.
+                </p><br>
+
+                <h3>Common Errors</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Error 1: Failed to Create Layer from Service</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>
+                            Usually occurs when the PrintingTools geoprocessing service is stopped, SSL/certificate trust is misconfigured, or firewall settings block communication</li>
+                    </ul>
+                    <li><strong>Error 2: Invalid or Inaccessible Print Service</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Triggered by asynchronous mode settings, SSL trust issues, corrupted PrintingTools, or incorrect URLs during Portal configuration.</li>
+                    </ul>
+                    <li><strong>Error 3: Unable to Print Maps Using Default PrintingTools Service</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Linked to misconfigured PrintingTools, improper SSL certificates , proxy server misconfigurations, or network segmentation (DMZ/MZ)</li>
+                    </ul>
+                    <li><strong>Error 4: Connection with the Server Could Not Be Established (WinINet Error 12029)</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Typically caused by incorrect Windows Internet Options, disabled RSA encryption, or firewall/proxy issue.</li>
+                    </ul>
+                </ul><br> 
+
+                <h3>Common Root Causes</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>SSL and Certificate Trust Issues</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Untrusted or expired SSL certificates, missing CA trust, or misconfigured SSL chains prevent secure communication between ArcGIS components.</li>
+                    </ul>
+                    <li><strong>Sharing Level and Permissions</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Incorrect sharing settings (Owner / Organization level) or lack of token-based authentication block access to required services.</li>
+                    </ul>
+                    <li><strong>Firewall, Proxy, and Network Architecture</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Closed ports, strict firewall rules, or network segmentation (DMZ/MZ) can isolate servers and break printing workflows.</li>
+                    </ul>
+                    <li><strong>Service Configuration and Corruption</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>This could be due to stopped or corrupted PrintingTools, missing Portal properties, or incorrect service URLs cause failures.</li>
+                    </ul>
+                    
+                </ul>
+        
+
+                <br><h2 id="sec2">Step by step troubleshooting & solutions</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic; text-align: justify;">
+                        📝 Important Note: Every ArcGIS Enterprise deployment is unique. The root causes and effectiveness of troubleshooting steps described here may vary. It’s recommended to approach each issue methodically, without assumptions, and adapt solutions to the environment in question. The solutions provided here are intended as flexible guideline, not fixed rules.
+                    </p>
+                </div>
+            
+                <p style="text-align: justify;">
+                    The steps outlined below are not sequential, hence choose the approach that best fits the specific issue and environment you’re working with. What works best will depend on the setup and the problem you’re facing.
+                </p><br>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Adjusting Sharing Levels</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>To mitigate this, user may set feature services to Organization/Public as needed, and use long-lived tokens for authentication when required.</li>
+                    </ul>
+                    
+                    <li><strong>Correcting Print Service URLs</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>As simple as it may sound, using the correct print service URL could mitigate the issue. Additionally, avoid asynchronous mode unless specifically required.</li>
+                    </ul>
+
+                    <li><strong>Deleting and Republishing PrintingTools</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>If corruption is suspected, deleting and recreating the PrintingTools service from the ArcGIS Server Utilities folder could be the way forward.</li>
+                    </ul>
+
+                    <li><strong>Network and Firewall Adjustments</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>It’s good practice to temporarily disable firewalls/antivirus to test connectivity. Moreover, permanently update inbound/outbound rules for required ports.</li>
+                    </ul>
+
+                    <li><strong>Handling Proxy and DMZ Deployments</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>It’s advised to ensure all ArcGIS Enterprise components can communicate internally without restrictions. It’s advisable to work with IT Personal or Security Team to cross-check network settings.</li>
+                    </ul>
+                </ul>
+
+
+                <!-- Building and Troubleshooting workflows -->
+                <br><h2 id="sec3">Some Printing Service Errors and knowledge based articles for reference</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Below is a list of common ArcGIS Printing Services issues along side relevant Knowledge Base articles suggesting causes and resolutions. I encourage you to review each article for detailed information, as I won’t go into each error individually.
+                </p><br>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Error 1: Error executing tool. Failed to create layer from service.</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Knowledge Article: <a href="https://support.esri.com/en-us/knowledge-base/problem-unable-to-print-web-maps-from-portal-for-arcgis-000028086" target="_blank" rel="noreferrer">000028086-Unable-To-Print-Web-Maps-From-Portal-For-ArcGIS</a></li>
+                    </ul>
+
+                    <li><strong>Error 2: The print service URL you have entered is invalid or inaccessible.</strong></li>
+                    Relevant knowledge articles:
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li><a href="https://support.esri.com/en-us/knowledge-base/error-the-print-service-url-you-have-entered-is-invalid-000031465" target="_blank" rel="noreferrer">000031465-Invalid-Print-Service-URL</a></li>
+                        <li><a href="https://support.esri.com/en-us/knowledge-base/how-to-delete-and-republish-the-arcgis-server-printingt-000028531" target="_blank" rel="noreferrer">000028531-Delete-And-Republish-ArcGIS-Server-PrintingTool-Service</a></li>
+                    </ul>
+
+                    <li><strong>Error 3: Unable to print using default Utilities > PrintingTools Service</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Knowledge Article: <a href="https://support.esri.com/en-us/knowledge-base/unable-to-print-the-maps-using-default-utilities-printi-000032732" target="_blank" rel="noreferrer">000032732-Unable-to-print-the-maps-using-default-utilities</a></li>
+                    </ul>
+                </ul>
+
+                <br><h2 id="sec4">Probing Questions for Efficient Diagnosis</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Time and effort are often wasted when we jump into solutions without first understanding the context. Effective troubleshooting starts with asking the right questions. These targeted prompts help narrow the scope, eliminate guesswork, and lead to quicker, more precise resolutions. Here are some key questions I recommend to identify feature service issues. (Bear in mind that this could be a simple self-interogation to help you identify root cause of the issue you’re facing.)
+                </p><br>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Is the PrintingTools service running and accessible from a browser?</li>
+                    <li>Are SSL certificates valid and trusted across all components?</li>
+                    <li>Is the environment behind a firewall, proxy, or DMZ, and are necessary ports open?</li>
+                    <li>Are you using the correct print service URL and mode (synchronous vs. asynchronous)?</li>
+                    <li>Has the ArcGIS Server account sufficient permissions for all referenced data?</li>
+                    <li>Have there been recent changes (upgrades, certificate renewals, configuration updates)?</li>
+                </ul>
+
+
+                <!-- Best Practices for Reliable ArcGIS Printing Services -->
+                <br><h2 id="sec5">Best Practices for Reliable ArcGIS Printing Services</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Best practices are crucial for maintaining the stability and reliability of ArcGIS printing services. These guidelines help to prevent common issues, enhance performance, and ensure a seamless user experience. Below are some key best practices to consider when working with ArcGIS printing services:
+                </p><br>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Regularly review sharing settings for all data sources and apps.</li>
+                    <li>Regularly review and renew SSL certificates.</li>
+                    <li>Maintain up-to-date ArcGIS Server and Portal versions.</li>
+                    <li>Use monitoring tools to track service health and performance.</li>
+                    <li>Periodically check the health of ArcGIS PrintingTools and other relevant services.</li>
+                </ul>
+
+                
+                <!-- Conclusion -->
+                <br><h2 id="conclusion">Conclusion</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    While troubleshooting ArcGIS Printing Services may seem overwhelming, focusing on key areas like service health/status, SSL configuration, sharing settings, and network architecture will address the majority of issues. I trust this guide will serve as a helpful reference for anyone facing similar challenges when working with ArcGIS products.
+                    <br><br>
+                    To sum it up, bear in mind that there’s much more that could be explored regarding Printing Services. This guide is intended to provide a simplified troubleshooting approach and an overview of common issues, not an exhaustive deep dive. For more complex scenarios or advanced configurations, consulting official ArcGIS documentation or seeking support from Esri may be necessary.
+                </p>
+
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic; text-align: justify;">
+                        ⚠️ Copyright & Proprietary Rights Notice
+                        <br><br>
+                        Per <a href="https://www.esri.com/en-us/legal/copyright-proprietary-rights" target="_blank" rel="noreferrer">Esri’s copyright policy</a>, the information included here is reproduced and shared for educational and non-commercial purposes only, including teaching, research, and scholarship. Any reuse of this content for commercial or distribution purposes beyond personal use must comply with Esri’s licensing terms and include the appropriate copyright notice.
+                    </p>
+                </div>
+                
+
+                <h2 id="references">References & Further Reading</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><a href="https://enterprise.arcgis.com/en/portal/11.5/administer/windows/about-utility-services.htm" target="_blank" rel="noreferrer">About Utility Services — Portal for ArcGIS</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/11.5/publish-services/windows/printing-in-web-applications.htm" target="_blank" rel="noreferrer">Print Services — ArcGIS Server</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/portal/11.5/administer/windows/configure-the-portal-to-print-maps.htm" target="_blank" rel="noreferrer">Configure the Organization to print maps</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/11.5/publish-services/windows/services-in-arcgis-enterprise.htm" target="_blank" rel="noreferrer">Service in ArcGIS Enterprise — ArcGIS Server</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/latest/administer/windows/common-problems-and-solutions.htm" target="_blank" rel="noreferrer">Common Problems and Solutions — ArcGIS Server</a></li>
+                </ul>
+
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic; text-align: justify;">
+                        "Maps are not just representations of reality; they shape our perception and understanding of the world." — <a href="https://www.bookey.app/quote-author/jack-dangermond" target="_blank" rel="noreferrer">Jack Dangermond</a>
+                    </p>
+                </div>
+
+            </div> 
+        </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Justin Kombe Tonguino. All rights reserved.</p>
+    </footer>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TryHackMe: Complete Beginner's Path Walkthrough - Justin Kombe Tonguino</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/mediaqueries.css">
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="../../index.html" class="logo-wrapper">
+          <!-- <img src="../../assets/home_light.webp" src-light="../../assets/home_light.webp" src-dark="../../assets/home_light.webp" alt="Home Logo" class="icon logo-icon" /> -->
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="../../blog/blog.html">Blog</a></li>
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../search.html">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="../../assets/theme_light.png"
+              src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="../../index.html" class="logo-wrapper">
+        <img src="../../assets/home_light.png" src-light="../../assets/home_light.png" src-dark="../../assets/home_dark.png"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="../../blog/blog.html">Blog</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../search.html">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="../../assets/theme_light.png"
+            src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
+    <main style="margin-top: 17vh; padding: 2rem;">
+        <article style="max-width: 800px; margin: 0 auto;">
+            <header>
+                <h1>TryHackMe: Complete Beginner's Path Walkthrough</h1>
+                <p class="meta">Published on May 20, 2024 | 15 min read</p>
+            </header>
+            
+            <div class="content">
+                <h2>Introduction</h2>
+                <p>TryHackMe is an excellent platform for learning cybersecurity through hands-on labs and challenges. The Beginner's Path is designed to introduce newcomers to fundamental cybersecurity concepts. In this walkthrough, I'll guide you through each room and provide tips for success.</p>
+                
+                <h2>Getting Started</h2>
+                <h3>Setting Up Your Environment</h3>
+                <p>Before diving into the rooms, ensure you have:</p>
+                <ul>
+                    <li>A TryHackMe account (free tier available)</li>
+                    <li>VPN connection to TryHackMe network</li>
+                    <li>Basic understanding of Linux commands</li>
+                    <li>Patience and curiosity!</li>
+                </ul>
+                
+                <h2>Room-by-Room Walkthrough</h2>
+                
+                <h3>1. Introduction to Cybersecurity</h3>
+                <p><strong>Objective:</strong> Understand basic cybersecurity concepts</p>
+                <p><strong>Key Topics:</strong></p>
+                <ul>
+                    <li>What is cybersecurity?</li>
+                    <li>Types of threats</li>
+                    <li>Security principles (CIA triad)</li>
+                </ul>
+                <p><strong>Tips:</strong> Take notes on key definitions and concepts. This foundation will be crucial for later rooms.</p>
+                
+                <h3>2. Linux Fundamentals</h3>
+                <p><strong>Objective:</strong> Learn essential Linux commands and concepts</p>
+                <p><strong>Key Commands:</strong></p>
+                <pre><code>ls, cd, pwd, cat, grep, find, chmod, sudo</code></pre>
+                <p><strong>Tips:</strong> Practice these commands in your own Linux environment. The more you use them, the more natural they become.</p>
+                
+                <h3>3. Network Fundamentals</h3>
+                <p><strong>Objective:</strong> Understand networking basics</p>
+                <p><strong>Key Topics:</strong></p>
+                <ul>
+                    <li>OSI model</li>
+                    <li>TCP/IP protocols</li>
+                    <li>Network devices</li>
+                    <li>IP addressing</li>
+                </ul>
+                <p><strong>Tips:</strong> Use network simulation tools like Packet Tracer to visualize concepts.</p>
+                
+                <h3>4. Web Application Security</h3>
+                <p><strong>Objective:</strong> Learn about web vulnerabilities</p>
+                <p><strong>Key Topics:</strong></p>
+                <ul>
+                    <li>OWASP Top 10</li>
+                    <li>SQL Injection</li>
+                    <li>XSS (Cross-Site Scripting)</li>
+                    <li>Authentication bypass</li>
+                </ul>
+                <p><strong>Tips:</strong> Set up a local web application testing environment using DVWA or WebGoat.</p>
+                
+                <h3>5. Cryptography</h3>
+                <p><strong>Objective:</strong> Understand encryption and hashing</p>
+                <p><strong>Key Topics:</strong></p>
+                <ul>
+                    <li>Symmetric vs Asymmetric encryption</li>
+                    <li>Hashing algorithms</li>
+                    <li>Digital signatures</li>
+                    <li>PKI (Public Key Infrastructure)</li>
+                </ul>
+                <p><strong>Tips:</strong> Practice with online tools like CyberChef for hands-on experience.</p>
+                
+                <h2>Common Challenges and Solutions</h2>
+                
+                <h3>Challenge 1: Understanding Technical Concepts</h3>
+                <p><strong>Solution:</strong> Don't rush through rooms. Take time to research concepts you don't understand. Use external resources like YouTube tutorials and documentation.</p>
+                
+                <h3>Challenge 2: Practical Application</h3>
+                <p><strong>Solution:</strong> Practice commands and techniques in your own lab environment. Repetition is key to mastery.</p>
+                
+                <h3>Challenge 3: Staying Motivated</h3>
+                <p><strong>Solution:</strong> Set small, achievable goals. Celebrate completing each room and track your progress.</p>
+                
+                <h2>Advanced Tips</h2>
+                <ul>
+                    <li>Join the TryHackMe Discord community for help and discussions</li>
+                    <li>Take detailed notes for future reference</li>
+                    <li>Practice regularly to maintain skills</li>
+                    <li>Don't be afraid to ask questions</li>
+                    <li>Explore additional resources beyond TryHackMe</li>
+                </ul>
+                
+                <h2>Next Steps</h2>
+                <p>After completing the Beginner's Path, consider:</p>
+                <ul>
+                    <li>TryHackMe's Pre Security path</li>
+                    <li>Complete Security path</li>
+                    <li>Specialized paths (Web Fundamentals, Network Security, etc.)</li>
+                    <li>CTF challenges and competitions</li>
+                </ul>
+                
+                <h2>Conclusion</h2>
+                <p>The TryHackMe Beginner's Path is an excellent starting point for anyone interested in cybersecurity. Take your time, practice regularly, and don't hesitate to seek help when needed. Remember, every expert was once a beginner!</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Justin Kombe Tonguino. All rights reserved.</p>
+    </footer>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>

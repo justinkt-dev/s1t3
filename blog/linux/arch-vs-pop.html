@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arch Vs Pop!_OS - JKT</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/mediaqueries.css">
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="../../index.html" class="logo-wrapper">
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="../../blog/blog.html">Blog</a></li>
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../search.html">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="../../assets/theme_light.png"
+              src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="../../index.html" class="logo-wrapper">
+        <img src="../../assets/home_light.png" src-light="../../assets/home_light.png" src-dark="../../assets/home_dark.png"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="../../blog/blog.html">Blog</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../search.html">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="../../assets/theme_light.png"
+            src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
+    <main style="margin-top: 56px; padding: 2rem;">
+        <div class="post-layout about-wide">
+        <article class="post-content">
+            <header>
+                <h1>Arch Linux Vs Pop!_OS: The Ultimate Guide for Developers and Security Experts</h1>
+            </header>
+            <!-- Cover image directly under title for all blogs -->
+            <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
+                <picture>
+                    <source srcset="../../assets/archvspop.webp" type="image/webp" />
+                    <img src="../../assets/archvspop.webp" alt="Arch Linux Vs Pop!_OS" style="width:100%;max-height:500px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary)" />
+                </picture>
+                <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Arch Linux Vs Pop!_OS</figcaption>
+            </figure>
+            <div class="post-meta-row">
+              <span class="meta">Published on January 23, 2025</span>
+              <span class="meta">|</span>
+              <span class="meta">5 min read</span>
+              <span class="meta hash">#</span>
+              <div class="post-tags-inline">
+                🏷 <span class="tag">Linux</span>
+                <span class="tag">Arch Linux</span>
+                <span class="tag">Pop!_OS</span>
+                <span class="tag">Linux Distribution</span>
+              </div>
+            </div>
+
+            <!-- Inline Table of Contents -->
+            <section id="inline-toc" class="card" style="padding:1rem; margin: 0 0 1rem 0;">
+              <h3 style="margin:0 0 .5rem 0; color:var(--text-secondary);">Table of Contents</h3>
+              <ul class="toc-list blog-list">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#overview">Overview of Pop!_OS and Arch Linux</a></li>
+                <li><a href="#popos">My Experience with Pop!_OS</a></li>
+                <li><a href="#arch">My Experience with Arch Linux</a></li>
+                <li><a href="#comparison">Head-to-Head Comparison</a></li>
+                <li><a href="#takeaways">My Personal Takeaways</a></li>
+              </ul>
+
+            
+            </section>
+            
+            <div class="content">
+                <br><h2 id="introduction">Introduction</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  As a Junior security researcher and system administrator, I’ve had the opportunity to use multiple Linux distributions including Kali Linux, Parrot OS, Ubuntu, Pop!_OS, etc… and my favorite Arch Linux. Note that each distro has its strengths and weaknesses catering to different user needs.
+                  <br><br>
+                  This might seem surprising for some people but I don’t use Kali Linux much despite its “ready to use philosophy” and if you keep reading this you might understand why. Despite the versatility, in this blog, I will break down my experience with Pop!_OS and Arch Linux, the pros, cons and use cases. 
+                  By the end of this blog, you should be able to identify the best fit for your workflows. Let’s do this!!
+                </p>
+
+                <!-- Overview of Pop!_OS and Arch Linux -->
+                <br><h2 id="overview">Overview of Pop!_OS and Arch Linux</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Pop!_OS: </strong>Developed by System76, Pop!_OS is based on Ubuntu. It’s tailored for developers, creators, and professionals, offering simplicity, excellent hardware compatibility, and out-of-the-box features.
+                      <a href="https://system76.com/pop/" target="_blank">More details</a>
+                    </li>
+                    <li><strong>Arch Linux: </strong>Known for its <strong>"DIY or do-it-yourself"</strong> philosophy, Arch Linux is a minimalist rolling-release distro that lets users configure every aspect of the system to their liking.
+                      <a href="https://wiki.archlinux.org/title/Main_page" target="_blank">More details</a>
+                    </li>
+                </ul><br>
+
+
+                <!-- My Experience with Arch Linux -->
+                <h2 id="arch">My Experience with Arch Linux</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <img src="../../assets/arch-logo.webp" alt="Arch Linux" style="width:50%;max-height:400px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
+                
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Pros of Arch Linux</strong></li>
+                    <ol class="blog-list">
+                      <li><strong>Ultimate customization:</strong> Arch allows you to tailor your system exactly as needed. From the kernel to the window manager, every choice is yours. Keep in mind that there are some desktop environments (such as GNOME or KDE) faster to setup if time is a constraint. However, the limitations in terms of customization remain slightly similar to Pop!_OS.</li>
+                      <li><strong>Rolling release:</strong> Access to the latest packages and updates means cutting-edge software for developers and security professionals. I would say, this is more of a double-edged sword and people have different feelings about this.</li>
+                      <li><strong>AUR (Arch User Repository):</strong> The AUR provides access to thousands of community-contributed packages, including niche tools like PenTesting utilities or custom scripts.</li>
+                      <li><strong>Performance:</strong> A lean base installation ensures no unnecessary bloat, making Arch fast and efficient.</li>
+                      <li><strong>Comprehensive documentation:</strong> The Arch Wiki is an unparalleled resource for troubleshooting and learning.</li>
+                    </ol>
+
+                    <li><strong>Cons of Arch Linux</strong></li>
+                    <ol class="blog-list">
+                      <li><strong>Steep learning curve:</strong> Installing and maintaining Arch can be challenging for beginners or those seeking a quick setup. (e.g., simple installation and setup can take up to 2–4 weeks or more to have a fully functional machine).</li>
+                      <li><strong>Stability concerns:</strong> Being on the bleeding edge means updates can occasionally break the system.</li>
+                      <li><strong>Time-Intensive setup:</strong> Configuring Arch for specific workflows (e.g., security tools or development environments) can be time-consuming. This might also bring issues such as software, drivers and dependencies compatibility.</li>
+                    </ol>
+
+                    <li><strong>Use Cases</strong></li>
+                    <ol class="blog-list">
+                      <li><strong>Developers:</strong> Perfect for those who need the latest programming tools and libraries.</li>
+                      <li><strong>Pentesters:</strong> Offers full control over the system, allowing for custom tool installations and configurations.</li>
+                      <li><strong>Advanced users:</strong> Arch is best suited for those who enjoy tinkering and have a solid understanding of Linux internals.</li>
+                    </ol>
+                </ul><br> 
+
+
+                <!-- My Experience with Pop!_OS -->
+                <h2 id="popos">My Experience with Pop!_OS</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <img src="../../assets/popos-logo.webp" alt="Pop!_OS" style="width:50%;max-height:400px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
+
+                <br><br>
+                <ul class="blog-list" style="text-align: justify;">
+                  <li><strong>Pros of Pop!_OS</strong></li>
+                  <ol class="blog-list">
+                    <li><strong>Ease of use:</strong> Pop!_OS offers a polished experience out of the box. The installation is straightforward, and tools like the Pop!_Shop simplify software management.</li>
+                    <li><strong>Focus on productivity:</strong> With features like auto-tiling windows and intuitive shortcuts, it helps streamline multitasking, especially for programming and security analysis.</li>
+                    <li><strong>Great hardware support:</strong> System76’s emphasis on hardware optimization, especially for laptops, ensures seamless driver support (e.g., Nvidia).</li>
+                    <li><strong>Pre-installed software:</strong> Comes with necessary tools like Python, Git, and a GNOME desktop environment, saving setup time for development tasks.</li>
+                    <li><strong>Frequent updates without breaking:</strong> Pop!_OS strikes a balance between stability and new features by offering well-tested updates. This is one of the major difference between Pop!_OS and Arch Linux.</li>
+                  </ol>
+
+                  <li><strong>Cons of Pop!_OS</strong></li>
+                  <ol class="blog-list">
+                    <li><strong>Limited customization:</strong> While GNOME offers a user-friendly experience, its limited flexibility may feel restrictive, especially for experienced Arch users or developers familiar to more customizable desktop environments.</li>
+                    <li><strong>Resource usage:</strong> Pop!_OS requires more system resources than lightweight distributions, which can be a drawback for older machines.</li>
+                    <li><strong>Not rolling-release:</strong> Despite frequent updates, being Ubuntu-based means it lacks the latest packages compared to rolling-release distros like Arch. Some software also requires Snapd, as it’s unavailable in APT or Pop!_Shop.</li>
+                  </ol>
+
+                  <li><strong>Use Cases</strong></li>
+                  <ol class="blog-list">
+                    <li><strong>Developers:</strong> Ideal for those who need a hassle-free environment to start coding immediately.</li>
+                    <li><strong>Security Analysts:</strong> Great for running tools like Wireshark, Burp Suite, or VMs without extensive setup.</li>
+                    <li><strong>Beginners:</strong> Pop!_OS offers an accessible entry point to Linux without overwhelming users. For short, it’s very beginner friendly.</li>
+                  </ol>
+                </ul>
+            </ul><br> 
+                
+
+                <!-- Head-to-Head Comparison -->
+                <h2 id="comparison">Head-to-Head Comparison</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  For your convenience, here’s a quick reference table for easy access, should you revisit this post and want to jump straight into the comparison.
+                </p>
+                
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Pop!_OS</th>
+                                <th>Arch Linux</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ease of installation</td>
+                                <td>Simple GUI installer</td>
+                                <td>Manual, CLI based</td>
+                            </tr>
+                            <tr>
+                                <td>Customizability</td>
+                                <td>Limited (GNOME-based)</td>
+                                <td>Highly customizable</td>
+                            </tr>
+                            <tr>
+                                <td>Software Management</td>
+                                <td>Pop!_OS + APT</td>
+                                <td>Pacman + AUR</td>
+                            </tr>
+                            <tr>
+                                <td>Hardware Compatibility</td>
+                                <td>Excellent, esp. Nvidia GPU's</td>
+                                <td>Depends on user configuration</td>
+                            </tr>
+                            <tr>
+                                <td>Learning Curve</td>
+                                <td>Low</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>Performance</td>
+                                <td>Slightly resource-heavy</td>
+                                <td>Lightweight</td>
+                            </tr>
+                            <tr>
+                                <td>Community Support</td>
+                                <td>Good</td>
+                                <td>Excellent (Arch Wiki, Forums)</td>
+                            </tr>
+                            <tr>
+                                <td>Ideal User</td>
+                                <td>Beginners, productivity-focused</td>
+                                <td>Advanced users, tinkerers</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- My Personal Takeaways -->
+                <br><h2 id="takeaways">My Personal Takeaways</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <img src="../../assets/key-takeaways.webp" alt="Takeaways" style="width:50%;max-height:400px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
+
+                <br><br>
+                <ol class="blog-list" style="text-align: justify;">
+                  <li><strong>For Quick and Hassle-Free Workflows:</strong> Pop!_OS is unbeatable for professionals who want to start working immediately without worrying about system setup or maintenance.</li>
+                  <li><strong>For Full Control and Cutting-Edge Software:</strong> Arch Linux is perfect for those willing to invest time to build a highly customized and efficient system.</li>
+                  <li><strong>For Security Professionals:</strong> Arch provides greater flexibility, especially when setting up tools for penetration testing, while Pop!_OS shines in running stable environments for analysis and reporting.</li>
+                  <li><strong>For Multi-Cloud and Red Teaming Workflows:</strong> Pop!_OS offers a more stable base for hybrid workloads, while Arch can be tailored for advanced cloud security tasks.</li>
+                  <li><strong>Hardware specs matters:</strong> Allow me to repeat that, hardware specs matter a lot more than you think. In fact, this factor plays a significant role in keeping your environment stable and save yourself hours or why not days of troubleshooting. The worst combination you can ever have is Nvidia Drivers + Intel CPU (anything Nvidia based for that matter). I personally have that combination and it’s a nightmare (eg. A simple troubleshooting can be super time consuming taking up to a week if not more). Hence, take note that it’s best to opt for AMD based GPU.</li>
+                </ol>
+                <br>
+
+                <p style="text-align: justify;">
+                  With this comparison, you should have the necessary knowledge to determine which distro aligns best with your workflow and professional needs. 
+                  With that being said, there are still wonderful distros out there worth downloading and configuring.
+                </p>
+
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                  <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    My advice: Download, configure, play around and choose what’s best for your needs as we all have our preferences.
+                  </p>
+                </div>
+
+                <p style="text-align: justify;">
+                  Lastly, the beauty of Linux lies in its freedom of choice, whether you prioritize control or convenience, the best distro is the one that empowers you to achieve your goals.
+                </p>
+
+            </div>
+        </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Justin Kombe Tonguino. All rights reserved.</p>
+    </footer>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>

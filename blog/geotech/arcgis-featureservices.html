@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArcGIS Feature Services: Common Issues, Tips and Effective Solutions You Need to Know - JKT</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/mediaqueries.css">
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="../../index.html" class="logo-wrapper">
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="../../blog/blog.html">Blog</a></li>
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../search.html">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="../../assets/theme_light.png"
+              src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="../../index.html" class="logo-wrapper">
+        <img src="../../assets/home_light.png" src-light="../../assets/home_light.png" src-dark="../../assets/home_dark.png"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="../../blog/blog.html">Blog</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../search.html">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="../../assets/theme_light.png"
+            src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
+    <main style="margin-top: 56px; padding: 2rem;">
+        <div class="post-layout about-wide">
+        <article class="post-content">
+            <header>
+                <h1>ArcGIS Feature Services: Common Issues, Tips and Effective Solutions You Need to Know </h1>
+            </header>
+            <!-- Cover image directly under title for all blogs -->
+            <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
+                <picture>
+                    <source srcset="../../assets/arcgisservices.webp" type="image/webp" />
+                    <img src="../../assets/arcgisservices.webp" alt="ArcGIS Feature Services" style="width:70%;max-height:700px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+                </picture>
+                <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">ArcGIS Feature Services</figcaption>
+            </figure>
+            <div class="post-meta-row">
+              <span class="meta">Published on June 06, 2025</span>
+              <span class="meta">|</span>
+              <span class="meta">8 min read</span>
+              <span class="meta hash">#</span>
+              <div class="post-tags-inline">
+                🏷 <span class="tag">ArcGIS</span>
+                    <span class="tag">Common Issues</span>
+                    <span class="tag">Solutions</span>
+                    <span class="tag">Best Practices</span>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                <p style="margin: 0; color: var(--text-primary); font-style: italic; text-align: justify;">
+                    Heads-up: This post may differ from the usual OpSec content as it takes a different route. It’s part of my GeoTech Logbook Series, centered around GIS insights where I explore and document practical GIS challenges and lessons as part of my learning journey.
+                </p>
+            </div>
+
+            <!-- Inline Table of Contents -->
+            <section id="inline-toc" class="card" style="padding:1rem; margin: 0 0 1rem 0;">
+              <h3 style="margin:0 0 .5rem 0; color:var(--text-secondary);">Table of Contents</h3>
+              <ul class="toc-list blog-list">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#understanding">Understanding ArcGIS Feature Services</a></li>
+                <li><a href="#service-types">Service-Type Specific Guidance: Hosted vs. Referenced vs. Copied Services</a></li>
+                <ul class="toc-list blog-list">
+                    <li><a href="#copied">Copied Data Stores</a></li>
+                    <li><a href="#registered">Registered Data Stores</a></li>
+                    <li><a href="#hosted">Hosted Data Stores</a></li>
+                </ul>
+                <li><a href="#error-lookup">Error Lookup: Common Feature Service Issues & Relevant Knowledge Articles</a></li>
+                <li><a href="#best-practices">Best Practices for Reliable ArcGIS Feature Services</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#references">References & Further Reading</a></li>
+              </ul>
+
+            
+            </section>
+
+            
+            <div class="content">
+                <br><h2 id="introduction">Introduction</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    ArcGIS Feature Services play a critical role in enabling dynamic, editable web maps and applications by serving geographic data over the web. However, managing these services in ArcGIS Enterprise or ArcGIS Online can present challenges especially when errors prevent publishing, accessing, or interacting with features.
+                    <br><br>
+                    This guide aims to break down common issues, provide actionable troubleshooting steps, and highlight some common practices to ensure smooth operation of Feature Services in any GIS environment. I hope this blog provide insights and clarity for your daily operations whether you’re a GIS Administrator, Analyst, or just a regular user.
+                </p>
+
+                <!-- Quick Overview on ArcGIS Printing Services -->
+                <br><h2 id="understanding">Understanding ArcGIS Feature Services</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    ArcGIS Feature Services allow you to publish, query, and edit spatial datasets (features) via web services. In fact, these services are commonly consumed in ArcGIS Online or Portal (for Enterprise environment), ArcGIS Pro, and custom web apps using the ArcGIS API for JavaScript or REST API.
+                    <br><br>
+                    Additionally, Feature Services can be either hosted (stored in ArcGIS Online or Portal) or referenced (pointing to existing enterprise geodatabases) or copied. (More on service types in the upcoming section)
+                    <br><br>
+                    Some common scenarios involving Feature Services include:
+                </p><br>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Publishing editable layers from ArcGIS Pro</li>
+                    <li>Syncing offline field data from mobile apps (e.g., Collector, Field Maps)</li>
+                    <li>Performing spatial queries from a web dashboard</li>
+                    <li>Embedding interactive layers in a web map or application</li>
+                    <li>Enabling real-time data editing and collaboration among multiple users</li>
+                    <li>Providing data for custom widgets in Experience Builder or WebApp Builder.</li>
+                    <li>Supporting print and export functions in web mapping applications.</li>
+                </ul>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        Find more details on feature services <a href="https://enterprise.arcgis.com/en/server/latest/publish-services/windows/what-is-a-feature-service-.htm" target="_blank" rel="noreferrer">HERE</a>
+                    </p>
+                </div>
+
+                <!-- Service Types -->
+                <br><h2 id="service-types">Service-Type Specific Guidance: Hosted vs. Referenced vs. Copied Services</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    It’s necessary to note that when it comes to dealing with services, ArcGIS Enterprise supports three main types of data stores for services: Copied, Registered (Referenced), and Hosted. Consequently, each type has its own architecture, troubleshooting considerations, and best practices. Below is a structured guide to investigating issues related to each type, with relevant things to take into account.
+                </p>
+                
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic; text-align: justify;">
+                        ✍️ Note: Every ArcGIS Enterprise deployment is different, hence troubleshooting steps may not always have the same results. Always investigate issues systematically and tailor solutions to your specific environment or use case.
+                    </p>
+                </div>
+
+                <p style="text-align: justify;">
+                    At first, let’s inspect the below figure and get a better understanding of how data are being handled (registered, fetched and subsequently retrieved) based on each type of Data Store in ArcGIS Server.
+                </p><br>
+
+                <!-- IMAGE HERE -->
+                <img src="../../assets/arcgisdatastores.webp" alt="ArcGIS Data Store" style="width:70%;max-height:1000px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
+
+                <!-- Copied Data Stores -->
+                <br><br><h3 id="copied">Copied Data Stores</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    As shown in the above figure, when dealing with copied data stores, the data is copied from the publisher’s machine to the ArcGIS Server machine (e.g., to a directory like C:\\arcgisserver). This is typically used when the source data is not accessible to the server directly.
+                    <br><br>
+                    It’s time to dive into more interesting core elements which consist of key considerations as well as a few notable troubleshooting steps. Keep in mind that the troubleshooting steps might vary based on the deployment at hand.
+                </p><br>
+
+                <strong>Key Considerations</strong>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Data synchronization:</strong> Updates to the source data will not be reflected in the published service unless republished.</li>
+                    <li><strong>Storage management:</strong> Large datasets can quickly fill server storage.</li>
+                    <li><strong>Permissions:</strong> Publisher account must have write access to the server directory.</li>
+                </ul>
+
+                <strong>Remediation Checklist</strong>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Check Data Copy Process:</strong> Ensure data is actually being copied to the correct server directory. If data is not appearing, do verify permissions and available disk space.</li>
+                    <li><strong>Validate Data Connections:</strong> Sometimes, publishing tools may appear to use the correct connection, but the server might not recognize it as registered, causing unnecessary data copying.</li>
+                    <li><strong>Analyze Publishing Logs:</strong> Review ArcGIS Server logs for errors during the publishing process. The Job IDs might reveal interesting details worth checking as well.</li>
+                    <li><strong>Check for Duplicate Data:</strong> Ensure that multiple copies of the same data are not causing confusion or performance issues.</li>
+                </ul><br>
+
+                <!-- Registered Data Stores -->
+                <h3 id="registered">Registered (Referenced) Data Stores</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Just like the name, in this case data remains in its original location (e.g., enterprise geodatabase, shared network folder). Additionally, ArcGIS Server is registered to access the data source directly. Similarly to the Copied Data Store, we will take a look at some aspects to consider as well as a few diagnostic workflow.
+                </p><br>
+
+                <strong>Elements to take into account</strong>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Data availability:</strong> This is crucial as if the data source is offline or inaccessible, services will fail.</li>
+                    <li><strong>Permissions:</strong> Both the publisher and ArcGIS Server account must have read (and possibly write) access.</li>
+                    <li><strong>Performance:</strong> Distinguishing between network/database performance interference and feature service issues can be quiet challenging, making it difficult to pinpoint the root cause.</li>
+                </ul><br>
+
+                <strong>Troubleshooting Steps</strong>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Check Data Store Registration:</strong> Confirm that the data source is properly registered with ArcGIS Server. Note that incorrect or incomplete registration can cause publishing failures or data copying instead of referencing.</li>
+                    <li><strong>Validate Connection Settings:</strong> Ensure that the connection properties (especially for enterprise geodatabases) are correct and validated.</li>
+                    <li><strong>Test Data Accessibility:</strong> From the ArcGIS Server machine, verify that the data source is accessible (network paths, database credentials, etc.). As a matter of fact, ODBC driver configuration can be taken into consideration in the event of any deployment involving Microsoft SQL Database. Consequently, ensure drivers are up to date and compatible.</li>
+                    <li><strong>Review Server Logs:</strong> Look for errors related to data access, permissions, or network connectivity.</li>
+                    <li><strong>Analyze Publishing Logs:</strong> Review ArcGIS Server logs for errors during the publishing process. The Job IDs might reveal interesting details worth checking as well.</li>
+                </ul>
+
+                <!-- Hosted Data Stores -->
+                <br><h3 id="hosted">3. Hosted Data Stores</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    This is one of the most common instance where data is managed by ArcGIS Data Store (relational, tile cache, or spatiotemporal) and supports hosted feature, tile, or scene layers in Portal for ArcGIS. Below are some key points to look out for when dealing with hosted data stores.
+                </p><br>
+                <strong>Important Factors to Consider</strong>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>High availability:</strong> For critical services, configure highly available ArcGIS Server and Data Store setups. With this being said keep in mind any considerations related to primary site and secondary site administrator.</li>
+                    <li><strong>Data backup:</strong> Ensure regular backups of the ArcGIS Data Store.</li>
+                    <li><strong>Security:</strong> It is essential to properly configure SSL certificates, Web Adaptors, and all other security-related components to ensure a secure ArcGIS Enterprise deployment.</li>
+                </ul>
+                <br><strong>Resolution steps</strong>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Check Data Store Health:</strong> Use the ArcGIS Server and Portal for ArcGIS admin interfaces to verify the health and status of the ArcGIS Data Store.</li>
+                    <li><strong>Restart Services in Correct Order:</strong> If services are not loading, restart Portal for ArcGIS, ArcGIS Server, and ArcGIS Data Store in the recommended order to avoid service crashes. (Please do it after working hours if on production to avoid service disruptions and system downtime)</li>
+                    <li><strong>Validate License Status:</strong> Ensure the ArcGIS License Manager is running and licenses are current, as expired licenses can cause hosted services to fail.</li>
+                    <li><strong>Check for recent changes:</strong> System restores, version upgrade/downgrade, or server migrations can disrupt connections between Portal, Server, and Data Store.</li>
+                    <li><strong>Apply relevant patches:</strong> For issues after server restarts, check for and apply patches like the ArcGIS Server Hosted Services Restart Patch for instance or any other relevant one.</li>
+                    <li><strong>Review Logs:</strong> Analyze logs for errors related to service publishing, data store connectivity, or authentication.</li>
+                </ul><br>
+
+                <p style="text-align: justify;">
+                    Check out the below links to learn more about ArcGIS Server & type of data stores:
+                </p>
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><a href="https://enterprise.arcgis.com/en/portal/latest/use/data-publishing-and-enterprise.htm" target="_blank" rel="noreferrer">  </a>Data-And-Publishing-In-ArcGIS-Enterprise</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm" target="_blank" rel="noreferrer">Data-Source-For-ArcGIS-Server</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-manager.htm" target="_blank" rel="noreferrer"></a>Register-Data-Using-ArcGIS-Server-Manager</a></li>
+                </ul>
+
+
+                <br><h2 id="error-lookup">Error Lookup: Common Feature Service Issues & Relevant Knowledge Articles</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Below is a list of frequent errors encountered when working with ArcGIS Feature Services, along with Knowledge Base articles highlighting likely causes, and recommended solutions. I WILL NOT be covering each error in depth, hence I highly recommend you to inspect each one individually for more insights.
+                </p><br>
+
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><strong>Error 1 → Creating Map Failed</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Knowledge Article: <a href="https://support.esri.com/en-us/knowledge-base/problem-the-web-map-is-not-available-in-the-map-widget--000031842" target="_blank" rel="noreferrer">000031842 — Creating Map Failed</a></li>
+                    </ul>
+                    <li><strong>Error 2 → An Error Occurred Loading This Layer</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Knowledge Article: <a href="https://support.esri.com/en-us/knowledge-base/problem-the-hosted-feature-layer-is-unable-to-load-in-a-000028732" target="_blank" rel="noreferrer">000028732 — Error Loading Layer</a></li>
+                    </ul>
+                    <li><strong>Error 3 → Failed to Create the Service</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li>Knowledge Article: <a href="https://support.esri.com/en-us/knowledge-base/error-error-001369-failed-to-create-the-service-000016577" target="_blank" rel="noreferrer">000016577 — Failed to Create the Service</a></li>
+                    </ul>
+                    <li><strong>Other Relevant Causes & Tips for Troubleshooting</strong></li>
+                    <ul class="blog-list" style="text-align: justify;">
+                        <li><strong>Database locks:</strong> It is advisable to disconnect users or restart services to release locks.</li>
+                        <li><strong>Max record count exceeded:</strong> Not frequent, however configuring services to check results or adjust maxRecordCount should mitigate the issue at hand.</li>
+                        <li><strong>Firewall or proxy blocking traffic:</strong> Networking is a key element when we talk about ArcGIS Enterprise deployment. Hence, confirm port access and SSL configurations. (Bear in mind that end-user should be responsible of investigating any firewall or proxy related issues with their IT Team).</li>
+                        <li><strong>Sharing Level:</strong> This is potentially one of the most fundamental aspect to check as the wrong sharing level (owner instead of organization/public) can lead to inaccessible services or hours of frustration.</li>
+                        <li><strong>Token expiration:</strong> For those of you reading this who are wondering since when do we use token for authentication in ArcGIS Environment, kindly read more on this here. Be aware that, it’s good practice to refresh credentials or configure long-lived tokens for enterprise apps as a possible workaround.</li>
+                    </ul>   
+                </ul><br>
+
+
+                <!-- Best Practices for Reliable ArcGIS Feature Services -->
+                <h2 id="best-practices">Best Practices for Reliable ArcGIS Feature Services</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                
+                <ul class="blog-list" style="text-align: justify;">
+                    <li>Regularly validate your data in ArcGIS Pro using "Check Geometry" and "Repair Geometry" tools before publishing.</li>
+                    <li>Use consistent spatial references across layers in a map document.</li>
+                    <li>Follow naming conventions and avoid special characters in service names.</li>
+                    <li>Monitor service health via ArcGIS Server Manager or Portal logs.</li>
+                    <li>Enable service capabilities (e.g., sync, query, editing) based on use-case and avoid enabling unnecessary features.</li>
+                    <li>Limit layer size: Consider tiling or generalizing large datasets before publishing.</li>
+                    <li>Enable versioning for enterprise geodatabases when editing is needed.</li>
+                    <li>Test service endpoints using the REST URL before embedding in apps or web maps.</li>
+                    <li>Use groups and item sharing strategically in Portal or ArcGIS Online (also known as AGOL) to manage access securely.</li>
+                </ul>
+                
+                
+                <!-- Conclusion -->
+                <br><h2 id="conclusion">Conclusion</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                    Troubleshooting ArcGIS Feature Services requires a mix of GIS knowledge, system awareness, and familiarity with Esri tools and architecture. Most common issues stem from misconfigurations, unsupported data, or permission conflicts.
+                    <br><br>
+                    Whether you’re deploying a complex web app or simply publishing a layer for internal/external use, applying best practices and learning from common errors can greatly enhance the reliability and performance of your ArcGIS environment.
+                </p>
+
+
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic; text-align: justify;">
+                        ⚠️ Copyright & Proprietary Rights Notice
+                        <br><br>
+                        Per <a href="https://www.esri.com/en-us/legal/copyright-proprietary-rights" target="_blank" rel="noreferrer">Esri’s copyright policy</a>, the information included here is reproduced and shared for educational and non-commercial purposes only, including teaching, research, and scholarship. Any reuse of this content for commercial or distribution purposes beyond personal use must comply with Esri’s licensing terms and include the appropriate copyright notice.
+                    </p>
+                </div>
+
+                
+                <!-- References & Further Reading -->
+                <h2 id="references">References & Further Reading</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                    <li><a href="https://enterprise.arcgis.com/en/server/latest/administer/windows/esri-troubleshooting-feature-services.htm" target="_blank" rel="noreferrer">Esri Troubleshooting Feature Services</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/latest/publish-services/windows/arcgis-rest-api-reference.htm" target="_blank" rel="noreferrer"></a>ArcGIS REST API Reference</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/latest/publish-services/windows/feature-service-publishing-options.htm" target="_blank" rel="noreferrer">Feature Service Publishing Options</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/latest/publish-services/windows/difference-between-a-map-service-feature-service-and-a-hosted-feature-layer.htm" target="_blank" rel="noreferrer">Difference between a map service, feature service, and a hosted feature layer</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/latest/administer/windows/unable-to-publish-new-or-start-existing-services-arcsoc.htm" target="_blank" rel="noreferrer">Unable to Publish New or Start Existing Services (ArcSOC)</a></li>
+                    <li><a href="https://enterprise.arcgis.com/en/server/latest/publish-services/windows/fail-to-load-map-and-custom-widget.htm" target="_blank" rel="noreferrer">Fail to load map and custom widget</a></li>
+                </ul>
+
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic; text-align: justify;">
+                        "The application of GIS is limited only by the imagination of those who use it" — <a href="https://www.azquotes.com/author/72668-Jack_Dangermond" target="_blank" rel="noreferrer">Jack Dangermond</a>
+                    </p>
+                </div>
+
+            </div> 
+        </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Justin Kombe Tonguino. All rights reserved.</p>
+    </footer>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>

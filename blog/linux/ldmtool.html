@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Recovery Using Ldmtools - JKT</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/mediaqueries.css">
+</head>
+<body>
+  <header>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <a href="../../index.html" class="logo-wrapper">
+          <span class="home-nav-link" style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; transition: all 0.3s ease; cursor: pointer;">Home</span>
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav-links">
+          <li><a href="../../blog/blog.html">Blog</a></li>
+          <li><a href="../../about/about.html">About</a></li>
+          <li><a href="../../search.html">🔍</a></li>
+          <li>
+            <img id="modeToggle" class="icon color-icon" src="../../assets/theme_light.png"
+              src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <a href="../../index.html" class="logo-wrapper">
+        <img src="../../assets/home_light.png" src-light="../../assets/home_light.png" src-dark="../../assets/home_dark.png"
+          alt="Home Logo" class="icon logo-icon" />
+        <span>Justin Kombe T.</span>
+      </a>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="../../blog/blog.html">Blog</a></li>
+        <li><a href="../../about/about.html">About</a></li>
+        <li><a href="../../search.html">🔍</a></li>
+        <li>
+          <img id="modeToggle2" class="icon color-icon" src="../../assets/theme_light.png"
+            src-light="../../assets/theme_light.png" src-dark="../../assets/theme_dark.png" alt="Color theme icon" />
+        </li>
+      </div>
+    </div>
+  </nav>
+
+    <main style="margin-top: 56px; padding: 2rem;">
+        <div class="post-layout about-wide">
+        <article class="post-content">
+            <header>
+                <h1>Data Recovery on Linux Using ldmtool</h1>
+            </header>
+            <!-- Cover image directly under title for all blogs -->
+            <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
+                <picture>
+                    <source srcset="../../assets/data-recovery.webp" type="image/webp" />
+                    <img src="../../assets/data-recovery.webp" alt="Data Recovery" style="width:100%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary)" />
+                </picture>
+                <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Data Recovery</figcaption>
+            </figure>
+            <div class="post-meta-row">
+              <span class="meta">Published on November 11, 2024</span>
+              <span class="meta">|</span>
+              <span class="meta">3 min read</span>
+              <span class="meta hash">#</span>
+              <div class="post-tags-inline">
+              🏷 <span class="tag">Linux</span>
+                <span class="tag">Data Recovery</span>
+                <span class="tag">Linux Tools & Techniques</span>
+              </div>
+            </div>
+
+            <!-- Inline Table of Contents -->
+            <section id="inline-toc" class="card" style="padding:1rem; margin: 0 0 1rem 0;">
+              <h3 style="margin:0 0 .5rem 0; color:var(--text-secondary);">Table of Contents</h3>
+              <ul class="toc-list blog-list">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#step1">Step 1: Installing ldmtool</a></li>
+                <li><a href="#step2">Step 2: Launching and Scanning the LDM Volumes</a></li>
+                <li><a href="#step3">Step 3: Listing Volume Mappings</a></li>
+                <li><a href="#step4">Step 4: Mounting The Volume</a></li>
+                <li><a href="#step5">Step 5: Preparing the Next Hard Disk with GParted</a></li>
+                <li><a href="#step6">Step 6: Mounting Another Hard Disk</a></li>
+                <li><a href="#step7">Step 7: Verifying Data Recovery with File Manager</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#references">References</a></li>
+              </ul>
+
+            
+            </section>
+            
+            <div class="content">
+                <br><h2 id="introduction">Introduction</h2>
+                <!-- <hr style="border: 1px solid black;"><br> -->
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  Data recovery can be a lifesaver, especially when dealing with Logical Disk Manager (LDM) volumes. Using ldmtool, a utility designed for managing Windows LDM partitions on Linux, we can mount and access these volumes easily.
+                  <br><br>
+                  In this guide, we will explore the use of ldmtool to scan and mount LDM volumes, as well as steps using GParted to format additional disks. Additionally, we will also cover ldmtool installation across different Linux distributions such as Arch Linux, Debian and Red Hat.
+                </p>
+
+
+                <br><h2 id="step1">Step 1: Installing ldmtool</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  <strong>ldmtool</strong> can be installed using various methods depending on the Linux distribution. Below are a few alternatives:
+                </p>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                  <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    sudo pacman -S ldmtool --> Arch Linux 
+                    <br>sudo apt install ldmtool --> Debian-based systems (Ubuntu, Pop!_OS, etc.)
+                    <br>sudo yum install ldmtool --> Red Hat based systems (Fedora, CentOS, etc.) 
+                  </p>
+              </div>
+
+
+                <br><h2 id="step2">Step 2: Launching and Scanning the LDM Volumes</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  Once installed, we can launch ldmtool and scan for LDM volumes using the following command:
+                </p>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                  <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    sudo ldmtool scan
+                    <br>sudo ldmtool create all
+                  </p>
+                </div>
+
+
+                <br><h2 id="step3">Step 3: Listing Volume Mappings</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  After the scan, list the created device mappings as shown below. 
+                  If correctly executed we should see entries similar to <strong>/dev/mapper/ldm_vol_<hostname>_<diskgroup>_Volume1</strong>.
+                </p>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                  <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    ls -l /dev/mapper
+                  </p>
+                </div>
+                <p style="text-align: justify;">Alternatively, you can use lsblk to list all block devices and partitions like so:</p>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                  <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    lsblk
+                  </p>
+                </div>
+
+
+                <br><h2 id="step4">Step 4: Mounting The Volume</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                  <li><strong>Create a mount directory: </strong>Create a directory of your choice where you will mount the recovered volume.</li>
+                  <li><strong>Mount the volume: </strong>Mount the volume: Using ntfs as the filesystem type, mount the LDM volume. Make sure to replace the <hostname>_<diskgroup>_Volume1 with the output of the command ls -l /dev/mapper.</li>
+                </ul>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                  <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    sudo mkdir /mnt/ldm_volume
+                    <br>sudo mount -t ntfs /dev/mapper/ldm_vol_<hostname>_<diskgroup>_Volume1 /mnt/ldm_volume
+                  </p>
+                </div>
+
+
+                <br><h2 id="step5">Step 5: Preparing the Next Hard Disk with GParted</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  GParted is highly recommended when it comes to disk formatting as it offers a visual interface making it user friendly.
+                </p>
+                <ul class="blog-list" style="text-align: justify;">
+                  <li><strong>Installing GParted: </strong>Install GParted using the following command:</li>
+                    <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                      <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        sudo pacman -S gparted --> Arch linux 
+                        <br>sudo apt install gparted --> Debian based systems (Ubuntu, PopOS, etc.)
+                        <br>sudo yum install gparted --> Red Hat based systems (Fedora, CentOS, etc.)
+                      </p>
+                    </div>
+                  <li><strong>Opening GParted: </strong>Open GParted using the following command:</li>
+                  <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                      sudo -E gparted 
+                    </p>
+                  </div>
+                  <li><strong>Selecting and formatting the disk</strong>
+                    <ul class="blog-list"> 
+                      <li>Use lsblk to identify the correct block device.</li>
+                      <li>In GParted, select the desired disk and format it to NTFS as needed.</li>
+                    </ul>
+                </ul>
+
+
+                <br><h2 id="step6">Step 6: Mounting Another Hard Disk</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                  <li><strong>Create a Mount Directory </strong></li>
+                    <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                      <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                        sudo mkdir /mnt/files
+                      </p>
+                    </div>
+                  <li><strong>Mount the Hard Disk</strong></li>
+                  <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                    <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                      sudo mount /dev/sdb1 /mnt/files --> Assuming that /dev/sdb1 is our Hard Disk 
+                    </p>
+                  </div>
+                </ul>
+
+                <br><h2 id="step7">Step 7: Verifying Data Recovery with File Manager</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">Finally, open your preferred file explorer to navigate to the directories:</p>
+                <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
+                  <p style="margin: 0; color: var(--text-primary); font-style: italic;">
+                    /mnt/ldm_volume for the recovered LDM volume.
+                    /mnt/files for the additional mounted hard disk.
+                  </p>
+                </div>
+
+                <br><h2 id="conclusion">Conclusion</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <p style="text-align: justify;">
+                  By following these steps, you can efficiently recover and access data from LDM volumes on Linux. 
+                  With ldmtool for mounting and GParted for formatting, this guide provides a versatile approach to handling complex disk structures on a Linux system.
+                </p>
+
+                <br><h2 id="references">References</h2>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+                <ul class="blog-list" style="text-align: justify;">
+                  <li><a href="https://wiki.archlinux.org/title/Dynamic_disks" target="_blank">Arch Wiki — ldmtool: Details the use of ldmtool for managing LDM partitions</a></li>
+                  <li><a href="https://gparted.org/documentation.php" target="_blank">GParted — Official Documentation: GParted</a></li>
+                  <li><a href="https://www.geeksforgeeks.org/linux-unix/mount-command-in-linux-with-examples/" target="_blank">GeekforGeeks— How to mount files in linux: Mount</a></li>
+                  <li><a href="https://ioflood.com/blog/author/gabriel-ramuglia/" target="_blank">lsblk Commands Guide by Gabriel Ramuglia — blog</a></li>
+            </div>
+        </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Justin Kombe Tonguino. All rights reserved.</p>
+    </footer>
+
+    <script src="../../static/js/main.js"></script>
+</body>
+</html>
