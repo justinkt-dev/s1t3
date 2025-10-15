@@ -342,6 +342,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize Table of Contents for blog posts
     initializeTableOfContents();
+
+    // Inject structured data (JSON-LD) for SEO
+    injectStructuredData();
 });
 
 // ============================================
@@ -495,3 +498,50 @@ function setupTOCInteractions(container, items) {
 window.toggleMenu = toggleMenu;
 window.toggleTheme = toggleTheme;
 window.initializeTableOfContents = initializeTableOfContents;
+
+// ============================================
+// STRUCTURED DATA (JSON-LD) INJECTION
+// ============================================
+function injectStructuredData() {
+    // Avoid duplicate injection across navigations
+    if (document.getElementById('person-jsonld')) return;
+
+    var origin = window.location.origin || '';
+    // Fallback for local file viewing
+    var siteRoot = origin ? (origin + '/') : '/';
+
+    var person = {
+        "@context": "https:\/\/schema.org",
+        "@type": "Person",
+        "name": "Justin Kombe Tonguino",
+        "url": siteRoot,
+        "image": siteRoot + "assets/profile.webp",
+        "sameAs": [
+            "https:\/\/www.linkedin.com\/in\/jkt112\/",
+            "https:\/\/github.com\/justinkt101\/",
+            "https:\/\/tryhackme.com\/p\/justinkt",
+            "https:\/\/app.hackthebox.com\/profile\/justinkt"
+        ],
+        "jobTitle": "Cybersecurity Researcher",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Asia Pacific University"
+        },
+        "inLanguage": "en",
+        "knowsAbout": [
+            "Red Teaming",
+            "Penetration Testing",
+            "Adversary Simulation",
+            "CRTA",
+            "MCRTA",
+            "eJPT",
+            "HackTheBox"
+        ]
+    };
+
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'person-jsonld';
+    script.text = JSON.stringify(person);
+    document.head.appendChild(script);
+}
