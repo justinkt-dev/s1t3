@@ -108,14 +108,13 @@
             
             <div class="content">
                 <br><h2 id="introduction">Introduction</h2>
-                <!-- <hr style="border: 1px solid black;"><br> -->
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     ArcGIS web applications are essential tools for organizations seeking to visualize, analyze, and share spatial data interactively. Two primary platforms, ArcGIS Experience Builder and Web AppBuilder offer powerful, flexible solutions for building these web apps. However, users frequently encounter challenges during configuration and deployment. In this guide, we will try to summarize key troubleshooting workflows, common errors, and best practices, drawing from documentation and real-world cases.
                     <br><br>
                     <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                         <p style="margin: 0; color: var(--text-primary); font-style: italic;">
-                            📝 Side note: We won’t cover ArcGIS Web App in depth here, this is just a glimpse of something much bigger. Thus, this aims to give us an overview of how web app are handled in ArcGIS Enterprise Environments. With that out of the way, let’s get to it.
+                            📝 <strong style="font-size: bold;">Side note:</strong> We won’t cover ArcGIS Web App in depth here, this is just a glimpse of something much bigger. Thus, this aims to give us an overview of how web app are handled in ArcGIS Enterprise Environments. With that out of the way, let’s get to it.
                         </p>
                     </div>
                     
@@ -219,10 +218,10 @@
 
                 <!-- IMAGE HERE -->
                 <img src="../../assets/webappflow.webp" alt="ArcGIS Web Application Troubleshooting and Building Flow" style="width:70%;max-height:1000px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color); position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
-
+                <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">ArcGIS Web Application Troubleshooting and Building Flow</figcaption>
 
                 
-                <br><br><h2 id="sec3">Guide to Common Errors: Causes, Workarounds, and Relevant Knowledge Articles</h2>
+                <h2 id="sec3">Guide to Common Errors: Causes, Workarounds, and Relevant Knowledge Articles</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Below is a list of frequent errors encountered when working with ArcGIS Experience Builder, along with Knowledge Base articles highlighting likely causes, and recommended solutions. This will be slightly different compared to the other guides as we will highlight main causes and plausible solutions for each error. However, it’s crucial to mention the need of exploring the knowledge article to get a clear understanding of the workflow.
@@ -242,7 +241,7 @@
                     <li>Inappropriate sharing level of the map from Portal for ArcGIS</li>
                     <li>Broken or corrupted ArcGIS Experience Builder</li>
                     <li>Web map is corrupted, broken, or deleted and no longer exists from the source.</li>
-                </ul><br>
+                </ul>
 
 
                 <p style="text-align: justify;">
@@ -301,7 +300,7 @@
                 <ul class="blog-list" style="text-align: justify;">
                     <li>The “Interact with a Map widget” option is not selected</li>
                     <li>The “Toggle layer visibility” options is not enabled</li>
-                </ul><br>
+                </ul>
 
 
                 <p style="text-align: justify;">
@@ -337,7 +336,7 @@
                 <ul class="blog-list" style="text-align: justify;">
                     <li>The layers specified in the widget are not editable</li>
                     <li>The user does not have the appropriate role for editing a layer (viewer role)</li>
-                </ul><br>
+                </ul>
 
 
                 <p style="text-align: justify;">
@@ -374,14 +373,14 @@
                     <li>Check for version mismatches between custom widgets and the Experience Builder framework.</li>
                     <li>For custom widgets, verify that the manifest URL is correct and the server is listed in allowed proxy hosts.</li>
                     <li>Update browsers and clear cache to resolve client-side issues.</li>
-                </ul><br>
+                </ul>
 
 
                 <h2 id="sec4">Best Practices for Reliable ArcGIS WebApps</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Best practices are crucial for maintaining the stability and reliability of ArcGIS web applications. These guidelines help to prevent common issues, enhance performance, and ensure a seamless user experience. Below are some key best practices to consider when working with ArcGIS web applications:
-                </p><br>
+                </p>
                 
                 <ul class="blog-list" style="text-align: justify;">
                     <li>Regularly review sharing settings for all data sources and apps.</li>
@@ -391,32 +390,31 @@
                     <li>Use roles and privileges appropriately to control editing and data access.</li>
                     <li>Leverage Esri’s Knowledge Base and community forums for troubleshooting and peer support.</li>
                     <li>Always save snapshot and back up configurations before major updates or migrations.</li>
-                </ul><br>
+                </ul>
 
 
                 <h2 id="conclusion">Conclusion</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     ArcGIS Experience Builder and Web AppBuilder are robust platforms for building interactive and responsive web mapping applications. By following structured troubleshooting workflows, understanding common errors, and applying best practices, you can minimize downtime as well as performance issue, subsequently deliver reliable, user-friendly web apps.
-                </p><br>
+                </p>
                 
 
                 <h2 id="references">References & Further Reading</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <ul class="blog-list" style="text-align: justify;">
                     <li> <a href="https://www.esri.com/en-us/arcgis/products/arcgis-experience-builder/overview" target="_blank" rel="noreferrer">ArcGIS Experience Builder | Esri Products</a></li>
-                    <li> <a href="https://www.esri.com/en-us/arcgis/products/arcgis-webapp-builder/overview" target="_blank" rel="noreferrer">ArcGIS WebApp Builder | Esri Products</a></li>
-                    <li> <a href="https://www.esri.com/en-us/arcgis/products/esri-product-with-relevant-lifecycle" target="_blank" rel="noreferrer">Esri Product With Relevant LifeCycle</a></li>
+                    <li> <a href="https://www.esri.com/en-us/arcgis/products/arcgis-web-appbuilder/resources" target="_blank" rel="noreferrer">ArcGIS WebApp Builder | Esri Products</a></li>
+                    <li> <a href="https://www.esri.com/en-us/arcgis/products/index" target="_blank" rel="noreferrer">Esri Product With Relevant LifeCycle</a></li>
                     <li> <a href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/manage-members.htm" target="_blank" rel="noreferrer">Manage Members | ArcGIS Enterprise</a></li>
-                    <li> <a href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/manage-feature-layer-editing.htm" target="_blank" rel="noreferrer">Manage Feature layer editing | ArcGIS Portal</a></li>
-                    <li> <a href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/configure-map-layers-widget.htm" target="_blank" rel="noreferrer">Configure Map Layers widget | ArcGIS Enterprise</a></li>
-                    <li> <a href="https://support.esri.com/en-us/knowledge-base/unable-to-configure-custom-widget" target="_blank" rel="noreferrer">Unable to configure custom widget</a></li>
-                    <li> <a href="https://support.esri.com/en-us/knowledge-base/category/106000" target="_blank" rel="noreferrer">Esri Knowledge Base</a></li>
+                    <li> <a href="https://enterprise.arcgis.com/en/portal/latest/use/manage-editing-hfl.htm" target="_blank" rel="noreferrer">Manage Feature layer editing | ArcGIS Portal</a></li>
+                    <li> <a href="https://doc.arcgis.com/en/experience-builder/latest/configure-widgets/map-layers-widget.htm" target="_blank" rel="noreferrer">Configure Map Layers widget | ArcGIS Enterprise</a></li>
+                    <li> <a href="https://support.esri.com/en-us/knowledge-base/problem-unable-to-configure-a-custom-print-service-temp-000030278" target="_blank" rel="noreferrer">Unable to configure custom widget</a></li>
                 </ul>
 
                 <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                     <p style="margin: 0; color: var(--text-primary); font-style: italic;">
-                        "GIS enables us to analyze geographic data and make informed decisions." — <a href="https://www.bookey.app/quote-author/jack-dangermond" target="_blank" rel="noreferrer">Jack Dangermond</a>
+                        "GIS enables us to analyze geographic data and make informed decisions." — <a href="https://www.bookey.app/quote-author/jack-dangermond" target="_blank" rel="noreferrer"><strong style="font-size: bold;">Jack Dangermond</strong></a>
                     </p>
                 </div>
 
