@@ -70,53 +70,16 @@ python3 -m http.server 3000
 - **Smooth Animations**: CSS animations and transitions for better UX
 - **Modern UI**: Clean, professional design with cybersecurity theme
 
-### Functionality
-- **Interactive Navigation**: Smooth scrolling and mobile hamburger menu
-- **Theme Toggle**: Persistent theme preference with localStorage
-- **Contact Integration**: Direct email and social media links
-- **Blog System**: Organized blog posts with categories
-- **Performance Optimized**: Fast loading and efficient code
-
 ### Content Sections
 - **About**: Personal introduction and background
 - **Experience**: Education and work experience
 - **Blog**: Categorized blog posts about cybersecurity
 - **Contact**: Social media and contact information
 
-## 📝 Content Overview
-
-### Certifications
-- **CRTA** (08/2025) - Certified Red Team Analyst
-- **MCRTA** (11/2024) - Master Certified Red Team Analyst  
-- **ICCA** (03/2024) - Cloud Security Certification
-- **eJPT** (02/2024) - Junior Penetration Tester
-- **HackTheBox Pro Labs** (09/2025) - RastaLabs, Offshore, Zephyr, Dante, POO
-
-### Education
-- **Asia Pacific University, Malaysia**
-- B.Hons of Computer Science (Cyber Security)
-- September 2021 - September 2024
-
-### Experience
-- **IT Intern - LAB Security Analyst** (09/2023 - 01/2024)
-- **SOC Analyst** (12/2023 - 03/2024)
-
 ### Blog Categories
 1. **Full Review: Certifications and Learning Paths**
-   - eJPT v2 Certification Review
-   - CRTA vs MCRTA Comparison
-   - HackTheBox Pro Labs Journey
-
 2. **Linux Insights: Tips, Tools & Resources**
-   - Essential Linux Commands
-   - Secure Home Lab Setup
-   - Red Hat Training Review
-
 3. **Walkthroughs and Relevant Materials**
-   - TryHackMe Beginner's Path
-   - HackTheBox Starting Point
-   - Active Directory Penetration Testing
-   - Malware Development Guide
 
 ## 🛠️ Customization
 
@@ -135,25 +98,11 @@ python3 -m http.server 3000
 2. Update `static/css/mediaqueries.css` for responsive design
 3. Customize color variables in the CSS for theme changes
 
-## 🔧 Technical Details
-
-### Technologies Used
-- **HTML5**: Semantic markup and structure
-- **CSS3**: Modern styling with CSS Grid and Flexbox
-- **JavaScript**: Interactive functionality and theme management
-- **Python**: Local development server
-
 ### Browser Support
 - Chrome 60+
 - Firefox 55+
 - Safari 12+
 - Edge 79+
-
-### Performance Features
-- Optimized images and assets
-- Efficient CSS and JavaScript
-- Responsive images
-- Lazy loading support
 
 ## 📱 Mobile Responsiveness
 
