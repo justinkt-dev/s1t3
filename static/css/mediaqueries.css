@@ -244,8 +244,8 @@
     
     .title { font-size: 2rem; }
     .hero-title { font-size: 1.9rem; }
-    /* Keep mobile hero subtext slightly smaller and centered */
-    .hero-sub { font-size: 1.1rem; text-align: center; }
+    /* Keep mobile hero subtext slightly smaller, centered, and narrower for readability */
+    .hero-sub { font-size: 1.1rem; text-align: center; max-width: 92vw; }
     
     .section__text__p2 {
         font-size: 1.3rem;
@@ -423,6 +423,25 @@
         width: 20px;
         height: 20px;
     }
+    /* About page mobile refinements */
+    /* Tighten About header spacing */
+    .about-wide .post-content header { margin-bottom: 0.5rem !important; }
+    .about-wide .post-content h1.title { margin-bottom: 0.5rem !important; }
+    .about-wide .post-content p { font-size: 0.98rem; line-height: 1.7; }
+    .about-wide .post-content .btn-container { margin-top: 0.75rem; }
+
+    /* Single column for certifications and social grids */
+    #certifications .card,
+    #social-networks .card { display: grid; grid-template-columns: 1fr !important; gap: 0.75rem !important; }
+    #certifications .interactive-row,
+    #social-networks .interactive-row { padding: 0.6rem !important; }
+
+    /* Reduce nested list indent for work experience */
+    #my-journey ul ul { margin: 0.4rem 0 0 1.2rem !important; padding-left: 1rem !important; }
+    #my-journey .chip { padding: 6px 10px; font-size: 0.82rem; }
+
+    /* Breadcrumb spacing on About */
+    .breadcrumb-wrapper { margin-top: calc(var(--nav-height) + 4px) !important; }
 }
 
 /* Mobile Small */

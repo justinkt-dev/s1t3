@@ -128,7 +128,7 @@ nav a:hover {
 }
 
 /* Ensure breadcrumb areas start below fixed nav */
-.breadcrumb-wrapper { margin-top: calc(var(--nav-height) + 6px); }
+.breadcrumb-wrapper { display: none; }
 
 .nav-links {
     display: flex;
@@ -279,7 +279,7 @@ nav a:hover {
 
 /* Hero size tweaks */
 .hero-title { font-size: 2.6rem; }
-.hero-sub { font-size: 1.35rem; }
+.hero-sub { font-size: 1.35rem; max-width: clamp(800px, 92vw, 1200px); margin-left: auto; margin-right: auto; }
 
 .section__text__p2 {
     font-size: 1.4rem;
@@ -658,6 +658,10 @@ nav a:hover {
 .about-wide { grid-template-columns: 1fr; max-width: 1200px; }
 /* Constrain About content width and keep text justified */
 .about-wide .post-content { max-width: var(--content-max); margin-left: auto; margin-right: auto; }
+/* Harmonize About typography with blog */
+.about-wide .post-content p,
+.about-wide .post-content li { text-align: justify; line-height: 1.75; }
+.about-wide .post-content h2 { margin-top: 1.6rem; margin-bottom: .8rem; }
 
 .post-content {
     background: var(--bg-primary);
