@@ -127,6 +127,9 @@ nav a:hover {
     color: var(--accent-primary);
 }
 
+/* Ensure breadcrumb areas start below fixed nav */
+.breadcrumb-wrapper { margin-top: calc(var(--nav-height) + 6px); }
+
 .nav-links {
     display: flex;
     gap: 1rem;
@@ -567,7 +570,7 @@ nav a:hover {
     color: var(--text-secondary);
     font-size: 1.1rem;
     line-height: 1.8;
-    max-width: 600px;
+    max-width: var(--content-max);
     margin: 0 auto;
 }
 
@@ -1030,7 +1033,7 @@ article a:hover {
 
 /* Footer */
 footer {
-    margin: 0 1rem;
+    margin: 0;
     padding: 10px 0;
     background-color: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
@@ -1111,7 +1114,7 @@ footer p {
 
 @media screen and (max-width: 600px) {
     /* keep nav consistent on small screens */
-    :root { --nav-height: 15vh; }
+    :root { --nav-height: 56px; }
     /* smaller cover images on phones */
     .post-cover img { max-height: 320px; }
     #contact,

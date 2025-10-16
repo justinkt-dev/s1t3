@@ -227,19 +227,15 @@
 
 /* Mobile Large */
 @media screen and (max-width: 600px) {
-    /* Keep nav visible on small screens; use desktop nav */
+    /* Keep nav visible on small screens; use desktop nav and smaller height */
     #desktop-nav { transform: none !important; }
     #hamburger-nav { display: none; }
     nav {
-        height: 15vh;
+        height: 56px;
         padding: 0 1rem;
     }
     
-    #profile {
-        height: auto;
-        margin-top: 15vh;
-        padding: 2rem 1rem;
-    }
+    #profile { height: auto; margin-top: 56px; padding: 2rem 1rem; }
     
     .section__pic-container {
         width: 250px;

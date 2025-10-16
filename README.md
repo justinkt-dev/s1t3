@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing cybersecurity expertise, certifications, and blog content.
 
-   .## 📁 Project Structure
+## 📁 Project Structure
 
 ```
 Test/
@@ -17,9 +17,9 @@ Test/
 │   └── js/
 │       └── main.js         # JavaScript functionality
 └── blog/                   # Blog posts
-    ├── certifications/     # Certification-related posts
+    ├── certifications/     # Learning Pathway and Certification-related posts
     ├── linux/              # Linux and system administration
-    └── geotech/           # GIS and geospatial technology posts
+    └── geotech/            # GIS and geospatial technology posts
 ```
 
 ## 🎨 Features
