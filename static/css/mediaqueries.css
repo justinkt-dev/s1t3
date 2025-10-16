@@ -47,6 +47,10 @@
   /* Tighten paddings */
   .card { padding: 0.9rem !important; }
   #home-summary .card { padding: 1rem !important; }
+
+  /* Further prevent horizontal scroll on tablets */
+  .post-content { max-width: min(96vw, var(--content-max)); margin-left: auto; margin-right: auto; }
+  .post-content img, .post-content iframe, .post-content video { max-width: 100%; height: auto; }
 }
 
 /* Phones */
@@ -54,6 +58,8 @@
   :root {
     --gutter: clamp(10px, 3.5vw, 18px);
     --fs-body: clamp(0.95rem, 0.4rem + 1.4vw, 1.05rem);
+    --container-max: 100vw; /* ensure containers fit viewport */
+    --content-max: 94vw;    /* keep readable margins on phones */
   }
 
   /* Prevent overflow of long titles and chips */
@@ -63,6 +69,15 @@
   /* Hero adjustments */
   .section__text { text-align: left; }
   .section__text__p2 { line-height: 1.7; }
+
+  /* Ensure about and blog content never overflow */
+  .about-wide .post-content,
+  .post-content { max-width: var(--content-max); margin-left: auto; margin-right: auto; overflow-wrap: anywhere; }
+
+  /* Responsive media inside posts */
+  .post-content img, .post-content video, .post-content iframe { max-width: 100%; height: auto; display: block; margin: 0.5rem auto; }
+  .post-content table { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; }
+  .post-content pre { max-width: 100%; overflow-x: auto; }
 }
 
 /* Very small phones */

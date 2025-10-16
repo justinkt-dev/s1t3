@@ -744,6 +744,12 @@ nav a:hover {
     margin: 1.5rem 0;
 }
 
+/* Prevent long strings from causing overflow */
+.post-content code, .post-content pre, .post-content p, .post-content li {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
 .post-content pre code {
     background: none;
     padding: 0;
