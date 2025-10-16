@@ -61,7 +61,7 @@
         <div class="post-layout about-wide">
         <article class="post-content">
             <header>
-                <h1>Dissecting HackTheBox Pro Labs: The Art of Attacking Enterprise Networks</h1>
+                <h1 style="text-align: justify;">Dissecting HackTheBox Pro Labs: The Art of Attacking Enterprise Networks</h1>
             </header>
             <!-- Cover image directly under title for all blogs -->
             <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
@@ -100,6 +100,8 @@
                 </ul>
             
             </section>
+            <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
+
             
             <div class="content">
                 <h2 id="introduction">Introduction</h2>
@@ -115,7 +117,7 @@
                     Before dissecting the mentioned Pro Labs individually, it’s essential to have a sneak peek of what they are made of, their purpose, as well as applicability. As you can see below, there are 2 main categories:
                     
                     <ul class="blog-list">
-                        <li><strong style="font-size: bold;">The Primary Bundle:</strong> this allows players to gain access to the all Pro Labs shown on the cover image of this post. More details on pricing can be found <a href="https://www.hackthebox.com/blog/pro-labs-update" target="_blank">HERE</a>.</li>
+                        <li><strong style="font-size: bold;">The Primary Bundle:</strong> this allows players to gain access to the all Pro Labs shown on the cover image of this post. More details on pricing can be found <a href="https://www.hackthebox.com/blog/pro-labs-update" target="_blank"><strong style="font-size: bold;">HERE</strong></a>.</li>
                         <li><strong style="font-size: bold;">Enterprise Exclusive:</strong>On the other hand comes under a different subscription. I can’t pronounce myself much on this so feel free to explore.</li>
                     </ul>
                 </p>
@@ -126,14 +128,15 @@
                     <figcaption style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">HTB Red Team Training Labs</figcaption>
                 </a>   
 
-                <h2 id="redteamer-pentesters">Are Pro Labs Designed for Red Team Operators or Penetration Testers?</h2>
+                <h2 id="redteamer-pentesters" text-align="justify">Are Pro Labs Designed for Red Team Operators or Penetration Testers?</h2>
                 <!-- <hr style="border: 1px solid black;"><br> -->
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     At first, I thought HackTheBox Pro Labs were only for Red Team operators but turns out I was wrong. Most labs are Red Team–level, and while shortcuts can work, it’s best to follow the intended approach. Relying on shortcuts or luck might work in these labs at times but may not or rather would never in real engagements. Everything in the lab exists for a reason, so stay observant and take detailed notes.
                     <br><br>
-                    Despite the name, penetration testers can tackle these labs to learn new skills or techniques. Bear in mind that they are time-consuming, even for seasoned professionals. This could be due to factors like tools malfunctioning, VPN issues, broken machines, or overlapping attacks. Frustrating moments such as “Why won’t this payload work?” are unavoidable.
-                </p><br>
+                    Despite the name, penetration testers can tackle these labs, hence practice if not learn new skills or techniques. Bear in mind that they are time-consuming, even for seasoned professionals. 
+                    This could be due to factors like tools malfunctioning, VPN issues, broken machines, or overlapping attacks. Frustrating moments such as <strong style="font-size: bold;">“Why won’t this payload work?”</strong> are unavoidable.
+                </p>
 
                 <img src="../../assets/Pentest-Redteamin.webp" alt="RedTeaming Vs PenTesting" style="width:80%;max-height:1000px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
                 
@@ -236,6 +239,7 @@
                 <img src="../../assets/Zephyr.webp" alt="Zephyr Pro Labs" style="width:60%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
 
                 <br><h3>Overview</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify; text-align: justify;">
                     Zephyr is an intermediate-level red team simulation environment, designed to be attacked as a means of learning and honing your engagement skills and improving your active directory enumeration and exploitation skills.
                 </p>
@@ -257,17 +261,18 @@
                 <ul class="blog-list" style="text-align: justify;">
                     <li>Several reviews suggest Zephyr to be excellent for CRTP holders and exam prep. I haven’t completed CRTP yet, so I won’t comment directly, but the latest syllabus includes using Sliver C2 on Windows Server 2022, which is invaluable. I didn’t use a C2 for Zephyr, but leveraging one could make handling AV/EDR much easier.</li>
                     <li>Besides CRTP, many CPTS veterans note that Zephyr aligns well with the HTB CPTS exam. Dante and Zephyr are often the top two Pro Labs recommended before attempting the CPTS Exam. While Offshore is considered to be an overkill, doing it wouldn’t hurt and will just be icing on the cake.</li>
-                    <li>While CPTS learning path felt enough, I found the overall experience to be incredibly rewarding allowing me to learn new tricks and TTPs.</li>
+                    <li>While <strong style="font-size: bold;">CPTS learning path</strong> felt enough, I found the overall experience to be incredibly rewarding allowing me to learn new tricks and TTPs.</li>
                 </ul>
 
 
                 <!-- Time for Offshore Pro Labs -->             
-                <br><h2 id="offshore-pro-labs">Offshore Pro Labs (AKA Trust Terror)</h2>
+                <h2 id="offshore-pro-labs">Offshore Pro Labs (AKA Trust Terror)</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <img src="../../assets/Offshore.webp" alt="Offshore Pro Labs" style="width:60%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
 
 
                 <br><h3>Overview</h3>
+                <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify; text-align: justify;">
                     Offshore is a real-world enterprise environment that features a wide range of modern Active Directory misconfigurations. If you manage to breach the perimeter and gain a foothold, you are tasked to explore the infrastructure and attempt to compromise all Offshore Corp entities.
                 </p>
