@@ -44,6 +44,59 @@ function smoothScroll(target) {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize theme
     initializeTheme();
+
+    // Normalize nav links to correct base regardless of nesting depth
+    (function normalizeNavLinks(){
+        try {
+            var pathname = window.location.pathname || '';
+            var origin = window.location.origin || '';
+            var marker = '/Test/';
+            var idx = pathname.indexOf(marker);
+            var siteBase = '';
+            if (idx !== -1) {
+                var basePath = pathname.substring(0, idx + marker.length);
+                siteBase = origin ? (origin + basePath) : basePath;
+            } else {
+                // Fallback: use origin root or current directory
+                siteBase = origin ? (origin + '/') : './';
+            }
+
+            function setHref(anchor, target){
+                if (!anchor) return;
+                anchor.setAttribute('href', siteBase + target);
+            }
+
+            // Desktop nav
+            var desktopNav = document.querySelector('#desktop-nav');
+            if (desktopNav){
+                setHref(desktopNav.querySelector('a.logo-wrapper'), '');
+                desktopNav.querySelectorAll('a').forEach(function(a){
+                    var href = (a.getAttribute('href')||'').toLowerCase();
+                    var text = (a.textContent||'').trim().toLowerCase();
+                    if (href.indexOf('blog.html') !== -1 || text === 'blog') setHref(a, 'blog.html');
+                    else if (href.indexOf('about.html') !== -1 || text === 'about') setHref(a, 'about.html');
+                    else if (href.indexOf('search.html') !== -1 || text.indexOf('🔍') !== -1) setHref(a, 'search.html');
+                    else if (href === '/' || href.indexOf('index.html') !== -1 || text === 'home') setHref(a, '');
+                });
+            }
+
+            // Hamburger nav
+            var mobileNav = document.querySelector('#hamburger-nav');
+            if (mobileNav){
+                setHref(mobileNav.querySelector('a.logo-wrapper'), '');
+                mobileNav.querySelectorAll('a').forEach(function(a){
+                    var href = (a.getAttribute('href')||'').toLowerCase();
+                    var text = (a.textContent||'').trim().toLowerCase();
+                    if (href.indexOf('blog.html') !== -1 || text === 'blog') setHref(a, 'blog.html');
+                    else if (href.indexOf('about.html') !== -1 || text === 'about') setHref(a, 'about.html');
+                    else if (href.indexOf('search.html') !== -1 || text.indexOf('🔍') !== -1) setHref(a, 'search.html');
+                    else if (href === '/' || href.indexOf('index.html') !== -1 || text === 'home') setHref(a, '');
+                });
+            }
+        } catch (e) {
+            console.warn('Nav normalization failed:', e);
+        }
+    })();
     
     // Wire navbar theme icons
     const navToggle1 = document.getElementById('modeToggle');
