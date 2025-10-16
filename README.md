@@ -2,54 +2,14 @@
 
 A modern, responsive portfolio website showcasing cybersecurity expertise, certifications, and blog content.
 
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.6 or higher
-- Modern web browser
-
-### Running Locally
-
-1. **Clone or navigate to the project directory:**
-   ```bash
-   cd /home/kombe/Cursor/0xkombe1337
-   ```
-
-2. **Start the local server:**
-   ```bash
-   python3 server.py
-   ```
-
-3. **Open your browser and visit:**
-   ```
-   http://localhost:3000
-   ```
-
-### Alternative: Using Python's built-in server
-```bash
-python3 -m http.server 3000
-```
-
-## 📁 Project Structure
+   .## 📁 Project Structure
 
 ```
-0xkombe1337/
+Test/
 ├── index.html              # Main homepage
 ├── server.py               # Local development server
 ├── README.md               # This file
 ├── assets/                 # Images and static assets
-│   ├── profile.webp        # Profile picture
-│   ├── favicon.png         # Website favicon
-│   ├── linkedin.png        # LinkedIn icon
-│   ├── github.png          # GitHub icon
-│   ├── email.png           # Email icon
-│   ├── experience.png      # Experience icon
-│   ├── education.png       # Education icon
-│   ├── checkmark.png       # Checkmark icon
-│   ├── arrow.png           # Arrow icon
-│   ├── theme_light.png     # Light theme icon
-│   ├── theme_dark.png      # Dark theme icon
-│   └── resume.pdf          # Resume PDF
 ├── static/                 # CSS and JavaScript files
 │   ├── css/
 │   │   ├── style.css       # Main stylesheet
@@ -120,15 +80,6 @@ The website is fully responsive and optimized for:
 - Proper heading hierarchy
 - Alt text for images
 
-## 🚀 Deployment
-
-For production deployment:
-1. Replace localhost URLs with your domain
-2. Optimize images and assets
-3. Set up proper web server configuration
-4. Enable HTTPS
-5. Configure proper caching headers
-
 ## 📞 Contact
 
 - **Email**: justinkombe.offsec@outlook.com
@@ -141,5 +92,5 @@ This project is for personal portfolio use. All rights reserved.
 
 ---
 
-**Note**: This is a local development version. For production use, update all localhost references to your actual domain.
+**Note**: For local development and use, update all domain references to your actual localhost.
 
