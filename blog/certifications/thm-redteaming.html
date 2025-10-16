@@ -60,7 +60,7 @@
         <div class="post-layout about-wide">
         <article class="post-content">
             <header>
-                <h1>TryHackMe Red Teaming Pathway — Full Review</h1>
+                <h1 style="text-align: justify;">TryHackMe Red Teaming Pathway — Full Review</h1>
             </header>
             <!-- Cover image directly under title for all blogs -->
             <figure class="post-cover" style="margin:.5rem 0 1rem 0;">
@@ -112,54 +112,53 @@
                 </p>
 
                 <!-- Section 1: Red Team Fundamentals -->
-                <br><h2 id="sec1">Section 1: Red Team Fundamentals</h2>
+                <h2 id="sec1">Section 1: Red Team Fundamentals</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Introduces Red Team methodologies, OPSEC, threat intelligence, and the basics of Command and Control (C2) operations. One thing worth mentioning is the fact that Command and Control (C2) are absolutely crucial when it comes to Post Exploitation and Persistence. In fact, APT groups implement custom ones and use them on a day-to-day operations. So should any other Adversary Emulator. 
                     The attached figure indicates the modules covered in this section.
-                </p><br> 
+                </p>
 
                 <!-- IMAGE HERE -->
                 <img src="../../assets/red-sec1.webp" alt="TryHackMe Red Teaming Pathway" style="width:70%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color); position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
 
 
-                <br><br><h2 id="sec2">Section 2: Initial Access</h2>
+                <br><h2 id="sec2">Section 2: Initial Access</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Covers reconnaissance, weaponization, phishing, and password attacks to simulate gaining a foothold in target environments. It covers all the necessary steps on how to setup a stage, and prepare the environment for a successful red team engagement. The modules highlighted in this section are as such:
-                </p><br>
+                </p>
 
                 <!-- IMAGE HERE -->
                 <img src="../../assets/red-sec2.webp" alt="TryHackMe Red Teaming Pathway" style="width:70%;max-height:1000px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color); position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
 
                 
-                <br><br><h2 id="sec3">Section 3: Post Compromise</h2>
+                <br><h2 id="sec3">Section 3: Post Compromise</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Teaches enumeration, privilege escalation, lateral movement, persistence, and ex-filtration techniques to navigate compromised systems. Compromising a host is one thing, however maintaining persistence is another. Therefore, this have been one of my favorite part of this path and the modules covered are as shown in the below figure:
-                </p><br>
+                </p>
 
                 <!-- IMAGE HERE -->
                 <img src="../../assets/red-sec3.webp" alt="TryHackMe Red Teaming Pathway" style="width:70%;max-height:600px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
 
 
-
-                <br><br><h2 id="sec4">Section 4: Host Evasions</h2>
+                <br><h2 id="sec4">Section 4: Host Evasions</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Focuses on bypassing antivirus, obfuscation, logging evasion, and using Living Off the Land tactics for stealth. This is arguably the most extensive section of it all as it emphasis a wide range of evasion techniques that can be utilized for successful red team engagement. Check the attached figure to get a glimpse of what the section has to offer.
-                </p><br>
+                </p>
 
                 <!-- IMAGE HERE -->
                 <img src="../../assets/red-sec4.webp" alt="TryHackMe Red Teaming Pathway" style="width:70%;max-height:1200px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
 
                 <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                     <p style="margin: 0; color: var(--text-primary); font-style: italic;">
-                        Note: This is covered in depth on THB Introduction to Windows Evasion Techniques. Check the link
+                        <strong style="font-size: bold;">Note:</strong> This is covered in depth on <strong style="font-size: bold;">HTB Introduction to Windows Evasion Techniques</strong>. <a href="https://academy.hackthebox.com/course/preview/introduction-to-windows-evasion-techniques" target="_blank" rel="noreferrer"><strong style="font-size: bold;">Check the link HERE</strong></a>
                     </p>
                 </div>
 
-                <br><h2 id="sec5">Section 5: Network Security Evasion</h2>
+                <h2 id="sec5">Section 5: Network Security Evasion</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Explores methods to bypass firewalls, intrusion detection systems, and sandboxes for network-level persistence. Moreover, It also highlights the use of next generation detection/prevention tools.
@@ -168,27 +167,27 @@
                 <!-- IMAGE HERE -->
                 <img src="../../assets/red-sec5.webp" alt="TryHackMe Red Teaming Pathway" style="width:70%;max-height:1200px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
 
-                <br><br><h2 id="sec6">Section 6: Compromising Active Directory</h2>
+                <br><h2 id="sec6">Section 6: Compromising Active Directory</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Guides on AD enumeration, credential harvesting, lateral movement, privilege escalation, and maintaining persistence in enterprise networks. 
                     Honestly, I will stretch this once again, there is a lot more to learn on Active Directory and this is just the tip of the iceberg. 
-                    Checkout sites such as HTB, AlteredSecurity, Vulnlab, TCM Security, etc for more insights, practices, tools and techniques on AD attacks and exploitation. 
+                    Checkout sites such as HTB, AlteredSecurity, Vulnlab, CyberWarFare Labs, etc for more insights, practices, tools and techniques on AD attacks and exploitation. 
                     The topics covered are same as the ones from CompTIA Pentest+:
-                </p><br>
+                </p>
                 
                 <!-- IMAGE HERE -->
                 <img src="../../assets/red-sec6.webp" alt="TryHackMe Red Teaming Pathway" style="width:70%;max-height:1200px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
 
                 <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                     <p style="margin: 0; color: var(--text-primary); font-style: italic;">
-                        Note: The above might seems like a lot but there is more to it.
+                        Bear in mind that the above might seems like a lot but there is more to it.
                     </p>
                 </div>
 
 
                 <!-- Deliverables of this section -->
-                <br><h2 id="deliverables">Key Deliverables</h2>
+                <h2 id="deliverables">Key Deliverables</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <img src="../../assets/deliverables.webp" alt="Deliverables" style="width:50%;max-height:400px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);background:var(--bg-secondary); position: relative; left: 50%; transform: translateX(-50%);" />
                 <br><br>
@@ -223,7 +222,7 @@
                 </ol>
 
                 
-                <br><h2 id="dos">The Do’s and Don’ts: Tips for Aspiring Cybersecurity Professionals</h2>
+                <h2 id="dos">The Do’s and Don’ts: Tips for Aspiring Cybersecurity Professionals</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
 
                 <!-- Dos -->
@@ -244,7 +243,7 @@
 
 
                 <!-- Don’ts -->
-                <br><h3>❌ Don’ts</h3>
+                <h3>❌ Don’ts</h3>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <ol class="blog-list" style="text-align: justify;">
                     <li><strong>Avoid over-reliance on tools</strong></li>
@@ -256,18 +255,16 @@
                     <br><br><li><strong>Ignore post-engagement processes</strong></li>
                     Conduct thorough cleanup to ensure systems remain stable and secure after testing.
                 </ol>
-                <br>
 
 
-
-                <br><h2 id="conclusion">Conclusion</h2>
+                <h2 id="conclusion">Conclusion</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     To sum it up, this path not only teaches technical skills but also inspires the strategic mindset necessary for professional Red Teaming, equipping you to tackle advanced offensive security challenges effectively.
                 </p>
                 <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                     <p style="margin: 0; color: var(--text-primary); font-style: italic;">
-                        View My Certificate of Completion <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-FHJO9MQGNO.pdf" target="_blank" rel="noreferrer">HERE</a>
+                        View My Certificate of Completion <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-FHJO9MQGNO.pdf" target="_blank" rel="noreferrer"><strong style="font-size: bold;">HERE</strong></a>
                     </p>
                 </div>
 
