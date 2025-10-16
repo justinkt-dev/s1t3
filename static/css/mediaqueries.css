@@ -248,7 +248,8 @@
     
     .title { font-size: 2rem; }
     .hero-title { font-size: 1.9rem; }
-    .hero-sub { font-size: 1.05rem; text-align: center; }
+    /* Keep mobile hero subtext slightly smaller and centered */
+    .hero-sub { font-size: 1.1rem; text-align: center; }
     
     .section__text__p2 {
         font-size: 1.3rem;
