@@ -111,7 +111,7 @@
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     ArcGIS web applications are essential tools for organizations seeking to visualize, analyze, and share spatial data interactively. Two primary platforms, ArcGIS Experience Builder and Web AppBuilder offer powerful, flexible solutions for building these web apps. However, users frequently encounter challenges during configuration and deployment. In this guide, we will try to summarize key troubleshooting workflows, common errors, and best practices, drawing from documentation and real-world cases.
-                    <br><br>
+                    <br>
                     <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                         <p style="margin: 0; color: var(--text-primary); font-style: italic;">
                             📝 <strong style="font-size: bold;">Side note:</strong> We won’t cover ArcGIS Web App in depth here, this is just a glimpse of something much bigger. Thus, this aims to give us an overview of how web app are handled in ArcGIS Enterprise Environments. With that out of the way, let’s get to it.
@@ -121,7 +121,7 @@
                 </p>
 
                 <!-- Understanding ArcGIS Web Applications: Experience Builder and Web AppBuilder -->
-                <br><h2 id="sec1">Understanding ArcGIS Web Applications: Experience Builder and Web AppBuilder</h2>
+                <h2 id="sec1">Understanding ArcGIS Web Applications: Experience Builder and Web AppBuilder</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     ArcGIS Experience Builder enables users to create unique web experiences with flexible layouts, interactive widgets, and support for both 2D and 3D data. It offers drag-and-drop tools, responsive design, and the ability to build multi-page apps, making it ideal for modern, mobile-friendly web applications. Additionally, express mode allows for quick setup focused on essential features, while advanced options support custom widgets and templates.
@@ -204,7 +204,7 @@
                 </div>
 
                 <!-- Building and Troubleshooting workflows -->
-                <br><h2 id="sec2">Building and Troubleshooting Workflows</h2>
+                <h2 id="sec2">Building and Troubleshooting Workflows</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Understanding how Web Applications are constructed from the ground up is essential when troubleshooting ArcGIS-based environments. This foundational knowledge enables a more effective approach and optimal use of available resources. Consequently, the figure below highlights what I refer to as key checkpoints at each stage from services, through web maps, to web applications.
@@ -225,7 +225,7 @@
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Below is a list of frequent errors encountered when working with ArcGIS Experience Builder, along with Knowledge Base articles highlighting likely causes, and recommended solutions. This will be slightly different compared to the other guides as we will highlight main causes and plausible solutions for each error. However, it’s crucial to mention the need of exploring the knowledge article to get a clear understanding of the workflow.
-                </p><br>
+                </p>
                 <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                     <p style="margin: 0; color: var(--text-primary); font-style: italic;">
                         As side note, WebApp Builder is soon to be deprecated reason why I did not cover it in this guide . Read more here.
@@ -251,43 +251,43 @@
                     <li>Change the sharing level of the web map (Organization/Public)</li>
                     <ul class="blog-list" style="text-align: justify;">
                         <li>
-                            Steps: ArcGIS Portal → Content → Select Web Map → Edit Sharing → Set to Organization or Public
+                            <strong style="font-size: bold;">STEPS:</strong> ArcGIS Portal → Content → Select Web Map → Edit Sharing → Set to Organization or Public
                         </li>
                     </ul>
                     <li>Replace the Web map in ArcGIS Experience Builder</li>
                     <ul class="blog-list" style="text-align: justify;">
                         <li>
-                            Steps: Experience Builder → Open App → Select Map widget → Content → Replace Web Map → Save → Preview / Publish
+                            <strong style="font-size: bold;">STEPS:</strong> Experience Builder → Open App → Select Map widget → Content → Replace Web Map → Save → Preview / Publish
                         </li>
                     </ul>
                     <li>Replace the Map widget in ArcGIS Experience Builder</li>
                     <ul class="blog-list" style="text-align: justify;">
                         <li>
-                            Steps: Experience Builder → Delete existing Map widget → Insert new Map widget → Configure with desired Web Map → Save → Preview / Publish
+                            <strong style="font-size: bold;">STEPS:</strong> Experience Builder → Delete existing Map widget → Insert new Map widget → Configure with desired Web Map → Save → Preview / Publish
                         </li>
                     </ul>
                     <li>Replace the Map widget in ArcGIS Experience Builder</li>
                     <ul class="blog-list" style="text-align: justify;">
                         <li>
-                            Steps: Experience Builder → Delete existing Map widget → Insert new Map widget → Configure with desired Web Map → Save → Preview / Publish
+                            <strong style="font-size: bold;">STEPS:</strong> Experience Builder → Delete existing Map widget → Insert new Map widget → Configure with desired Web Map → Save → Preview / Publish
                         </li>
                     </ul>
                     <li>Ensure all data sources are properly bound and loaded for custom widget</li>
                     <ul class="blog-list" style="text-align: justify;">
                         <li>
-                            Steps: ArcGIS Portal → Content→ Item details page →Settings Feature layer (hosted) or Feature layer (hosted, view) →Enable editing → Check keep track of changes to the data (add, update, delete features) → Select the desired editing capabilities → Save
+                            <strong style="font-size: bold;">STEPS:</strong> ArcGIS Portal → Content→ Item details page →Settings Feature layer (hosted) or Feature layer (hosted, view) →Enable editing → Check keep track of changes to the data (add, update, delete features) → Select the desired editing capabilities → Save
                         </li>
                     </ul>
                     <li>Verify data source connections in widget settings</li>
                     <ul class="blog-list" style="text-align: justify;">
                         <li>
-                            Steps: Confirm all layers load correctly → Test in Preview mode
+                            <strong style="font-size: bold;">STEPS:</strong> Confirm all layers load correctly → Test in Preview mode
                         </li>
                     </ul>
                 </ul>
                 <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                     <p style="margin: 0; color: var(--text-primary); font-style: italic;">
-                        Relevant Knowledge Article → <a href="https://support.esri.com/en-us/knowledge-base/problem-the-web-map-is-not-available-in-the-map-widget--000031842" target="_blank" rel="noreferrer">Creating Map Failed</a>
+                        Relevant Knowledge Article → <a href="https://support.esri.com/en-us/knowledge-base/problem-the-web-map-is-not-available-in-the-map-widget--000031842" target="_blank" rel="noreferrer"><strong style="font-size: bold;">Creating Map Failed</strong></a>
                     </p>
                 </div>
 
@@ -310,20 +310,20 @@
                     <li>Select and enable the necessary options in the Map Layers Widgets (Interact with a Map widget, toggle layer visibility)</li>
                     <ul class="blog-list" style="text-align: justify;">
                         <li>
-                            Steps: Insert widget → Map Layers → Content → Select Interact with a Map widget (source) → Options, Toggle layer visibility → Save / Preview / Publish
+                            <strong style="font-size: bold;">STEPS:</strong> Insert widget → Map Layers → Content → Select Interact with a Map widget (source) → Options, Toggle layer visibility → Save / Preview / Publish
                         </li>
                     </ul>
                     <li>User the Map Widget as the source of the Map layers widget</li>
                     <ul class="blog-list" style="text-align: justify;">
                         <li>
-                            Steps: Insert widget → Map → Select or configure your map (Source) then Insert widget → Map Layers → Open Map Layers widget settings → Set Source to Interact with a Map widget → Choose the Map widget you added → Customize layers and enable desired options (optional) → Save → Preview / Publish
+                            <strong style="font-size: bold;">STEPS:</strong> Insert widget → Map → Select or configure your map (Source) then Insert widget → Map Layers → Open Map Layers widget settings → Set Source to Interact with a Map widget → Choose the Map widget you added → Customize layers and enable desired options (optional) → Save → Preview / Publish
                         </li>
                     </ul>
                     <li>Save and publish changes after enabling options.</li>
                 </ul>
                 <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                     <p style="margin: 0; color: var(--text-primary); font-style: italic;">
-                        Relevant Knowledge Article → <a href="https://support.esri.com/en-us/knowledge-base/problem-unable-to-toggle-the-visibility-of-the-map-laye-000028614" target="_blank" rel="noreferrer"></a>Toggle the visibility of the map layers</a>
+                        Relevant Knowledge Article → <a href="https://support.esri.com/en-us/knowledge-base/problem-unable-to-toggle-the-visibility-of-the-map-laye-000028614" target="_blank" rel="noreferrer"><strong style="font-size: bold;">Toggle the visibility of the map layers</strong></a>
                     </p>
                 </div>
                 
@@ -346,12 +346,12 @@
                     <li>Allow edits on all the feature layers.</li>
                     <ul class="blog-list" style="text-align: justify;">
                         <li>
-                            Steps: ArcGIS Portal → Content→ Item details page →Settings Feature layer (hosted) or Feature layer (hosted, view) →Enable editing → Check keep track of changes to the data (add, update, delete features) → Select the desired editing capabilities → Save
+                            <strong style="font-size: bold;">STEPS:</strong> ArcGIS Portal → Content→ Item details page →Settings Feature layer (hosted) or Feature layer (hosted, view) →Enable editing → Check keep track of changes to the data (add, update, delete features) → Select the desired editing capabilities → Save
                         </li>
                     </ul>
                     <li>With an admin account, change the user’s role to one with editing privileges (e.g., Viewer to Editor)</li>
                     <ul class="blog-list" style="text-align: justify;">
-                        <li>Steps: ArcGIS Portal → Organization → Members tab →Search for Member → Click Role and select appropriate role.</li>
+                        <li><strong style="font-size: bold;">STEPS:</strong> ArcGIS Portal → Organization → Members tab →Search for Member → Click Role and select appropriate role.</li>
                     </ul>
                     <li>Test the Editor widget after making changes.</li>
                 
@@ -359,7 +359,7 @@
                 </ul>
                 <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
                     <p style="margin: 0; color: var(--text-primary); font-style: italic;">
-                        Relevant Knowledge Article → <a href="https://support.esri.com/en-us/knowledge-base/problem-the-editor-widget-is-empty-in-arcgis-experience-000031809" target="_blank" rel="noreferrer">No editable layers found</a>
+                        Relevant Knowledge Article → <a href="https://support.esri.com/en-us/knowledge-base/problem-the-editor-widget-is-empty-in-arcgis-experience-000031809" target="_blank" rel="noreferrer"><strong style="font-size: bold;">No editable layers found</strong></a>
                     </p>
                 </div>
 
