@@ -255,6 +255,7 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .section__text {
@@ -265,7 +266,7 @@ nav a:hover {
 .section__text__p1 {
     text-align: center;
     color: var(--text-secondary);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
 }
 
@@ -278,8 +279,8 @@ nav a:hover {
 }
 
 /* Hero size tweaks */
-.hero-title { font-size: 2.6rem; }
-.hero-sub { font-size: 1.35rem; max-width: clamp(800px, 92vw, 1200px); margin-left: auto; margin-right: auto; }
+.hero-title { font-size: 2.5rem; }
+.hero-sub { font-size: 1.28rem; max-width: clamp(800px, 92vw, 1200px); margin-left: auto; margin-right: auto; }
 
 .section__text__p2 {
     font-size: 1.4rem;
