@@ -237,8 +237,8 @@ nav a:hover {
 
 .section__pic-container {
     display: flex;
-    height: 350px;
-    width: 350px;
+    height: 420px;
+    width: 420px;
     margin: auto 0;
     border-radius: 50%;
     overflow: hidden;
@@ -282,7 +282,7 @@ nav a:hover {
 
 /* Hero size tweaks */
 .hero-title { font-size: 2.5rem; }
-.hero-sub { font-size: 1.28rem; max-width: clamp(800px, 92vw, 1200px); margin-left: auto; margin-right: auto; }
+.hero-sub { font-size: 1.28rem; max-width: clamp(1000px, 95vw, 1300px); margin-left: auto; margin-right: auto; }
 
 .section__text__p2 {
     font-size: 1.4rem;
