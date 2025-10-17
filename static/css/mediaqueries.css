@@ -125,8 +125,8 @@
     }
     
     .section__pic-container {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
         margin: 0 auto;
     }
     
@@ -258,8 +258,8 @@
     #profile { height: auto; margin-top: 56px; padding: 2rem 1rem; }
     
     .section__pic-container {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
     
     .title { font-size: 2rem; }
@@ -485,8 +485,8 @@
     }
     
     .section__pic-container {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
     }
     
     .about-pic {
