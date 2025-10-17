@@ -245,6 +245,7 @@ nav a:hover {
     border: 3px solid var(--accent-primary);
     box-shadow: 0 10px 30px var(--shadow);
     transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1; /* enforce perfect circle */
 }
 
 .section__pic-container:hover {
@@ -256,6 +257,7 @@ nav a:hover {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    aspect-ratio: 1 / 1; /* avoid oval rendering from flex context */
 }
 
 .section__text {
