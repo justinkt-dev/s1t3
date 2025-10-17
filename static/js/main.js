@@ -32,6 +32,22 @@ function updateThemedImages(mode){
             img.setAttribute('src', dark);
         }
     });
+
+    // Invert icon for theme toggle buttons specifically (show opposite theme icon)
+    function setToggleIcon(el){
+        if (!el) return;
+        var light = el.getAttribute('src-light');
+        var dark = el.getAttribute('src-dark');
+        if (theme === 'light' && dark) {
+            // Light UI shows dark icon
+            el.setAttribute('src', dark);
+        } else if (theme === 'dark' && light) {
+            // Dark UI shows light icon
+            el.setAttribute('src', light);
+        }
+    }
+    setToggleIcon(document.getElementById('modeToggle'));
+    setToggleIcon(document.getElementById('modeToggle2'));
 }
 
 // Hamburger Menu Toggle
