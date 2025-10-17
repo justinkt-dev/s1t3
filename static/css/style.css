@@ -662,6 +662,12 @@ nav a:hover {
 .about-wide .post-content p,
 .about-wide .post-content li { text-align: justify; line-height: 1.75; }
 .about-wide .post-content h2 { margin-top: 1.6rem; margin-bottom: .8rem; }
+/* Slightly reduce About header intro paragraph on desktop */
+.about-wide .post-content header p { font-size: 1.05rem; }
+
+/* Make certification and social images more rounded */
+#certifications .interactive-row img,
+#social-networks .interactive-row img { border-radius: 12px; }
 
 .post-content {
     background: var(--bg-primary);
