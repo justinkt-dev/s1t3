@@ -6,7 +6,8 @@ function toggleTheme() {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     
-    // Navbar icons swap handled via src-light/src-dark attributes in HTML
+    // Update themed images
+    updateThemedImages(newTheme);
 }
 
 // Initialize theme on page load
@@ -14,11 +15,23 @@ function initializeTheme() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
-    // Set initial theme toggle icon
-    const themeIcon = document.querySelector('.theme-toggle img');
-    if (themeIcon) {
-        themeIcon.src = savedTheme === 'light' ? 'assets/theme_dark.png' : 'assets/theme_light.png';
-    }
+    // Sync any themed images on load
+    updateThemedImages(savedTheme);
+}
+
+// Swap any <img> elements that declare src-light/src-dark attributes
+function updateThemedImages(mode){
+    var theme = mode || (document.documentElement.getAttribute('data-theme') || 'dark');
+    var imgs = document.querySelectorAll('img[src-light][src-dark]');
+    imgs.forEach(function(img){
+        var light = img.getAttribute('src-light');
+        var dark = img.getAttribute('src-dark');
+        if (theme === 'light' && light) {
+            img.setAttribute('src', light);
+        } else if (theme === 'dark' && dark) {
+            img.setAttribute('src', dark);
+        }
+    });
 }
 
 // Hamburger Menu Toggle
@@ -305,29 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return emailRegex.test(email);
     }
     
-    // Add copy to clipboard functionality for email
-    const emailElement = document.querySelector('a[href^="mailto:"]');
-    if (emailElement) {
-        emailElement.addEventListener('click', function(e) {
-            e.preventDefault();
-            const email = this.href.replace('mailto:', '');
-            
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(email).then(() => {
-                    showNotification('Email copied to clipboard!');
-                });
-            } else {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = email;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                showNotification('Email copied to clipboard!');
-            }
-        });
-    }
+    // Let mailto links open the mail client (no more copy-to-clipboard override)
     
     // Notification system
     function showNotification(message) {
