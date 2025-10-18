@@ -257,6 +257,10 @@ nav a:hover {
 
 .section__pic-container:hover {
     transform: scale(1.05);
+    box-shadow:
+      0 10px 30px var(--shadow),
+      0 0 0 4px rgba(137, 180, 250, 0.18), /* outer glow ring */
+      0 0 22px rgba(137, 180, 250, 0.22);   /* soft ambient glow */
 }
 
 .section__pic-container img {
@@ -265,6 +269,19 @@ nav a:hover {
     object-fit: cover;
     border-radius: 50%;
     aspect-ratio: 1 / 1; /* avoid oval rendering from flex context */
+}
+
+/* Layered hover glow for interactive rows and cards (About and site-wide) */
+.interactive-row:hover,
+.card:hover,
+.details-container:hover,
+.post-content a:hover,
+#certifications .interactive-row:hover,
+#social-networks .interactive-row:hover {
+    box-shadow:
+      0 6px 18px var(--shadow),
+      0 0 0 3px rgba(137, 180, 250, 0.14),
+      0 0 18px rgba(137, 180, 250, 0.18);
 }
 
 .section__text {
