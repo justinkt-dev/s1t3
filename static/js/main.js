@@ -566,7 +566,7 @@ function injectStructuredData() {
         "image": siteRoot + "assets/profile.webp",
         "sameAs": [
             "https:\/\/www.linkedin.com\/in\/jkt112\/",
-            "https:\/\/github.com\/justinkt101\/",
+            "https:\/\/github.com\/justinkt-dev",
             "https:\/\/tryhackme.com\/p\/justinkt",
             "https:\/\/app.hackthebox.com\/profile\/justinkt"
         ],
