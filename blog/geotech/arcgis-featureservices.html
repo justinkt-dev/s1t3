@@ -122,7 +122,7 @@
                 </p>
 
                 <!-- Quick Overview on ArcGIS Printing Services -->
-                <br><h2 id="understanding">Understanding ArcGIS Feature Services</h2>
+                <h2 id="understanding">Understanding ArcGIS Feature Services</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     ArcGIS Feature Services allow you to publish, query, and edit spatial datasets (features) via web services. In fact, these services are commonly consumed in ArcGIS Online or Portal (for Enterprise environment), ArcGIS Pro, and custom web apps using the ArcGIS API for JavaScript or REST API.
@@ -130,7 +130,7 @@
                     Additionally, Feature Services can be either hosted (stored in ArcGIS Online or Portal) or referenced (pointing to existing enterprise geodatabases) or copied. (More on service types in the upcoming section)
                     <br><br>
                     Some common scenarios involving Feature Services include:
-                </p><br>
+                </p>
                 <ul class="blog-list" style="text-align: justify;">
                     <li>Publishing editable layers from ArcGIS Pro</li>
                     <li>Syncing offline field data from mobile apps (e.g., Collector, Field Maps)</li>
@@ -147,7 +147,7 @@
                 </div>
 
                 <!-- Service Types -->
-                <br><h2 id="service-types">Service-Type Specific Guidance: Hosted vs. Referenced vs. Copied Services</h2>
+                <h2 id="service-types">Service-Type Specific Guidance: Hosted vs. Referenced vs. Copied Services</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     It’s necessary to note that when it comes to dealing with services, ArcGIS Enterprise supports three main types of data stores for services: Copied, Registered (Referenced), and Hosted. Consequently, each type has its own architecture, troubleshooting considerations, and best practices. Below is a structured guide to investigating issues related to each type, with relevant things to take into account.
@@ -161,7 +161,7 @@
 
                 <p style="text-align: justify;">
                     At first, let’s inspect the below figure and get a better understanding of how data are being handled (registered, fetched and subsequently retrieved) based on each type of Data Store in ArcGIS Server.
-                </p><br>
+                </p>
 
                 <!-- IMAGE HERE -->
                 <img src="../../assets/arcgisdatastores.webp" alt="ArcGIS Data Store" style="width:70%;max-height:1000px;object-fit:cover;border-radius:12px;border:1px solid var(--border-color);position: relative; left: 50%; transform: translateX(-50%); background:var(--bg-secondary)" />
@@ -173,7 +173,7 @@
                     As shown in the above figure, when dealing with copied data stores, the data is copied from the publisher’s machine to the ArcGIS Server machine (e.g., to a directory like C:\\arcgisserver). This is typically used when the source data is not accessible to the server directly.
                     <br><br>
                     It’s time to dive into more interesting core elements which consist of key considerations as well as a few notable troubleshooting steps. Keep in mind that the troubleshooting steps might vary based on the deployment at hand.
-                </p><br>
+                </p>
 
                 <strong>Key Considerations</strong>
                 <ul class="blog-list" style="text-align: justify;">
@@ -188,21 +188,21 @@
                     <li><strong>Validate Data Connections:</strong> Sometimes, publishing tools may appear to use the correct connection, but the server might not recognize it as registered, causing unnecessary data copying.</li>
                     <li><strong>Analyze Publishing Logs:</strong> Review ArcGIS Server logs for errors during the publishing process. The Job IDs might reveal interesting details worth checking as well.</li>
                     <li><strong>Check for Duplicate Data:</strong> Ensure that multiple copies of the same data are not causing confusion or performance issues.</li>
-                </ul><br>
+                </ul>
 
                 <!-- Registered Data Stores -->
                 <h3 id="registered">Registered (Referenced) Data Stores</h3>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Just like the name, in this case data remains in its original location (e.g., enterprise geodatabase, shared network folder). Additionally, ArcGIS Server is registered to access the data source directly. Similarly to the Copied Data Store, we will take a look at some aspects to consider as well as a few diagnostic workflow.
-                </p><br>
+                </p>
 
                 <strong>Elements to take into account</strong>
                 <ul class="blog-list" style="text-align: justify;">
                     <li><strong>Data availability:</strong> This is crucial as if the data source is offline or inaccessible, services will fail.</li>
                     <li><strong>Permissions:</strong> Both the publisher and ArcGIS Server account must have read (and possibly write) access.</li>
                     <li><strong>Performance:</strong> Distinguishing between network/database performance interference and feature service issues can be quiet challenging, making it difficult to pinpoint the root cause.</li>
-                </ul><br>
+                </ul>
 
                 <strong>Troubleshooting Steps</strong>
                 <ul class="blog-list" style="text-align: justify;">
@@ -214,18 +214,18 @@
                 </ul>
 
                 <!-- Hosted Data Stores -->
-                <br><h3 id="hosted">3. Hosted Data Stores</h3>
+                <h3 id="hosted">3. Hosted Data Stores</h3>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     This is one of the most common instance where data is managed by ArcGIS Data Store (relational, tile cache, or spatiotemporal) and supports hosted feature, tile, or scene layers in Portal for ArcGIS. Below are some key points to look out for when dealing with hosted data stores.
-                </p><br>
+                </p>
                 <strong>Important Factors to Consider</strong>
                 <ul class="blog-list" style="text-align: justify;">
                     <li><strong>High availability:</strong> For critical services, configure highly available ArcGIS Server and Data Store setups. With this being said keep in mind any considerations related to primary site and secondary site administrator.</li>
                     <li><strong>Data backup:</strong> Ensure regular backups of the ArcGIS Data Store.</li>
                     <li><strong>Security:</strong> It is essential to properly configure SSL certificates, Web Adaptors, and all other security-related components to ensure a secure ArcGIS Enterprise deployment.</li>
                 </ul>
-                <br><strong>Resolution steps</strong>
+                <strong>Resolution steps</strong>
                 <ul class="blog-list" style="text-align: justify;">
                     <li><strong>Check Data Store Health:</strong> Use the ArcGIS Server and Portal for ArcGIS admin interfaces to verify the health and status of the ArcGIS Data Store.</li>
                     <li><strong>Restart Services in Correct Order:</strong> If services are not loading, restart Portal for ArcGIS, ArcGIS Server, and ArcGIS Data Store in the recommended order to avoid service crashes. (Please do it after working hours if on production to avoid service disruptions and system downtime)</li>
@@ -233,7 +233,7 @@
                     <li><strong>Check for recent changes:</strong> System restores, version upgrade/downgrade, or server migrations can disrupt connections between Portal, Server, and Data Store.</li>
                     <li><strong>Apply relevant patches:</strong> For issues after server restarts, check for and apply patches like the ArcGIS Server Hosted Services Restart Patch for instance or any other relevant one.</li>
                     <li><strong>Review Logs:</strong> Analyze logs for errors related to service publishing, data store connectivity, or authentication.</li>
-                </ul><br>
+                </ul>
 
                 <p style="text-align: justify;">
                     Check out the below links to learn more about ArcGIS Server & type of data stores:
@@ -249,7 +249,7 @@
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Below is a list of frequent errors encountered when working with ArcGIS Feature Services, along with Knowledge Base articles highlighting likely causes, and recommended solutions. I WILL NOT be covering each error in depth, hence I highly recommend you to inspect each one individually for more insights.
-                </p><br>
+                </p>
 
                 <ul class="blog-list" style="text-align: justify;">
                     <li><strong>Error 1 → Creating Map Failed</strong></li>
@@ -272,13 +272,11 @@
                         <li><strong>Sharing Level:</strong> This is potentially one of the most fundamental aspect to check as the wrong sharing level (owner instead of organization/public) can lead to inaccessible services or hours of frustration.</li>
                         <li><strong>Token expiration:</strong> For those of you reading this who are wondering since when do we use token for authentication in ArcGIS Environment, kindly read more on this here. Be aware that, it’s good practice to refresh credentials or configure long-lived tokens for enterprise apps as a possible workaround.</li>
                     </ul>   
-                </ul><br>
-
+                </ul>
 
                 <!-- Best Practices for Reliable ArcGIS Feature Services -->
                 <h2 id="best-practices">Best Practices for Reliable ArcGIS Feature Services</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
-                
                 <ul class="blog-list" style="text-align: justify;">
                     <li>Regularly validate your data in ArcGIS Pro using "Check Geometry" and "Repair Geometry" tools before publishing.</li>
                     <li>Use consistent spatial references across layers in a map document.</li>
@@ -293,7 +291,7 @@
                 
                 
                 <!-- Conclusion -->
-                <br><h2 id="conclusion">Conclusion</h2>
+                <h2 id="conclusion">Conclusion</h2>
                 <hr style="border: 1px solid var(--border-color); margin-bottom:1rem;">
                 <p style="text-align: justify;">
                     Troubleshooting ArcGIS Feature Services requires a mix of GIS knowledge, system awareness, and familiarity with Esri tools and architecture. Most common issues stem from misconfigurations, unsupported data, or permission conflicts.
