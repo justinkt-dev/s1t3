@@ -248,6 +248,12 @@ nav a:hover {
     aspect-ratio: 1 / 1; /* enforce perfect circle */
 }
 
+/* Subtle depth and refined crop for the avatar */
+.section__pic-container img {
+    object-position: 50% 38%; /* shift focal point slightly upward */
+    filter: saturate(1.05) contrast(1.02);
+}
+
 .section__pic-container:hover {
     transform: scale(1.05);
 }
