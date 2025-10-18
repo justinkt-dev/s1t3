@@ -131,6 +131,7 @@
         width: 300px;
         height: 300px;
         margin: 0 auto;
+        border-radius: 50%; /* ensure perfect circle on tablet */
     }
     
     .section-container {
@@ -263,6 +264,7 @@
     .section__pic-container {
         width: 200px;
         height: 200px;
+        border-radius: 50%; /* ensure perfect circle on mobile */
     }
     
     .title { font-size: 2rem; }
@@ -490,6 +492,7 @@
     .section__pic-container {
         width: 200px;
         height: 200px;
+        border-radius: 50%;
     }
     
     .about-pic {
@@ -577,6 +580,7 @@
     .section__pic-container {
         width: 200px;
         height: 200px;
+        border-radius: 50%;
     }
     
     .title {
