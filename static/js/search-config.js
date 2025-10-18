@@ -15,8 +15,8 @@ class SearchIndex {
   // Auto-discover all blog content
   async discoverContent() {
     const basePages = [
-      { title: 'About', url: 'about/about.html', fetch: 'about/about.html', category: 'core' },
-      { title: 'Blog', url: 'blog/blog.html', fetch: 'blog/blog.html', category: 'core' },
+      { title: 'About', url: 'about.html', fetch: 'about.html', category: 'core' },
+      { title: 'Blog', url: 'blog.html', fetch: 'blog.html', category: 'core' },
       { title: 'Home', url: 'index.html', fetch: 'index.html', category: 'core' }
     ];
 
