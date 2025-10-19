@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <title>Globe</title>
+  <defs>
+    <style>
+      .stroke{stroke:#1e66f5;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <circle class="stroke" cx="32" cy="32" r="24"/>
+  <!-- Meridians -->
+  <path class="stroke" d="M32 8c7 6.5 11 14.8 11 24s-4 17.5-11 24c-7-6.5-11-14.8-11-24S25 14.5 32 8z"/>
+  <path class="stroke" d="M12 32h40"/>
+  <!-- Parallels -->
+  <path class="stroke" d="M32 14c9.5 0 18 3 20 7H12c2-4 10.5-7 20-7z"/>
+  <path class="stroke" d="M32 50c9.5 0 18-3 20-7H12c2 4 10.5 7 20 7z"/>
+</svg>
+
