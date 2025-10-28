@@ -1116,12 +1116,12 @@ footer p {
 
 /* Skill Highlights marquee */
 .skills-marquee{overflow:hidden;position:relative}
-.skills-track{display:flex;gap:24px;width:max-content;animation:marquee-ltr 24s linear infinite;will-change:transform}
+.skills-track{display:flex;gap:24px;width:max-content;animation:marquee-ltr 45s linear infinite;will-change:transform}
 .skills-track-inner{display:flex;gap:12px;padding:6px 0}
 .skill-item{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border-color);border-radius:999px;background:var(--bg-secondary);color:var(--text-secondary);white-space:nowrap}
 @keyframes marquee-ltr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 @media (max-width: 768px){
-  .skills-track{gap:16px;animation-duration:28s}
+  .skills-track{gap:16px;animation-duration:60s}
   .skills-track-inner{gap:10px}
   .skill-item{padding:6px 10px}
 }
