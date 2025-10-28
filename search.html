@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./static/css/style.css" />
   <link rel="stylesheet" href="./static/css/mediaqueries.css" />
 </head>
-<body>
+<body id="top">
   <header>
     <nav id="desktop-nav">
       <div class="logo">
@@ -75,6 +75,13 @@
   <footer style="margin-top:auto; padding:1rem 0; background:var(--bg-secondary); border-top:1px solid var(--border-color);">
     <p style="text-align:center; color:var(--text-secondary); font-size:0.85rem; margin:0;">Copyright &#169; 2025 Justin Kombe Tonguino.</p>
   </footer>
+
+  <!-- Floating home button -->
+  <a href="#top" class="float-home-btn" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 14l6-6 6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+  </a>
 
   <script src="./static/js/main.js"></script>
   <script src="./static/js/search-config.js"></script>
