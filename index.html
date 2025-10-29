@@ -104,7 +104,7 @@
     </div>
     <div class="section__text">
       <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title hero-title">Justin Kombe Tonguino</h1>
+      <h1 class="title hero-title"><span id="rotating-identity">Justin Kombe Tonguino</span></h1>
       <i>
         <p class="section__text__p2 hero-sub">As a Security Researcher interested in all things cyber, here I compile content that I find useful and relevant.<br> Feel free to explore and I hope you learn something from me.<br></p>
       </i>
@@ -288,11 +288,36 @@
     (function(){
       try {
         var path = window.location.pathname;
-        if (/\.html$/.test(path)) {
-          var pretty = path.replace(/\.html$/, '');
+        var pretty = path;
+        if (/\.html$/.test(pretty)) {
+          pretty = pretty.replace(/\.html$/, '');
+        }
+        if (/\/index$/.test(pretty)) {
+          pretty = pretty.replace(/\/index$/, '/');
+        }
+        if (pretty !== path) {
           window.history.replaceState(null, '', pretty + window.location.search + window.location.hash);
         }
       } catch (_) {}
+    })();
+  </script>
+  <script>
+    (function(){
+      var el = document.getElementById('rotating-identity');
+      if(!el) return;
+      var items = [
+        'Justin Kombe Tonguino',
+        'Red Team Enthusiast',
+        'Penetration Tester',
+        'GIS Analyst',
+        'Security Researcher',
+        'Network Security Specialist'
+      ];
+      var i = 0;
+      setInterval(function(){
+        i = (i + 1) % items.length;
+        el.textContent = items[i];
+      }, 2200);
     })();
   </script>
 </body>
