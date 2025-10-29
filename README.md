@@ -82,7 +82,7 @@ The website is fully responsive and optimized for:
 
 ## 📞 Contact
 
-- **Email**: info@justinkombe.com
+- **Email**: info@justinkombe.xyz
 - **LinkedIn**: [linkedin.com/in/jkt112/](https://linkedin.com/in/jkt112/)
 - **GitHub**: [github.com/justinkt-dev](https://github.com/justinkt-dev)
 
