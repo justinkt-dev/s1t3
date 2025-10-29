@@ -854,6 +854,16 @@ nav a:hover {
     color: var(--accent-primary);
 }
 
+/* About: Work Experience hover border accent */
+.about-wide #my-journey ul > li.interactive-row {
+    border: 1px solid var(--border-color);
+}
+
+.about-wide #my-journey ul > li.interactive-row:hover {
+    border-color: var(--accent-primary);
+    background: var(--bg-primary);
+}
+
 /* Blog list styling for consistent indentation */
 .blog-list {
     margin-left: 2rem;
