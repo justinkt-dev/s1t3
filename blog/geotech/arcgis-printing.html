@@ -327,5 +327,16 @@
     </a>
 
     <script src="../../static/js/main.js"></script>
+    <script>
+      (function(){
+        try {
+          var path = window.location.pathname;
+          if (/\.html$/.test(path)) {
+            var pretty = path.replace(/\.html$/, '');
+            window.history.replaceState(null, '', pretty + window.location.search + window.location.hash);
+          }
+        } catch (_) {}
+      })();
+    </script>
 </body>
 </html>

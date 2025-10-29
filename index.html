@@ -9,21 +9,21 @@
   <!-- Canonical & SEO -->
   <title>Justin Kombe Tonguino | Cybersecurity Researcher</title>
   <meta name="description"
-    content="I'm Justin Kombe Tonguino, a cybersecurity researcher. I specialize in red teaming, penetration testing, and adversary simulation. Explore my certifications, labs, and notes." />
+    content="JKT Cybersecurity Portfolio — Curated research insights, notes, and resources from discussions with cybersecurity enthusiasts and professionals." />
   <link rel="canonical" href="https://justinkombe.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Justin Kombe Tonguino | Cybersecurity Researcher" />
   <meta property="og:description"
-    content="Explore Justin's cybersecurity journey through certifications, red team labs, and security research." />
+    content="JKT Cybersecurity Portfolio — Curated research insights, notes, and resources from discussions with cybersecurity enthusiasts and professionals." />
   <meta property="og:image" content="/assets/profile.webp" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Justin Kombe Tonguino | Cybersecurity Researcher" />
   <meta name="twitter:description"
-    content="Cyber Security Vault & Personal Blog" />
+    content="JKT Cybersecurity Portfolio — Curated research insights, notes, and resources from discussions with cybersecurity enthusiasts and professionals." />
   <meta name="twitter:image" content="/assets/profile.webp" />
 
   <!-- Favicon -->
@@ -284,6 +284,17 @@
   </a>
 
   <script src="./static/js/main.js"></script>
+  <script>
+    (function(){
+      try {
+        var path = window.location.pathname;
+        if (/\.html$/.test(path)) {
+          var pretty = path.replace(/\.html$/, '');
+          window.history.replaceState(null, '', pretty + window.location.search + window.location.hash);
+        }
+      } catch (_) {}
+    })();
+  </script>
 </body>
 
 </html>
